@@ -225,12 +225,11 @@ a:hover, a:active {
 
 #content_wrapper {
   position: relative;
-  margin-top: 25px;
+  margin-top: 50px;
   margin-right: 50px;
-  margin-bottom: 50px;
-  margin-left: 50px;
+  margin-bottom: 0;
+  margin-left: 541px;
   width: auto;
-  /* border-top: solid black 1px; */
   border-bottom: none;
   text-transform: lowercase;
 }
@@ -309,8 +308,7 @@ a:hover, a:active {
 }
 
 #nav_container {
-  position: relative;
-  margin-top: 50px;
+  position: fixed;
   margin-left: 50px;
   padding: 20px 20px 0px 20px;
   width: 400px;
@@ -341,6 +339,19 @@ a:hover, a:active {
     cursor: default;
 }
 
+
+@media only screen and (max-width: 1300px) {
+  #content_wrapper {
+  margin-left: 50px;
+  margin-top: 25px;
+  margin-bottom: 100px;
+  }
+
+  #nav_container {
+    position: relative;
+    margin-top: 50px;
+  }
+}
 
 @media only screen and (max-width: 570px) {
   #nav_container {
