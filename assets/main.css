@@ -246,7 +246,7 @@ a:hover, a:active {
   border: solid black 1px;
   color: black;
   text-align: center;
-  font-size: 350%;
+  font-size: 25px;
   transition: .2s linear;
   transition-property: background;
 }
@@ -264,7 +264,6 @@ a:hover, a:active {
   background-repeat: no-repeat;
   color: black;
   font-weight: 900;
-  font-size: 350%;
 }
 
 
