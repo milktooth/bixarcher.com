@@ -87,7 +87,7 @@ video {
   font: inherit;
   font-weight: 300;
   font-size: 100%;
-  font-family: "Crimson Text", Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+  font-family: helvetica;
 }
 
 article,
@@ -107,7 +107,7 @@ section {
 body {
   background: white;
   line-height: 1;
-  /* animation: colorflux 120s infinite linear; */
+  animation: colorflux 120s infinite linear;
 }
 
 @keyframes colorflux {
@@ -206,7 +206,7 @@ a:hover, a:active {
 
 }
 
-#title_wrap {position: absolute;right: 20px;bottom: 0;margin-bottom: 5px;}
+#title_wrap {position: absolute;right: 20px;bottom: 0;margin-bottom: 12px;}
 
 #nav_links {
   margin-bottom: 10px;
@@ -221,32 +221,30 @@ a:hover, a:active {
   border-bottom: solid 1px;
   color: black;
   text-align: left;
+  font-size: 20px;
 }
 
 #content_wrapper {
   position: relative;
+  margin: auto;
   margin-top: 25px;
-  margin-right: 50px;
-  margin-bottom: 50px;
-  margin-left: 50px;
-  width: auto;
-  /* border-top: solid black 1px; */
+  width: 440px;
   border-bottom: none;
   text-transform: lowercase;
 }
 
-#content_wrapper>div:hover h1{
-  background: yellow;
-}
+#content_wrapper>div:hover h1{}
+
+
+#content_wrapper>div>h1>a{display: block;padding: 30px;}
 
 #content_wrapper>div>h1{
-  position: absolute;
   z-index: -5;
-  padding: 20px;
-  border: solid black 1px;
+  border-bottom: solid black 1px;
   color: black;
-  text-align: center;
-  font-size: 25px;
+  display: block;
+  text-align: right;
+  font-size: 20px;
   transition: .2s linear;
   transition-property: background;
 }
@@ -289,7 +287,7 @@ a:hover, a:active {
   z-index: -100;
   width: 100%;
   height: 0;
-  background: yellow;
+  background: black;
   content:"";
   transition: .2s ease-in-out;
   transition-delay: .05s;
@@ -297,7 +295,7 @@ a:hover, a:active {
 }
 
 #nav_links>a:hover:after {
-  height: 75%;
+  height: 100%;
 }
 
 
@@ -309,8 +307,8 @@ a:hover, a:active {
 
 #nav_container {
   position: relative;
+  margin: auto;
   margin-top: 50px;
-  margin-left: 50px;
   padding: 20px 20px 0px 20px;
   width: 400px;
   border: black 1px solid;
@@ -336,7 +334,7 @@ a:hover, a:active {
     text-align: right;
     font-weight: bold;
     font-style: initial;
-    font-size: 350%;
+    font-size: 53px;
     cursor: default;
 }
 
@@ -351,9 +349,7 @@ a:hover, a:active {
   #content_wrapper {
     margin-right: auto;
     margin-left: auto;
-
     width: 86%;
-    border-bottom: solid black 1px;
   }
 
   #nav_links>a {
@@ -368,12 +364,10 @@ a:hover, a:active {
   }
 
   #content_wrapper>div>h1 {
-    border: none;
   }
 
 
   #content_wrapper>div:hover h1{
-    background: white;
   }
 
   #nav_links>a:after {
