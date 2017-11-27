@@ -106,7 +106,7 @@ section {
 
 body {
   line-height: 1;
-  /* animation: colorflux 120s infinite linear; */
+  animation: colorflux 120s infinite linear;
 }
 
 @keyframes colorflux {
@@ -226,9 +226,8 @@ a:hover, a:active {
 
 #content_wrapper {
   position: relative;
-  margin: auto;
-  margin-left: 50px;
-  margin-top: 25px;
+  font-size: 25px;
+  margin: 25px 50px 25px 50px;
   justify-content: flex-start;
   flex-wrap: wrap;
   display: flex;
@@ -236,12 +235,7 @@ a:hover, a:active {
   text-transform: lowercase;
 }
 
-#content_wrapper>div {
-background: yellow;
-border: solid 1px black;
-margin-right: -1px;
-margin-bottom: -1px;
-}
+#content_wrapper div {background: white;border: solid 1px black;margin-right: -1px;margin-bottom: -1px;padding: 30px;}
 
 #content_wrapper>div>h1>a{display: block;padding: 30px;}
 
@@ -286,7 +280,8 @@ margin-bottom: -1px;
   background-repeat: no-repeat;
 }
 
-.title {}
+.title {
+}
 
 
 @media only screen and (max-width: 570px) {
