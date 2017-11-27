@@ -34,7 +34,8 @@
     </div>
   </div>
 
-  <div id="content_wrapper">
+  <div id="content_wrapper" class="accordion">
+    <!-- featherlight version
     <div>
       <h1><a href="#" data-featherlight="/assets/images/365.jpg">365 (Uniform)</a></h1>
     </div>
@@ -50,12 +51,35 @@
     <div>
       <h1><a href="#" data-featherlight="/assets/images/true-story.jpg">True Story</a></h1>
     </div>
+    -->
+
+    <!-- accordion version -->
+    <div>
+      <h1><a href="#" class="accordion-toggle">365 (Uniform)</a></h1>
+      <div class="accordion-content"><img src="/assets/images/365.jpg"></div>
+    </div>
+    <div>
+      <h1><a href="#" class="accordion-toggle">North Bay Fires Memorial Quilt</a></h1>
+      <div class="accordion-content"><img src="/assets/images/north-bay-fires.jpg"></div>
+    </div>
+    <div>
+      <h1><a href="#" class="accordion-toggle">Untitled(?)</a></h1>
+      <div class="accordion-content"><img src="/assets/images/red-painting.jpg"></div>
+    </div>
+    <div>
+      <h1><a href="#" class="accordion-toggle">The Water is Fine(?)</a></h1>
+      <div class="accordion-content"><img src="/assets/images/the-water-is-fine.jpg"></div>
+    </div>
+    <div>
+      <h1><a href="#" class="accordion-toggle">True Story</a></h1>
+      <div class="accordion-content"><img src="/assets/images/true-story.jpg"></div>
+    </div>
+
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="//cdn.rawgit.com/noelboss/featherlight/1.7.9/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 
-<!--
   <script type="text/javascript">
     $(document).ready(function($) {
 
@@ -69,7 +93,8 @@
       });
     });
   </script>
-
+  
+<!--
   <script src="/assets/lightbox.js"></script>
   <script>
     lightbox.option({
