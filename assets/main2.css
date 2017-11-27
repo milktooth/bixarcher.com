@@ -1,0 +1,313 @@
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+button,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  font: inherit;
+  font-weight: 300;
+  font-size: 100%;
+  font-family: helvetica;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  /* animation: colorflux 120s infinite linear; */
+}
+
+@keyframes colorflux {
+  0% {background: rgba(80, 73, 255, 1);}
+  25% {background: rgba(40, 73, 255, 1);}
+  50% {background: rgba(80, 73, 255, 1);}
+  75% {background: rgba(100, 73, 255, 1);}
+  100% {background: rgba(80, 73, 255, 1);}
+
+}
+
+@keyframes textflux {
+  0% {color: rgba(80, 73, 255, 1);}
+  25% {color: rgba(40, 73, 255, 1);}
+  50% {color: rgba(80, 73, 255, 1);}
+  75% {color: rgba(100, 73, 255, 1);}
+  100% {color: rgba(80, 73, 255, 1);}
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
+  content: '';
+  content: none;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 400;
+}
+
+a:link, a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  color: black;
+  text-decoration: none;
+}
+
+.accordion-toggle {
+  cursor: pointer;
+}
+
+.accordion-content {
+  display: none;
+}
+
+@keyframes slidein {
+  0% {margin-right: -20%;}
+  100% {margin-right: 0%;}
+
+}
+
+.type_wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: -100;
+  overflow: hidden;
+  padding-left: 25px;
+  width: 10vw;
+  height: 100vh;
+  background: black;
+  animation: slidein 1s;
+}
+
+.type_wrapper>h1 {
+  margin-top: 73vh;
+  color: black;
+  font-weight: 900;
+  font-size: 15vw;
+  opacity: 1;
+  transform: rotate(-35deg);
+  transform: rotate(-90deg);
+
+  -webkit-highlight: none;
+}
+
+.accordion-content{
+
+}
+
+#title_wrap {position: absolute;right: 20px;bottom: 0;margin-bottom: 12px;}
+
+#nav_links {
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+
+#nav_links>a {
+  position: relative;
+  display: inline-block;
+  margin-right: 200px;
+  margin-bottom: 10px;
+  border-bottom: solid 1px;
+  color: black;
+  text-align: left;
+  font-size: 20px;
+}
+
+#content_wrapper {
+  position: relative;
+  margin: auto;
+  margin-left: 50px;
+  margin-top: 25px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  display: flex;
+  border-bottom: none;
+  text-transform: lowercase;
+}
+
+#content_wrapper>div {
+background: yellow;
+border: solid 1px black;
+margin-right: -1px;
+margin-bottom: -1px;
+}
+
+#content_wrapper>div>h1>a{display: block;padding: 30px;}
+
+#content_wrapper>div>h1{
+  z-index: -5;
+  color: black;
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  transition: .2s linear;
+  transition-property: background;
+}
+
+
+#content_wrapper>div>div:hover {
+}
+
+#content_wrapper>div>div {
+  height: 500px;
+  border-top: solid 1px black;
+  background-attachment: scroll;
+  background-position: center;
+  background-size: auto 300px;
+  background-repeat: no-repeat;
+  color: black;
+  font-weight: 900;
+}
+
+
+#content_wrapper>div>div>a:hover {}
+
+
+#content_wrapper>div>div>a {display: block;width: 100%;height: 100%;text-align: left;}
+
+.thumbnail {
+  float: left;
+  margin: 0px 25px 25px 0px;
+  width: 300px;
+  height: 300px;
+  background-position: top left;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.title {}
+
+
+@media only screen and (max-width: 570px) {
+
+  #content_wrapper {
+    margin-right: auto;
+    margin-left: auto;
+    width: 86%;
+  }
+
+  #content_wrapper>div>div {
+    height: 400px;
+    border: solid black 1px;
+    border-bottom: none;
+    background-size: auto 200px;
+  }
+
+  #content_wrapper>div>h1 {
+  }
+
+
+  #content_wrapper>div:hover h1{
+  }
+}
