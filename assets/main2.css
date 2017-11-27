@@ -106,7 +106,7 @@ section {
 
 body {
   line-height: 1;
-  animation: colorflux 120s infinite linear;
+  /* animation: colorflux 120s infinite linear; */
 }
 
 @keyframes colorflux {
@@ -151,6 +151,7 @@ table {
 
 h1, h2, h3, h4 {
   font-weight: 400;
+  padding: 30px;
 }
 
 a:link, a:visited {
@@ -226,28 +227,24 @@ a:hover, a:active {
 
 #content_wrapper {
   position: relative;
-  font-size: 25px;
-  margin: 25px 50px 25px 50px;
+  font-size: 32px;
+  margin: auto;
+  margin-top: 50px;
   justify-content: flex-start;
   flex-wrap: wrap;
+  width: 742px;
   display: flex;
   border-bottom: none;
   text-transform: lowercase;
 }
 
-#content_wrapper div {background: white;border: solid 1px black;margin-right: -1px;margin-bottom: -1px;padding: 30px;}
+#content_wrapper div {background: white;border: solid 1px black;margin-left: -1px;margin-bottom: -1px;}
 
-#content_wrapper>div>h1>a{display: block;padding: 30px;}
 
-#content_wrapper>div>h1{
-  z-index: -5;
-  color: black;
-  display: block;
-  text-align: center;
-  font-size: 20px;
-  transition: .2s linear;
-  transition-property: background;
-}
+#content_wrapper>div>h1{background: white;font-weight: bold;text-align: center;}
+
+
+#content_wrapper>div>h2{background: beige;}
 
 
 #content_wrapper>div>div:hover {
@@ -280,11 +277,7 @@ a:hover, a:active {
   background-repeat: no-repeat;
 }
 
-.title {
-}
-
-
-@media only screen and (max-width: 570px) {
+@media only screen and (max-width: 900px) {
 
   #content_wrapper {
     margin-right: auto;
