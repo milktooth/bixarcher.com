@@ -173,9 +173,24 @@ a:hover, a:active {
 
 nav {
   position: fixed;
-  top: 30px;
-  left: 30px;
+  top: 50px;
+  left: 50px;
   font-size: 16px;
+}
+
+nav > a {
+  display: block;
+  margin-bottom: 10px;
+}
+
+nav > a:link, nav > a:visited {
+  color: black;
+  text-decoration: underline;
+}
+
+nav > a:hover, nav > a:active {
+  color: black;
+  text-decoration: underline;
 }
 
 .accordion-toggle {
@@ -188,7 +203,7 @@ nav {
 
 .title {
   margin-right: 35%;
-  background: black;
+  background: white;
   color: white;
   width: 100%;
 }
@@ -208,16 +223,17 @@ nav {
 
 #content_wrapper>div>div {
   margin-bottom: 20px;
+  margin-right: 0;
+  border: solid 3px black;
+  color: black;
   margin-right: 20px;
-  border: solid 1px black;
-  box-shadow: 10px 10px 0px;
 }
 
 
 #content_wrapper>div>div>h1{
   /* background: white; */
   text-align: center;
-  font-weight: bold;
+  font-weight: 900;
 }
 
 
@@ -243,7 +259,7 @@ nav {
   text-align: left;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1000px) {
   .section {
     margin-right: auto;
     margin-left: auto;
@@ -252,6 +268,14 @@ nav {
   }
 
   #content_wrapper {
-    margin-top: 10px;
+    margin-top: 140px;
+  }
+
+  nav {
+    left: 7%;
+    padding-top: 50px;
+    top: 0;
+    position: absolute;
+    background: white;
   }
 }
