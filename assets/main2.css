@@ -171,6 +171,13 @@ a:hover, a:active {
   text-decoration: none;
 }
 
+nav {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  font-size: 16px;
+}
+
 .accordion-toggle {
   cursor: pointer;
 }
