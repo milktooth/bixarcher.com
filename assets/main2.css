@@ -176,28 +176,30 @@ a:hover, a:active {
 
 .title {
   margin-right: 35%;
+  margin-top: 30px;
+  background: black;
+  color: white;
+  width: 100%;
 }
 
 #content_wrapper {
   position: relative;
   display: flex;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 20px;
   width: 742px;
   border-bottom: none;
   text-transform: lowercase;
   font-size: 32px;
-
   justify-content: flex-start;
   flex-wrap: wrap;
 }
 
 #content_wrapper div {
-  margin-bottom: -1px;
-  margin-left: -1px;
+  margin-bottom: 20px;
+  margin-right: 20px;
   border: solid 1px black;
-  background: #ffffffcc;
-  /* box-shadow: 10px 10px 10px darkgrey; */
+  box-shadow: 10px 10px 1px;
 }
 
 
@@ -235,7 +237,7 @@ a:hover, a:active {
     margin-right: auto;
     margin-left: auto;
     width: 86%;
-    font-size: 3.5vw;
+    font-size: 20px;
   }
 
 }
