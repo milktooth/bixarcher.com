@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body>
+<body id="background">
   <div id="content_wrapper">
     <div class="title">
       <h1>bix archer</h1>
@@ -43,11 +43,23 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="//cdn.rawgit.com/noelboss/featherlight/1.7.9/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
   <script>
   $(function() {
     $.featherlight.defaults.loading = "i do hope you can wait a bit while this image loads. i think its a good image. i hope you like it."
   });
   </script>
+
+  <script type="text/javascript">
+      var imgCount = 3;
+          var dir = 'images/';
+          var randomCount = Math.round(Math.random() * (imgCount - 1)) + 1;
+          var images = new Array
+                  images[1] = "/assets/images/365.jpg",
+                  images[2] = "/assets/images/red-painting.jpg",
+                  images[3] = "/assets/images/true-story.jpg",
+          document.getElementById("background").style.backgroundImage = "url(" + dir + images[randomCount] + ")";
+     </script>
 </body>
 
 </html>
