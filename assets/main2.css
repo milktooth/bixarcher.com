@@ -106,7 +106,6 @@ section {
 
 body {
   line-height: 1;
-  /* animation: colorflux 120s infinite linear; */
 }
 
 @keyframes colorflux {
@@ -150,8 +149,9 @@ table {
 }
 
 h1, h2, h3, h4 {
-  font-weight: 400;
   padding: 30px;
+
+  font-weight: 400;
 }
 
 a:link, a:visited {
@@ -172,42 +172,12 @@ a:hover, a:active {
   display: none;
 }
 
-@keyframes slidein {
-  0% {margin-right: -20%;}
-  100% {margin-right: 0%;}
-
+#title_wrap {
+  position: absolute;
+  right: 20px;
+  bottom: 0;
+  margin-bottom: 12px;
 }
-
-.type_wrapper {
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: -100;
-  overflow: hidden;
-  padding-left: 25px;
-  width: 10vw;
-  height: 100vh;
-  background: black;
-  animation: slidein 1s;
-}
-
-.type_wrapper>h1 {
-  margin-top: 73vh;
-  color: black;
-  font-weight: 900;
-  font-size: 15vw;
-  opacity: 1;
-  transform: rotate(-35deg);
-  transform: rotate(-90deg);
-
-  -webkit-highlight: none;
-}
-
-.accordion-content{
-
-}
-
-#title_wrap {position: absolute;right: 20px;bottom: 0;margin-bottom: 12px;}
 
 #nav_links {
   margin-bottom: 10px;
@@ -227,27 +197,36 @@ a:hover, a:active {
 
 #content_wrapper {
   position: relative;
-  font-size: 32px;
+  display: flex;
   margin: auto;
   margin-top: 50px;
-  justify-content: flex-start;
-  flex-wrap: wrap;
   width: 742px;
-  display: flex;
   border-bottom: none;
   text-transform: lowercase;
+  font-size: 32px;
+
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
-#content_wrapper div {background: white;border: solid 1px black;margin-left: -1px;margin-bottom: -1px;}
+#content_wrapper div {
+  margin-bottom: -1px;
+  margin-left: -1px;
+  border: solid 1px black;
+  background: white;
+  box-shadow: 10px 10px 10px darkgrey;
+}
 
 
-#content_wrapper>div>h1{background: white;font-weight: bold;text-align: center;}
+#content_wrapper>div>h1{
+  background: white;
+  text-align: center;
+  font-weight: bold;
+}
 
 
-#content_wrapper>div>h2{background: beige;}
-
-
-#content_wrapper>div>div:hover {
+#content_wrapper>div>h2, #content_wrapper>div>a>h2 {
+  background: beige;
 }
 
 #content_wrapper>div>div {
@@ -260,10 +239,6 @@ a:hover, a:active {
   color: black;
   font-weight: 900;
 }
-
-
-#content_wrapper>div>div>a:hover {}
-
 
 #content_wrapper>div>div>a {display: block;width: 100%;height: 100%;text-align: left;}
 
@@ -278,11 +253,11 @@ a:hover, a:active {
 }
 
 @media only screen and (max-width: 900px) {
-
   #content_wrapper {
     margin-right: auto;
     margin-left: auto;
     width: 86%;
+    font-size: 3.5vw;
   }
 
   #content_wrapper>div>div {
