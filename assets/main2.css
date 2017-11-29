@@ -180,18 +180,27 @@ a:hover, a:active {
 nav {
   position: fixed;
   top: 50px;
+  background: beige;
+  border: solid 1px black;
+  border-bottom: none;
   left: 50px;
   font-size: 16px;
 }
 
+nav>* {
+  border-bottom: solid black 1px;
+}
+
 nav > a {
   display: block;
-  margin-bottom: 10px;
 }
 
 nav > a:link, nav > a:visited {
   color: black;
-  text-decoration: underline;
+  font-size: 32px;
+  margin-top: 50px;
+  text-align: center;
+  padding-bottom: 50px;
 }
 
 nav > a:hover, nav > a:active {
@@ -207,11 +216,7 @@ nav > a:hover, nav > a:active {
   display: none;
 }
 
-.title {
-  margin-right: 35%;
-  /* background: white; */
-  color: white;
-  width: 100%;
+#title_wrap {
 }
 
 .section {
@@ -302,14 +307,13 @@ nav > a:hover, nav > a:active {
   }
 }
 
-#warped {position: relative; display: block; width:588px; height:440px;}
+#warped {position: relative;display: block;width: 365px;height: 224px;padding-bottom: 12px;/* border: solid 3px pink; */}
 
 #warped>span[class^=w]:nth-of-type(n+0){display:block; position:absolute;
 -moz-transform-origin:50% 100%; -webkit-transform-origin:50% 100%; -o-transform-origin:50%
 100%; -ms-transform-origin:50% 100%; transform-origin:50% 100%; }
 
-#warped span{;font-size:46px;font-weight:regular;font-style:normal;
-line-height:1.1; white-space:pre; overflow:visible; padding:0px;}
+#warped span{font-size: 48px;font-weight:regular;font-style:normal;line-height:1.1;white-space:pre;overflow:visible;padding:0px;}
 
 #warped .w0 {-moz-transform: rotate(-7.15rad);-webkit-transform: rotate(-7.15rad);-o-transform:
 rotate(-7.15rad);-ms-transform: rotate(-7.15rad); transform: rotate(-7.15rad);
@@ -380,8 +384,7 @@ rotate(-7.13rad);-ms-transform: rotate(-7.13rad); transform: rotate(-7.13rad);
 width: 14px; height: 50px; left: 359.94px; top: 50.92px;}
 
 #warped .w17 {-moz-transform: rotate(-6.86rad);-webkit-transform: rotate(-6.86rad);-o-transform:
-rotate(-6.86rad);-ms-transform: rotate(-6.86rad); transform: rotate(-6.86rad);
-width: 18px; height: 50px; left: 373.43px; top: 37.31px;}
+rotate(-6.86rad);-ms-transform: rotate(-6.86rad);transform: rotate(-7.13rad);width: 18px;height: 50px;left: 363.43px;top: 41.31px;}
 
 #warped .w18 {-moz-transform: rotate(-6.58rad);-webkit-transform: rotate(-6.58rad);-o-transform:
 rotate(-6.58rad);-ms-transform: rotate(-6.58rad); transform: rotate(-6.58rad);
