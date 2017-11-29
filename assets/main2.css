@@ -216,8 +216,9 @@ nav > a:hover, nav > a:active {
   display: none;
 }
 
-#title_wrap {
-}
+#title_wrap {}
+
+#title_pos {}
 
 .section {
   position: relative;
@@ -307,7 +308,7 @@ nav > a:hover, nav > a:active {
   }
 }
 
-#warped {position: relative;display: block;width: 365px;height: 224px;padding-bottom: 12px;/* border: solid 3px pink; */}
+#warped {position: relative;display: block;width: 365px;height: 225px;margin-top: -61px;}
 
 #warped>span[class^=w]:nth-of-type(n+0){display:block; position:absolute;
 -moz-transform-origin:50% 100%; -webkit-transform-origin:50% 100%; -o-transform-origin:50%
