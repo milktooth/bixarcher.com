@@ -113,6 +113,7 @@ body {
 #content_wrapper {
   margin-top: 50px;
   margin-bottom: 50px;
+  /* background: white; */
 }
 
 @keyframes colorflux {
@@ -246,11 +247,11 @@ nav > a:hover, nav > a:active {
 }
 
 #bgd2 {
-  animation: textflux 120s linear infinite, rotator 10s linear infinite;
+  animation: textflux 120s linear infinite, rotator 40s linear infinite;
   font-size: 200px;
-  position: absolute;
   width: 100%;
-  opacity: .5;}
+  opacity: .5;
+  }
 
 #content_wrapper>div>div>div {
   height: 500px;
@@ -272,6 +273,11 @@ nav > a:hover, nav > a:active {
 
 #bgd_wrap {
   overflow: hidden;
+  display: block;
+  position: absolute;
+  z-index: -100;
+  left: 0;
+  right: 0;
 }
 
 @media only screen and (max-width: 1000px) {
