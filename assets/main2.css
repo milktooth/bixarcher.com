@@ -113,6 +113,7 @@ body {
 #content_wrapper {
   margin-top: 50px;
   margin-bottom: 50px;
+  padding-left: 416px;
   /* background: white; */
 }
 
@@ -180,15 +181,14 @@ a:hover, a:active {
 nav {
   position: fixed;
   top: 50px;
-  background: beige;
-  border: solid 1px black;
   border-bottom: none;
   left: 50px;
   font-size: 16px;
+  animation: textflux 120s linear infinite;
 }
 
 nav>* {
-  border-bottom: solid black 1px;
+  border-bottom: solid 4px;
 }
 
 nav > a {
@@ -196,16 +196,15 @@ nav > a {
 }
 
 nav > a:link, nav > a:visited {
-  color: black;
+  color: inherit;
   font-size: 32px;
-  margin-top: 50px;
   text-align: center;
-  padding-bottom: 50px;
+  padding: 50px 0 50px 0;
+  transition: .2s;
 }
 
 nav > a:hover, nav > a:active {
-  color: black;
-  text-decoration: underline;
+  background: #ffff9f;
 }
 
 .accordion-toggle {
@@ -216,15 +215,17 @@ nav > a:hover, nav > a:active {
   display: none;
 }
 
-#title_wrap {}
+#title_wrap {
+    height: 163px;
+    overflow: hidden;
+}
 
-#title_pos {}
+#title_pos {padding-bottom: 76px;}
 
 .section {
   position: relative;
   display: flex;
   margin: auto;
-  margin-top: 20px;
   width: 742px;
   border-bottom: none;
   text-transform: lowercase;
@@ -308,7 +309,7 @@ nav > a:hover, nav > a:active {
   }
 }
 
-#warped {position: relative;display: block;width: 365px;height: 225px;margin-top: -61px;}
+#warped {position: relative;display: block;width: 366px;height: 225px;margin-top: -61px;}
 
 #warped>span[class^=w]:nth-of-type(n+0){display:block; position:absolute;
 -moz-transform-origin:50% 100%; -webkit-transform-origin:50% 100%; -o-transform-origin:50%
