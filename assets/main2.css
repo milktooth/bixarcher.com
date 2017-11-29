@@ -248,9 +248,10 @@ nav > a:hover, nav > a:active {
 
 #bgd2 {
   animation: textflux 120s linear infinite, rotator 40s linear infinite;
-  font-size: 200px;
+  font-size: 116px;
   width: 100%;
   opacity: .5;
+  font-weight: 900;
   }
 
 #content_wrapper>div>div>div {
