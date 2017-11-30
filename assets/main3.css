@@ -183,12 +183,25 @@ nav {
   top: 50px;
   border-bottom: none;
   left: 50px;
+  width: 366px;
   font-size: 16px;
   animation: textflux 120s linear infinite;
 }
 
-nav>* {
+nav>div {
   border-bottom: solid 4px;
+}
+
+nav>p {
+  margin-top: 60px;
+  font-size: 24px;
+  text-align: justify;
+}
+
+nav>p:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
 }
 
 nav > a {
@@ -218,9 +231,10 @@ nav > a:hover, nav > a:active {
 #title_wrap {
     height: 163px;
     overflow: hidden;
+    display: inline-block;
 }
 
-#title_pos {padding-bottom: 76px;}
+#title_pos {padding-bottom: 75px;display: inline-block;}
 
 .section {
   position: relative;
@@ -309,7 +323,7 @@ nav > a:hover, nav > a:active {
   }
 }
 
-#warped {position: relative;display: block;width: 366px;height: 225px;margin-top: -61px;}
+#warped {position: relative;display: inline-block;width: 366px;height: 225px;margin-top: -61px;}
 
 #warped>span[class^=w]:nth-of-type(n+0){display:block; position:absolute;
 -moz-transform-origin:50% 100%; -webkit-transform-origin:50% 100%; -o-transform-origin:50%
