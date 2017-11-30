@@ -106,15 +106,11 @@ section {
 
 body {
   line-height: 1;
-  background-position: center;
-  background-size: auto;
+  background: black;
 }
 
 #content_wrapper {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  padding-left: 416px;
-  /* background: white; */
+  margin: 50px;
 }
 
 @keyframes colorflux {
@@ -163,8 +159,7 @@ table {
 }
 
 h1, h2, h3, h4 {
-  padding: 30px;
-
+  padding: 30px 0px 30px 0px;
   font-weight: 400;
 }
 
@@ -178,14 +173,17 @@ a:hover, a:active {
   text-decoration: none;
 }
 
+.content_item img {
+  width: 100%;
+}
+
 nav {
-  position: fixed;
-  top: 50px;
+  position: static;
   border-bottom: none;
-  left: 50px;
+  margin: 50px;
   width: 366px;
   font-size: 16px;
-  animation: textflux 120s linear infinite;
+  color: white;
 }
 
 nav>div {
@@ -196,6 +194,7 @@ nav>p {
   margin-top: 60px;
   font-size: 24px;
   text-align: justify;
+  display: none;
 }
 
 nav>p:after {
@@ -237,23 +236,15 @@ nav > a:hover, nav > a:active {
 #title_pos {padding-bottom: 75px;display: inline-block;}
 
 .section {
-  position: relative;
-  display: flex;
-  margin: auto;
-  width: 742px;
-  border-bottom: none;
-  text-transform: lowercase;
-  font-size: 32px;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+  /* position: relative; */
 }
 
 #content_wrapper>div>div {
-  margin-bottom: 20px;
-  margin-right: 0;
-  border: solid 3px black;
-  color: black;
+  margin-bottom: 50px;
+  width: 200px;
   margin-right: 20px;
+  vertical-align: top;
+  display: inline-block;
 }
 
 
@@ -263,8 +254,9 @@ nav > a:hover, nav > a:active {
   font-weight: 900;
 }
 
-#content_wrapper>div>div>h2, #content_wrapper>div>div>a>h2 {
-  /* background: beige; */
+.content_item h2 {
+  font-size: 24px;
+  display: none;
 }
 
 #bgd2 {
@@ -302,24 +294,16 @@ nav > a:hover, nav > a:active {
   right: 0;
 }
 
-@media only screen and (max-width: 1000px) {
-  .section {
-    margin-right: auto;
-    margin-left: auto;
-    width: 86%;
-    margin-top: 30px;
+@media only screen and (max-width: 800px) {
+  nav {
+    width: auto;
+    display: flex;
+    justify-content: center;
   }
 
   #content_wrapper {
-    margin-top: 140px;
-  }
-
-  nav {
-    left: 7%;
-    padding-top: 50px;
-    top: 0;
-    position: absolute;
-    background: white;
+    display: flex;
+    justify-content: center;
   }
 }
 
