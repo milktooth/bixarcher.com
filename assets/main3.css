@@ -108,8 +108,7 @@ body {
   line-height: 1;
 }
 
-#content_wrapper {
-}
+#content_wrapper {margin: 200px 10% 50px 10%;display: flex;flex-wrap: wrap;justify-content: center;}
 
 @keyframes colorflux {
   0% {background: rgba(80, 73, 255, 1);}
@@ -152,10 +151,12 @@ q:before {
 }
 .content_item {
   margin-bottom: 50px;
-  height: 100vh;
-  background-position: center;
+  height: 500px;
+  width: 500px;
+  background-position: top center;
   background-size: contain;
   position: relative;
+  display: inline-block;
   background-repeat: no-repeat;
 }
 table {
@@ -178,6 +179,12 @@ a:hover, a:active {
   text-decoration: none;
 }
 
+.content_item > a {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
 .content_item img {height: 100%;position: relative;margin: auto;}
 
 nav {
@@ -185,6 +192,7 @@ nav {
   border-bottom: none;
   font-size: 16px;
   z-index: 10000;
+  top: 0;
 }
 
 nav>div {
