@@ -119,12 +119,12 @@ body {
 
 }
 
-@keyframes textshadowflux {
-  0% {text-shadow: -15px 15px 10px rgba(80, 73, 255, 1);}
-  25% {text-shadow: -15px 15px 10px rgba(40, 73, 255, 1);}
-  50% {text-shadow: -15px 15px 10px rgba(80, 73, 255, 1);}
-  75% {text-shadow: -15px 15px 10px rgba(100, 73, 255, 1);}
-  100% {text-shadow: -15px 15px 10px rgba(80, 73, 255, 1);}
+@keyframes textflux {
+  0% {color: rgba(80, 73, 255, 1);}
+  25% {color: rgba(40, 73, 255, 1);}
+  50% {color: rgba(80, 73, 255, 1);}
+  75% {color: rgba(100, 73, 255, 1);}
+  100% {color: rgba(80, 73, 255, 1);}
 }
 
 ol,
@@ -236,13 +236,10 @@ nav > a:hover, nav > a:active {
 #title_pos {
     display: inline-block;
     margin-left: 20px;
+
     padding: 30px;
     text-shadow: -15px 15px 10px rgba(80, 73, 255, 1);
-    animation: textshadowflux 120s linear infinite;
-}
-
-.section {
-  /* position: relative; */
+    animation: textflux 120s linear infinite;
 }
 
 #content_wrapper>div>div {
@@ -256,7 +253,6 @@ nav > a:hover, nav > a:active {
 
 
 #content_wrapper>div>div>h1{
-  /* background: white; */
   text-align: center;
   font-weight: 900;
 }
