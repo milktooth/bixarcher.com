@@ -109,7 +109,6 @@ body {
 }
 
 #content_wrapper {
-  /* margin: 50px; */
 }
 
 @keyframes colorflux {
@@ -155,7 +154,8 @@ q:before {
   margin-bottom: 50px;
   height: 100vh;
   background-position: center;
-  background-size: auto 100%;
+  background-size: contain;
+  position: relative;
   background-repeat: no-repeat;
 }
 table {
@@ -297,11 +297,6 @@ nav > a:hover, nav > a:active {
 @media only screen and (max-width: 800px) {
   nav {
     width: auto;
-    display: flex;
-    justify-content: center;
-  }
-
-  #content_wrapper {
     display: flex;
     justify-content: center;
   }
