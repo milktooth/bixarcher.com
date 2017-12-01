@@ -236,9 +236,8 @@ nav > a:hover, nav > a:active {
 #title_pos {
     display: inline-block;
     margin-left: 20px;
-
     padding: 30px;
-    text-shadow: -15px 15px 10px rgba(80, 73, 255, 1);
+    color: rgba(80, 73, 255, 1);
     animation: textflux 120s linear infinite;
 }
 
@@ -262,16 +261,6 @@ nav > a:hover, nav > a:active {
 
   font-size: 24px;
 }
-
-#bgd2 {
-  width: 100%;
-  font-weight: 900;
-  font-size: 116px;
-  opacity: .5;
-
-  animation: textflux 120s linear infinite, rotator 40s linear infinite;
-  }
-
 #content_wrapper>div>div>div {
   height: 500px;
   border-top: solid 1px black;
