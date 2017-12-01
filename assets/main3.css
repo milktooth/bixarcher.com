@@ -154,6 +154,9 @@ q:before {
 .content_item {
   margin-bottom: 50px;
   height: 100vh;
+  background-position: center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
 }
 table {
   border-spacing: 0;
