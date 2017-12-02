@@ -182,50 +182,13 @@ nav {
   z-index: 10000;
   border-bottom: none;
   font-size: 16px;
-}
-
-nav>div {
+  left: 20px;
 }
 
 nav>p {
   display: none;
-
-  margin-top: 60px;
-  text-align: justify;
-  font-size: 24px;
 }
 
-nav>p:after {
-  display: inline-block;
-  width: 100%;
-
-  content: "";
-}
-
-nav > a {
-  display: block;
-}
-
-nav > a:link, nav > a:visited {
-  padding: 50px 0 50px 0;
-
-  color: inherit;
-  text-align: center;
-  font-size: 32px;
-  transition: .2s;
-}
-
-nav > a:hover, nav > a:active {
-  background: #ffff9f;
-}
-
-.accordion-toggle {
-  cursor: pointer;
-}
-
-.accordion-content {
-  display: none;
-}
 
 #title_wrap {
     display: inline-block;
@@ -235,7 +198,6 @@ nav > a:hover, nav > a:active {
 
 #title_pos {
     display: inline-block;
-    margin-left: 20px;
     padding: 30px;
     color: rgba(80, 73, 255, 1);
     animation: textflux 120s linear infinite;
@@ -289,14 +251,23 @@ nav > a:hover, nav > a:active {
   overflow: hidden;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 600px) {
   nav {
-    display: flex;
-
-    width: auto;
-
-    justify-content: center;
+  transform: scale(.75);
+  transform-origin: left top;
+  left: 0;
   }
+
+  #content_wrapper {
+    margin: auto;
+    width: 100%;
+    margin-top: 150px;
+}
+
+.content_item img {
+  max-width: 300px;
+  max-height: 300px;
+}
 }
 
 #warped {position: relative;display: inline-block;margin-top: -61px;width: 366px;height: 225px;}
