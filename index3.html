@@ -7,8 +7,7 @@
   <link href="/assets/main3.css" rel="stylesheet" type="text/css">
 
   <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,600" rel="stylesheet">
-  <link href="//cdn.rawgit.com/noelboss/featherlight/1.7.9/release/featherlight.min.css" type="text/css" rel="stylesheet"/>
-  <link href="/assets/featherlight-gallery-overwrite.css" type="text/css" rel="stylesheet"/>
+  <link href="/assets/lightbox.min.css" type="text/css" rel="stylesheet"/>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -31,33 +30,25 @@
 
   <div id="content_wrapper">
       <div class="content_item">
-        <a href="#" class="gallery" data-featherlight="/assets/images/north-bay-fires.jpg"><img src="/assets/images/north-bay-fires-500px.jpg"><h2>North Bay Fires Memorial Quilt</h2></a>
+        <a data-lightbox="gallery" data-lightbox="/assets/images/north-bay-fires.jpg"><img src="/assets/images/north-bay-fires-500px.jpg"><h2>North Bay Fires Memorial Quilt</h2></a>
       </div>
       <div class="content_item">
-        <a href="#" class="gallery" data-featherlight="/assets/images/the-water-is-fine.jpg"><img src="/assets/images/the-water-is-fine-500px.jpg"><h2>The Water is Fine(?)</h2></a>
+        <a data-lightbox="gallery" data-lightbox="/assets/images/the-water-is-fine.jpg"><img src="/assets/images/the-water-is-fine-500px.jpg"><h2>The Water is Fine(?)</h2></a>
       </div>
       <div class="content_item">
-        <a href="#" class="gallery" data-featherlight="/assets/images/365.jpg"><img src="/assets/images/365-500px.jpg"><h2>365 (Uniform)</h2></a>
+        <a data-lightbox="gallery" data-lightbox="/assets/images/365.jpg"><img src="/assets/images/365-500px.jpg"><h2>365 (Uniform)</h2></a>
       </div>
       <div class="content_item">
-        <a href="#" class="gallery" data-featherlight="/assets/images/red-painting.jpg"><img src="/assets/images/red-painting-500px.jpg"><h2>Untitled(?)</h2></a>
+        <a data-lightbox="gallery" data-lightbox="/assets/images/red-painting.jpg"><img src="/assets/images/red-painting-500px.jpg"><h2>Untitled(?)</h2></a>
       </div>
       <div class="content_item">
-        <a href="#" class="gallery" data-featherlight="/assets/images/true-story.jpg"><img src="/assets/images/true-story-500px.jpg"><h2>True Story</h2></a>
+        <a data-lightbox="gallery" data-lightbox="/assets/images/true-story.jpg"><img src="/assets/images/true-story-500px.jpg"><h2>True Story</h2></a>
       </div>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="//cdn.rawgit.com/noelboss/featherlight/1.7.9/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="//cdn.rawgit.com/noelboss/featherlight/1.7.10/release/featherlight.gallery.min.js" type="text/javascript" charset="utf-8"></script>
-   <script src="//cdnjs.cloudflare.com/ajax/libs/detect_swipe/2.1.1/jquery.detect_swipe.min.js"></script>
-  <script>
-    $('a.gallery').featherlightGallery({
-  		previousIcon: 'prev',     /* Code that is used as previous icon */
-  		nextIcon: 'next',         /* Code that is used as next icon */
-  		galleryFadeIn: 1,          /* fadeIn speed when slide is loaded */
-  		galleryFadeOut: 1          /* fadeOut speed before slide is loaded */
-  	});
+  <script src="/assets/lightbox.min.js" type="text/javascript" charset="utf-8"></script>
+
   </script>
 </body>
 
