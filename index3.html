@@ -7,16 +7,7 @@
   <link href="/assets/main3.css" rel="stylesheet" type="text/css">
 
   <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,600" rel="stylesheet">
-
-  <link href="/src/css/swipebox.min.css" type="text/css" rel="stylesheet"/>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="/src/js/jquery.swipebox.min.js" type="text/javascript" charset="utf-8"></script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $( '.swipebox' ).swipebox();
-    });
-  </script>
+  <link rel="stylesheet" href="src/css/swipebox.css">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -31,10 +22,6 @@
         </div>
       </div>
     </div>
-    <p>
-      Bix Archer is a girl from San Francisco. She is currently an undergraduate at Yale College.
-      contact: bixarcher@gmail.com
-    </p>
   </nav>
 
   <div id="content_wrapper">
@@ -54,6 +41,15 @@
         <a href="/assets/images/true-story.jpg" class="swipebox" title="temp"><img src="/assets/images/true-story-500px.jpg"></a>
       </div>
   </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="src/js/jquery.swipebox.js"></script>
+    <script type="text/javascript">
+  ;( function( $ ) {
+
+  	$( '.swipebox' ).swipebox();
+
+  } )( jQuery );
+  </script>
 </body>
 
 </html>
