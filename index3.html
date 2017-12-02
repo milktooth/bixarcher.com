@@ -26,29 +26,44 @@
 
   <div id="content_wrapper">
       <div class="content_item">
-        <a href="/assets/images/north-bay-fires.jpg" class="swipebox" title="temp"><img src="/assets/images/north-bay-fires-500px.jpg"></a>
+        <a href="/assets/images/north-bay-fires.jpg" class="swipebox" title="temp"><img src="/assets/images/north-bay-fires.jpg"></a>
       </div>
       <div class="content_item">
-        <a href="/assets/images/the-water-is-fine.jpg" class="swipebox" title="temp"><img src="/assets/images/the-water-is-fine-500px.jpg"></a>
+        <a href="/assets/images/the-water-is-fine.jpg" class="swipebox" title="temp"><img src="/assets/images/the-water-is-fine.jpg"></a>
       </div>
       <div class="content_item">
-        <a href="/assets/images/365.jpg" class="swipebox" title="temp"><img src="/assets/images/365-500px.jpg"></a>
+        <a href="/assets/images/365.jpg" class="swipebox" title="temp"><img src="/assets/images/365.jpg"></a>
       </div>
       <div class="content_item">
-        <a href="/assets/images/red-painting.jpg" class="swipebox" title="temp"><img src="/assets/images/red-painting-500px.jpg"></a>
+        <a href="/assets/images/red-painting.jpg" class="swipebox" title="temp"><img src="/assets/images/red-painting.jpg"></a>
       </div>
       <div class="content_item">
-        <a href="/assets/images/true-story.jpg" class="swipebox" title="temp"><img src="/assets/images/true-story-500px.jpg"></a>
+        <a href="/assets/images/true-story.jpg" class="swipebox" title="temp"><img src="/assets/images/true-story.jpg"></a>
       </div>
   </div>
   <script src="lib/jquery-2.0.3.js"></script>
   <script src="src/js/jquery.swipebox.js"></script>
     <script type="text/javascript">
-  ;( function( $ ) {
 
-  	$( '.swipebox' ).swipebox();
+  	$( document ).ready(function() {
 
-  } )( jQuery );
+  			/* Basic Gallery */
+  			$( '.swipebox' ).swipebox();
+
+  			/* Video */
+  			$( '.swipebox-video' ).swipebox();
+
+  			/* Dynamic Gallery */
+  			$( '#gallery' ).click( function( e ) {
+  				e.preventDefault();
+  				$.swipebox( [
+  					{ href : 'http://swipebox.csag.co/mages/image-1.jpg', title : 'My Caption' },
+  					{ href : 'http://swipebox.csag.co/images/image-2.jpg', title : 'My Second Caption' }
+  				] );
+  			} );
+
+        });
+
   </script>
 </body>
 
