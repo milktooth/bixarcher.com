@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,600" rel="stylesheet">
   <link href="//cdn.rawgit.com/noelboss/featherlight/1.7.9/release/featherlight.min.css" type="text/css" rel="stylesheet"/>
   <link href="/assets/featherlight-gallery-overwrite.css" type="text/css" rel="stylesheet"/>
-  
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -52,14 +52,15 @@
 	<script src="//cdn.rawgit.com/noelboss/featherlight/1.7.10/release/featherlight.gallery.min.js" type="text/javascript" charset="utf-8"></script>
    <script src="//cdnjs.cloudflare.com/ajax/libs/detect_swipe/2.1.1/jquery.detect_swipe.min.js"></script>
   <script>
-    $(function() {
+    $.featherlight.defaults {
+      closeIcon: ' ', 
     });
 
     $('a.gallery').featherlightGallery({
   		previousIcon: 'prev',     /* Code that is used as previous icon */
   		nextIcon: 'next',         /* Code that is used as next icon */
-  		galleryFadeIn: 100,          /* fadeIn speed when slide is loaded */
-  		galleryFadeOut: 300          /* fadeOut speed before slide is loaded */
+  		galleryFadeIn: 0,          /* fadeIn speed when slide is loaded */
+  		galleryFadeOut: 0          /* fadeOut speed before slide is loaded */
   	});
   </script>
 </body>
