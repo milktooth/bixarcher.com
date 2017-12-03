@@ -147,9 +147,19 @@ q:before {
 .content_item {
   position: relative;
   display: inline-block;
-
   margin: 25px;
+  text-align: center;
   vertical-align: top;
+}
+
+.content_item h1 {
+  width: 345px;
+  height: 465px;
+  animation: textflux 120s linear infinite;
+  border: solid 5px;
+  font-size: 48px;
+  color: white;
+  padding: 30px 0 0 0;
 }
 table {
   border-spacing: 0;
