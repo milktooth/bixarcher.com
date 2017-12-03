@@ -389,6 +389,7 @@ rotate(-6.58rad);transform: rotate(-6.58rad);
 .featherlight .featherlight-close-icon {
   top: 10px;
   right: 10px;
+  position: fixed;
 }
 
 .featherlight:last-of-type {
