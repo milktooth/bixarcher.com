@@ -119,7 +119,7 @@ html.swipebox-html.swipebox-touch {
   display: block;
   text-align: left;
   margin-left: 25px;
-  margin-top: 110px;
+  margin-top: 115px;
 }
 
 #swipebox-prev,
@@ -288,7 +288,7 @@ html.swipebox-html.swipebox-touch {
 
 #swipebox-top-bar {
   color: black!important;
-  font-size: 50px;
+  font-size: 48px;
   line-height: 1;
   font-family: Helvetica, Arial, sans-serif;
   animation: textflux 120s linear infinite;
