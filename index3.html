@@ -23,7 +23,6 @@
       </div>
     </div>
   </nav>
-  <h2 id="demo1">Here’s some curved text flowing clockwise.</h2>
   <div id="content_wrapper">
       <div class="content_item">
         <a href="/assets/images/north-bay-fires.jpg" class="swipebox" title="North Bay Fires"><img src="/assets/images/north-bay-fires-500px.jpg"></a>
@@ -69,7 +68,7 @@
   <!-- circletype-->
   <script src="/assets/circletype.min.js"></script>
   <script>
-    $( document ).ready(function() {
+    if ($.swipebox.isOpen) {
         new CircleType(document.getElementById('swipebox-title'));
       });
   </script>
