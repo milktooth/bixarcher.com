@@ -24,46 +24,29 @@
     </div>
   </nav>
   <div id="content_wrapper">
+
       <div class="content_item">
-        <a href="/assets/images/north-bay-fires.jpg" class="swipebox" title="North Bay Fires"><img src="/assets/images/north-bay-fires-500px.jpg"></a>
+        <a data-featherlight="<p>Bix Archer is a girl from San Francisco. She is currently an undergraduate at Yale College. <br> contact: bixarcher@gmail.com</p>" href="#"><h1>about</h1></a>
       </div>
       <div class="content_item">
-        <a href="/assets/images/the-water-is-fine.jpg" class="swipebox" title="The Water is Fine"><img src="/assets/images/the-water-is-fine-500px.jpg"></a>
+        <a data-featherlight="/assets/images/north-bay-fires.jpg" href="#"><img src="/assets/images/north-bay-fires-500px.jpg"></a>
       </div>
       <div class="content_item">
-        <a href="/assets/images/365.jpg" class="swipebox" title="365 (Uniform)"><img src="/assets/images/365-500px.jpg"></a>
+        <a data-featherlight="/assets/images/the-water-is-fine.jpg" href="#"><img src="/assets/images/the-water-is-fine-500px.jpg"></a>
       </div>
       <div class="content_item">
-        <a href="/assets/images/red-painting.jpg" class="swipebox" title="Untitled"><img src="/assets/images/red-painting-500px.jpg"></a>
+        <a data-featherlight="/assets/images/365.jpg" href="#"><img src="/assets/images/365-500px.jpg"></a>
       </div>
       <div class="content_item">
-        <a href="/assets/images/true-story.jpg" class="swipebox" title="True Story"><img src="/assets/images/true-story-500px.jpg"></a>
+        <a data-featherlight="/assets/images/red-painting.jpg" href="#"><img src="/assets/images/red-painting-500px.jpg"></a>
+      </div>
+      <div class="content_item">
+        <a data-featherlight="/assets/images/true-story.jpg" href="#"><img src="/assets/images/true-story-500px.jpg"></a>
       </div>
   </div>
 
-  <script src="lib/jquery-2.1.0.min.js"></script>
-
-  <!-- swipebox -->
-  <script src="src/js/jquery.swipebox.js"></script>
-  <script type="text/javascript">
-  	$( document ).ready(function() {
-  			/* Basic Gallery */
-  			$( '.swipebox' ).swipebox();
-
-  			/* Video */
-  			$( '.swipebox-video' ).swipebox();
-
-  			/* Dynamic Gallery */
-  			$( '#gallery' ).click( function( e ) {
-  				e.preventDefault();
-  				$.swipebox( [
-  					{ href : 'http://swipebox.csag.co/mages/image-1.jpg', title : 'My Caption' },
-  					{ href : 'http://swipebox.csag.co/images/image-2.jpg', title : 'My Second Caption' }
-  				] );
-  			} );
-
-        });
-  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.rawgit.com/noelboss/featherlight/1.7.10/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 </body>
 
 </html>
