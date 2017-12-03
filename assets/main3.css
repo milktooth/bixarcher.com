@@ -399,3 +399,8 @@ rotate(-6.58rad);transform: rotate(-6.58rad);
 .featherlight {
   background: white;
 }
+
+img {
+  opacity: 0.5;
+  transition: opacity .3s ease-in;
+}
