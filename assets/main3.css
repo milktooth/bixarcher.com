@@ -385,3 +385,16 @@ rotate(-6.86rad);transform: rotate(-7.13rad);}
 width: 0px; height: 50px; -webkit-transform: rotate(-6.58rad);-moz-transform: rotate(-6.58rad);-ms-transform: rotate(-6.58rad); -o-transform:
 rotate(-6.58rad);transform: rotate(-6.58rad);
 }
+
+.featherlight .featherlight-close-icon {
+  top: 10px;
+  right: 10px;
+}
+
+.featherlight:last-of-type {
+  background: none;
+}
+
+.featherlight {
+  background: white;
+}
