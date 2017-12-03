@@ -401,6 +401,6 @@ rotate(-6.58rad);transform: rotate(-6.58rad);
 }
 
 img {
-  opacity: 0.5;
-  transition: opacity .3s ease-in;
+  margin-top: 20px
+  transition: margin-top .3s ease-in;
 }
