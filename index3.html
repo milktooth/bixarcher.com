@@ -48,7 +48,9 @@
   	$( document ).ready(function() {
 
   			/* Basic Gallery */
-  			$( '.swipebox' ).swipebox();
+  			$( '.swipebox' ).swipebox({
+          hideBarsDelay: infinite,
+        });
 
   			/* Video */
   			$( '.swipebox-video' ).swipebox();
