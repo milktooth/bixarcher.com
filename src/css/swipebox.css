@@ -113,14 +113,13 @@ html.swipebox-html.swipebox-touch {
   top: -50px;
 }
 #swipebox-top-bar.visible-bars {
-  -webkit-transform: translate3d(0, 50px, 0);
-          transform: translate3d(0, 50px, 0);
 }
 
 #swipebox-title {
   display: block;
-  width: 100%;
-  text-align: center;
+  text-align: left;
+  margin-left: 25px;
+  margin-top: 110px;
 }
 
 #swipebox-prev,
@@ -280,18 +279,17 @@ html.swipebox-html.swipebox-touch {
 
 #swipebox-bottom-bar,
 #swipebox-top-bar {
-  text-shadow: 1px 1px 1px black;
-  background: lightblue;
+  background: none;
   opacity: 0.95;
   -webkit-transform: translate3d(0, -50px, 0);
   transform: translate3d(0, -50px, 0);
+  animation: colorflux 120s linear infinite;
 }
 
 #swipebox-top-bar {
-  color: white !important;
-  font-size: 15px;
-  line-height: 43px;
+  color: black!important;
+  font-size: 50px;
+  line-height: 1;
   font-family: Helvetica, Arial, sans-serif;
-  -webkit-transform: translate3d(0, 50px, 0);
-  transform: translate3d(0, 50px, 0);
+  animation: textflux 120s linear infinite;
 }
