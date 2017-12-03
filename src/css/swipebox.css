@@ -57,8 +57,8 @@ html.swipebox-html.swipebox-touch {
 #swipebox-slider .slide .swipebox-video-container,
 #swipebox-slider .slide .swipebox-inline-container {
   display: inline-block;
-  max-height: 100%;
-  max-width: 100%;
+  max-height: 80%;
+  max-width: 80%;
   margin: 0;
   padding: 0;
   width: auto;
@@ -274,10 +274,10 @@ html.swipebox-html.swipebox-touch {
     max-width: 800px;
   }
 }
-/* Skin 
+/* Skin
 --------------------------*/
 #swipebox-overlay {
-  background: #0d0d0d;
+  background: white;
 }
 
 #swipebox-bottom-bar,
