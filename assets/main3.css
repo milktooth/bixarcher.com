@@ -119,6 +119,11 @@ body {
 
 }
 
+@keyframes rotator {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
 @keyframes textflux {
   0% {color: rgba(80, 73, 255, 1);}
   25% {color: rgba(40, 73, 255, 1);}
@@ -158,8 +163,10 @@ q:before {
   text-align: left;
   background-position: bottom;
   font-size: 24px;
+  overflow: hidden;
   background-size: cover;
   padding: 0;
+  background: lightgreen;
 }
 table {
   border-spacing: 0;
@@ -284,6 +291,10 @@ nav>p {
   max-width: 300px;
   max-height: 300px;
 }
+
+#warped-about {
+  margin-left: -91px;
+}
 }
 
 /* title */
@@ -389,11 +400,10 @@ rotate(-6.58rad);transform: rotate(-6.58rad);
 }
 
 /* about */
-#warped-about {position: relative; display: block; width:588px; height:440px;}
+#warped-about {position: relative;height: 328px;width: 335px;margin-top: 75px;display: block;margin-left: 200px;animation: rotator linear 30s infinite;}
 
-#warped-about>span[class^=w]:nth-of-type(n+0){display:block; position:absolute;
--moz-transform-origin:50% 100%; -webkit-transform-origin:50% 100%; -o-transform-origin:50%
-100%; -ms-transform-origin:50% 100%; transform-origin:50% 100%; }
+#warped-about>span[class^=w]:nth-of-type(n+0){display:block;position:absolute;-moz-transform-origin:50% 100%;-webkit-transform-origin:50% 100%;-o-transform-origin:50%
+100%;-ms-transform-origin:50% 100%;transform-origin:50% 100%;margin-left: -126px;margin-top: -56px;}
 
 #warped-about span{font-size:48px;font-weight:regular;font-style:normal;
 line-height:0.65; white-space:pre; overflow:visible; padding:0px;}
@@ -561,6 +571,16 @@ width: 23px; height: 24px; left: 210.23px; top: 327.44px;}
 #warped-about .w40 {-moz-transform: rotate(10.08rad);-webkit-transform: rotate(10.08rad);-o-transform:
 rotate(10.08rad);-ms-transform: rotate(10.08rad); transform: rotate(10.08rad);
 width: 15px; height: 24px; left: 194.21px; top: 314.25px;}
+
+
+@media only screen and (max-width: 600px) {
+
+#warped-about {
+  margin-left: 48px;
+  margin-top: 70px;
+}
+
+}
 
 /*featherlight overwrite*/
 
