@@ -155,9 +155,11 @@ q:before {
 .content_item h1 {
   width: 345px;
   height: 465px;
-  border: solid 5px;
-  font-size: 48px;
-  animation: textflux 120s linear infinite;
+  background-size: 9%;
+  word-wrap: break-word;
+  line-height: 0.55;
+  font-size: 96px;
+  color: white;
   padding: 30px 0 0 0;
 }
 table {
@@ -265,6 +267,7 @@ nav>p {
   .content_item h1 {
     width: 220px;
     height: 250px;
+    font-size: 72px;
   }
 
   nav {
