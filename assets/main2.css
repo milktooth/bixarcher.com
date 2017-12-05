@@ -87,6 +87,7 @@ video {
   font: inherit;
   font-weight: 300;
   font-size: 100%;
+  font-size: 48px;
   font-family: helvetica;
 }
 
@@ -106,6 +107,8 @@ section {
 
 body {
   line-height: 1;
+  /* animation: colorflux 120s linear infinite; */
+  background: palegreen;
 }
 
 ol,
@@ -148,14 +151,9 @@ a:hover, a:active {
 #content_wrapper {
   display: flex;
   margin: 200px 0px 50px 0px;
+
   flex-wrap: wrap;
   justify-content: center;
-}
-
-#content_wrapper img {
-  max-width: 500px;
-  max-height: 500px;
-  margin: 25px;
 }
 
 .nav_card:hover #selected-ani>div {
@@ -229,7 +227,7 @@ nav {
   position: fixed;
   top: 0;
   left: 20px;
-  z-index: 10;
+  z-index: 10000;
   border-bottom: none;
   font-size: 16px;
 }
@@ -237,7 +235,7 @@ nav {
 #title_pos {
     display: inline-block;
     padding: 30px;
-    animation: textflux 120s linear infinite;
+    color: black;
 }
 
 #wonky-archive {
@@ -284,8 +282,10 @@ nav {
 /* title */
 #warped-title {position: relative;display: inline-block;margin-top: -61px;width: 366px;height: 225px;}
 
-#warped-title>span[class^=w]:nth-of-type(n+0){position:absolute;display:block;-webkit-transform-origin:50% 100%;-moz-transform-origin:50% 100%;-ms-transform-origin:50% 100%;-o-transform-origin:50%
-100%;transform-origin:50% 100%;}
+#warped-title>span[class^=w]:nth-of-type(n+0){position:absolute;
+display:block; -webkit-transform-origin:50% 100%;
+-moz-transform-origin:50% 100%; -ms-transform-origin:50% 100%; -o-transform-origin:50%
+100%; transform-origin:50% 100%; }
 
 #warped-title span{overflow:visible;padding:0px;black-space:pre;font-weight:regular;font-style:normal;font-size: 48px;line-height:1.1;}
 
