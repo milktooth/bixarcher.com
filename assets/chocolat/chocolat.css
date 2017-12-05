@@ -13,7 +13,6 @@
     z-index:10;
     background-color:#fff;
     display: none;
-    opacity: 0.8;
 }
 .chocolat-wrapper{
     height:100%;
@@ -108,16 +107,16 @@
 }
 .chocolat-wrapper .chocolat-bottom{
     position:absolute;
-    bottom:0;
+    bottom: 5px;
     left: 0;
     right: 0;
     line-height:40px;
     height:40px;
-    font-size:12px;
+    font-size: 24px;
     z-index: 17;
     padding-left: 15px;
     padding-right: 15px;
-    background: rgba(0, 0, 0, 0.2);
+    color: black;
     text-align: right;
     margin-top: 10px;
 }
