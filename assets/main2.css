@@ -88,6 +88,7 @@ video {
   font-weight: 300;
   font-size: 100%;
   font-family: helvetica;
+  font-size: 48px;
 }
 
 article,
@@ -162,11 +163,9 @@ q:before {
   height: 500px;
   text-align: left;
   background-position: bottom;
-  font-size: 24px;
   overflow: hidden;
   background-size: cover;
   padding: 0;
-  background: lightgreen;
 }
 table {
   border-spacing: 0;
@@ -267,9 +266,7 @@ nav>p {
   overflow: hidden;
 }
 
-#wonky-archive {
-
-}
+#wonky-archive {color: white;}
 
 @media only screen and (max-width: 600px) {
 
@@ -410,8 +407,7 @@ h1:hover>#warped-about {animation-play-state: paused;}
 #warped-about>span[class^=w]:nth-of-type(n+0){display:block;position:absolute;-moz-transform-origin:50% 100%;-webkit-transform-origin:50% 100%;-o-transform-origin:50%
 100%;-ms-transform-origin:50% 100%;transform-origin:50% 100%;margin-left: -126px;margin-top: -56px;}
 
-#warped-about span{font-size:48px;font-weight:regular;font-style:normal;
-line-height:0.65; white-space:pre; overflow:visible; padding:0px;}
+#warped-about span{font-weight:regular;font-style:normal;line-height:0.65;white-space:pre;overflow:visible;padding:0px;}
 
 #warped-about .w0 {-moz-transform: rotate(3.56rad);-webkit-transform: rotate(3.56rad);-o-transform:
 rotate(3.56rad);-ms-transform: rotate(3.56rad); transform: rotate(3.56rad);
