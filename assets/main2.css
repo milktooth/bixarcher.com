@@ -174,9 +174,9 @@ a:hover, a:active {
 
 @keyframes drop {
   0% {transform: translateY(0%);}
-  90% {transform: translateY(-110%);}
-  91% {transform: translateY(110%);}
-  100% {transform: translateY(0%);}
+  25% {transform: translateY(20%);}
+  50% {transform: translateY(-20%);}
+  75% {transform: translateY(20%);}
 }
 
 .nav_card {
@@ -233,10 +233,13 @@ nav {
 
 #selected-card {
     color: white;
+    padding: 20px;
 }
 
-#selected-ani {
-  animation: drop 10s linear infinite;
+#selected-ani>div {
+  animation: drop 5s linear infinite;
+  display: inline-block;
+  animation-timing-function: ease-in-out;
 }
 
 @media only screen and (max-width: 600px) {
