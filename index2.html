@@ -4,11 +4,13 @@
 <head>
   <title>bix archer</title>
 
-  <link href="/assets/main2.css" rel="stylesheet" type="text/css">
+
+  <link href="//cdn.rawgit.com/noelboss/featherlight/1.7.10/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+  <link href="/assets/main3.css" rel="stylesheet" type="text/css">
 
   <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,600" rel="stylesheet">
-  <link href="//cdn.rawgit.com/noelboss/featherlight/1.7.9/release/featherlight.min.css" type="text/css" rel="stylesheet" />
-  <!-- screen scale -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -16,46 +18,33 @@
   <nav>
     <div id="title_pos">
       <div id="title_wrap">
-        <div id='warped'>
+        <div id='warped-title'>
           <span class='w0'>B</span><span class='w1'> </span><span class='w2'>i</span><span class='w3'> </span><span class='w4'>x</span><span class='w5'> </span><span class='w6'> </span><span class='w7'>A</span><span class='w8'> </span><span class='w9'>r</span>
           <span class='w10'> </span><span class='w11'>c</span><span class='w12'> </span><span class='w13'>h</span><span class='w14'> </span><span class='w15'>e</span><span class='w16'> </span><span class='w17'>r</span><span class='w18'> </span>
         </div>
       </div>
     </div>
-    <a href="#">selected works</a>
-    <a href="#">archive</a>
-    <a href="#">about</a>
   </nav>
-
   <div id="content_wrapper">
-    <div class="section">
-      <div class="title">
-        <h1>selected works</h1>
+
+      <div class="content_item">
+        <a href="#">
+          <h1>
+            <div id='warped-about'>
+                             <span class='w0'>a</span><span class='w1'>b</span><span class='w2'>o</span><span class='w3'>u</span><span class='w4'>t</span><span class='w5'> </span><span class='w6'>a</span><span class='w7'>b</span><span class='w8'>o</span><span class='w9'>u</span><span class='w10'>t</span><span class='w11'> </span><span class='w12'>a</span><span class='w13'>b</span><span class='w14'>o</span><span class='w15'>u</span><span class='w16'>t</span><span class='w17'> </span><span class='w18'>a</span><span class='w19'>b</span><span class='w20'>o</span><span class='w21'>u</span><span class='w22'>t</span><span class='w23'> </span><span class='w24'>a</span><span class='w25'>b</span><span class='w26'>o</span><span class='w27'>u</span><span class='w28'>t</span><span class='w29'> </span><span class='w30'>a</span><span class='w31'>b</span><span class='w32'>o</span><span class='w33'>u</span><span class='w34'>t</span>
+            </div>
+          </h1>
+        </a>
       </div>
-      <div>
-        <a href="#" data-featherlight="/assets/images/north-bay-fires.jpg"><h2>North Bay Fires Memorial Quilt</h2></a>
-      </div>
-      <div>
-        <a href="#" data-featherlight="/assets/images/the-water-is-fine.jpg"><h2>The Water is Fine(?)</h2></a>
-      </div>
-      <div>
-        <a href="#" data-featherlight="/assets/images/365.jpg"><h2>365 (Uniform)</h2></a>
-      </div>
-      <div>
-        <a href="#" data-featherlight="/assets/images/red-painting.jpg"><h2>Untitled(?)</h2></a>
-      </div>
-      <div>
-        <a href="#" data-featherlight="/assets/images/true-story.jpg"><h2>True Story</h2></a>
-      </div>
-    </div>
+
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="//cdn.rawgit.com/noelboss/featherlight/1.7.9/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
-
+  <script src="//cdn.rawgit.com/noelboss/featherlight/1.7.10/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/assets/jquery.unveil.js" type="text/javascript" charset="utf-8"></script>
   <script>
-    $(function() {
-      $.featherlight.defaults.loading = "WAIT!"
+    $(document).ready(function() {
+      $("img").unveil(200);
     });
   </script>
 </body>
