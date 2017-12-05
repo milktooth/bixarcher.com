@@ -149,13 +149,32 @@ q:before {
   content: '';
   content: none;
 }
+.content_item {
+  position: relative;
+  display: inline-block;
+  margin: 25px;
+  text-align: center;
+  vertical-align: top;
+}
 
+.content_item h1 {
+  width: 345px;
+  height: 500px;
+  text-align: left;
+  background-position: bottom;
+  font-size: 24px;
+  overflow: hidden;
+  background-size: cover;
+  padding: 0;
+  background: lightgreen;
+}
 table {
   border-spacing: 0;
   border-collapse: collapse;
 }
 
 h1, h2, h3, h4 {
+  padding: 30px 0px 30px 0px;
   font-weight: 400;
 }
 
@@ -172,25 +191,6 @@ a:hover, a:active {
 .content_item > a {
 }
 
-.content_item {
-  position: relative;
-  display: inline-block;
-  margin: 25px;
-  text-align: center;
-  vertical-align: top;
-}
-
-.content_item div {
-  width: 345px;
-  height: 500px;
-  text-align: left;
-  background-position: bottom;
-  font-size: 24px;
-  overflow: hidden;
-  background-size: cover;
-  padding: 0;
-  background: lightgreen;
-}
 .content_item img {position: relative;margin: auto;max-width: 500px;max-height: 500px;}
 
 nav {
@@ -229,6 +229,17 @@ nav>p {
   vertical-align: top;
 }
 
+
+#content_wrapper>div>div>h1{
+  text-align: center;
+  font-weight: 900;
+}
+
+.content_item h2 {
+  display: none;
+
+  font-size: 24px;
+}
 #content_wrapper>div>div>div {
   height: 500px;
   border-top: solid 1px black;
@@ -259,7 +270,7 @@ nav>p {
 
 @media only screen and (max-width: 600px) {
 
-  .content_item>div {
+  .content_item h1 {
     width: 200px;
     height: 250px;
   }
@@ -391,7 +402,7 @@ rotate(-6.58rad);transform: rotate(-6.58rad);
 /* about */
 #warped-about {position: relative;height: 328px;width: 335px;margin-top: 75px;display: block;margin-left: 200px;animation: rotator linear 35s infinite;color: white;}
 
-div:hover>#warped-about {animation-play-state: paused;}
+h1:hover>#warped-about {animation-play-state: paused;}
 
 #warped-about>span[class^=w]:nth-of-type(n+0){display:block;position:absolute;-moz-transform-origin:50% 100%;-webkit-transform-origin:50% 100%;-o-transform-origin:50%
 100%;-ms-transform-origin:50% 100%;transform-origin:50% 100%;margin-left: -126px;margin-top: -56px;}
