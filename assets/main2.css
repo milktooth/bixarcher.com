@@ -106,9 +106,10 @@ section {
 }
 
 body {
-  line-height: 1;
   /* animation: colorflux 120s linear infinite; */
   background: palegreen;
+
+  line-height: 1;
 }
 
 ol,
@@ -154,6 +155,13 @@ a:hover, a:active {
 
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.chocolat-image img {
+  margin: 25px;
+
+  max-width: 500px;
+  max-height: 500px;
 }
 
 .nav_card:hover #selected-ani>div {
@@ -206,10 +214,10 @@ a:hover, a:active {
   display: inline-block;
   overflow: hidden;
   margin: 25px;
-  border: 3px solid black;
   padding: 0;
   width: 345px;
   height: 500px;
+  border: 3px solid black;
   vertical-align: top;
   text-align: left;
 }
@@ -246,7 +254,6 @@ nav {
 
 #wonky-archive>div {
     display: inline-block;
-
     padding: 0px 50px 0px 50px;
     height: auto;
     transform: translateX(-100%);
@@ -254,20 +261,21 @@ nav {
 }
 
 #selected-card {
-    color: black;
     padding: 20px;
+
+    color: black;
 }
 
 #selected-ani>div {
-  animation: drop 5s linear infinite;
   display: inline-block;
+
+  animation: drop 5s linear infinite;
   animation-timing-function: ease-in-out;
 }
 
 @media only screen and (max-width: 600px) {
   nav {
   left: 0;
-
   transform: scale(.75);
   transform-origin: left top;
   }
@@ -287,7 +295,7 @@ display:block; -webkit-transform-origin:50% 100%;
 -moz-transform-origin:50% 100%; -ms-transform-origin:50% 100%; -o-transform-origin:50%
 100%; transform-origin:50% 100%; }
 
-#warped-title span{overflow:visible;padding:0px;black-space:pre;font-weight:regular;font-style:normal;font-size: 48px;line-height:1.1;}
+#warped-title span{overflow:visible;padding:0px;font-weight:regular;font-style:normal;font-size: 48px;line-height:1.1;black-space:pre;}
 
 #warped-title .w0 {top: 169.25px;left: 26.12px;
 width: 29px; height: 50px; -webkit-transform: rotate(-7.15rad);-moz-transform: rotate(-7.15rad);-ms-transform: rotate(-7.15rad); -o-transform:
@@ -387,7 +395,7 @@ rotate(-6.58rad);transform: rotate(-6.58rad);
 #warped-about>span[class^=w]:nth-of-type(n+0){position:absolute;display:block;margin-top: -56px;margin-left: -126px;-webkit-transform-origin:50% 100%;-moz-transform-origin:50% 100%;-ms-transform-origin:50% 100%;-o-transform-origin:50%
 100%;transform-origin:50% 100%;}
 
-#warped-about span{overflow:visible;padding:0px;black-space:pre;font-weight:regular;font-style:normal;line-height:0.65;}
+#warped-about span{overflow:visible;padding:0px;font-weight:regular;font-style:normal;line-height:0.65;black-space:pre;}
 
 #warped-about .w0 {top: 324.41px;left: 224.27px;
 width: 23px; height: 24px; -webkit-transform: rotate(3.56rad);-moz-transform: rotate(3.56rad);-ms-transform: rotate(3.56rad); -o-transform:
