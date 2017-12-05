@@ -157,7 +157,7 @@ q:before {
   vertical-align: top;
 }
 
-.content_item h1 {
+.content_item div {
   width: 345px;
   height: 500px;
   text-align: left;
@@ -174,7 +174,6 @@ table {
 }
 
 h1, h2, h3, h4 {
-  padding: 30px 0px 30px 0px;
   font-weight: 400;
 }
 
@@ -582,30 +581,4 @@ width: 15px; height: 24px; left: 194.21px; top: 314.25px;}
   margin-top: 70px;
 }
 
-}
-
-/*featherlight overwrite*/
-
-.featherlight .featherlight-close-icon {
-  top: 10px;
-  right: 10px;
-  position: fixed;
-}
-
-.featherlight .featherlight-content {
-  overflow: visible;
-}
-
-.featherlight:last-of-type {
-  background: white;
-}
-
-.featherlight {
-  background: white;
-}
-
-.featherlight p {
-    margin: 0px 50px 0px 50px;
-    font-size: 5vw;
-    text-align: center;
 }
