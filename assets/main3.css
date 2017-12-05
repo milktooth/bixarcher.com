@@ -400,7 +400,7 @@ rotate(-6.58rad);transform: rotate(-6.58rad);
 }
 
 /* about */
-#warped-about {position: relative;height: 328px;width: 335px;margin-top: 75px;display: block;margin-left: 200px;animation: rotator linear 30s infinite;}
+#warped-about {position: relative;height: 328px;width: 335px;margin-top: 75px;display: block;margin-left: 200px;animation: rotator linear 35s infinite;color: white;}
 
 #warped-about>span[class^=w]:nth-of-type(n+0){display:block;position:absolute;-moz-transform-origin:50% 100%;-webkit-transform-origin:50% 100%;-o-transform-origin:50%
 100%;-ms-transform-origin:50% 100%;transform-origin:50% 100%;margin-left: -126px;margin-top: -56px;}
