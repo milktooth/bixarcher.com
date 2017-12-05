@@ -133,6 +133,10 @@ body {
   100% {color: rgba(80, 73, 255, 1);}
 }
 
+@keyframes flip {
+  0% {transform: translateX(-100%)}
+  100% {transform: translateX(155%)}
+}
 ol,
 ul {
   list-style: none;
@@ -156,10 +160,7 @@ q:before {
   margin: 25px;
   text-align: center;
   vertical-align: top;
-}
-
-.nav_card div {
-  width: 345px;
+    width: 345px;
   height: 500px;
   text-align: left;
   background-position: bottom;
@@ -266,8 +267,13 @@ nav>p {
   overflow: hidden;
 }
 
-#wonky-archive {color: white;}
-
+#wonky-archive {color: white;transform: rotate(45deg);margin-top: 70px;}
+#wonky-archive>h1 {
+    padding: 0px 50px 0px 50px;
+    height: auto;
+    display: inline-block;
+    animation: flip 6s linear infinite;
+}
 @media only screen and (max-width: 600px) {
 
   .nav_card h1 {
