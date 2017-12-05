@@ -148,7 +148,7 @@ a:hover, a:active {
 
 #content_wrapper {
   display: flex;
-  margin: 200px 10% 50px 10%;
+  margin: 200px 0px 50px 0px;
 
   flex-wrap: wrap;
   justify-content: center;
