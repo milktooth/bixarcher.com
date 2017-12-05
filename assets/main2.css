@@ -135,7 +135,7 @@ body {
 
 @keyframes flip {
   0% {transform: translateX(-100%)}
-  100% {transform: translateX(155%)}
+  100% {transform: translateX(170%)}
 }
 ol,
 ul {
@@ -273,6 +273,7 @@ nav>p {
     height: auto;
     display: inline-block;
     animation: flip 6s linear infinite;
+    transform: translateX(-100%);
 }
 @media only screen and (max-width: 600px) {
 
