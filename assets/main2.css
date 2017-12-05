@@ -232,7 +232,10 @@ nav {
 }
 
 #selected-card {
-  color: white;
+    color: white;
+}
+
+#selected-ani {
   animation: drop 10s linear infinite;
 }
 
