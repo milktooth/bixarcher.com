@@ -215,7 +215,7 @@ nav {
   transform: rotate(45deg);
 }
 
-#wonky-archive>h1 {
+#wonky-archive>div {
     display: inline-block;
 
     padding: 0px 50px 0px 50px;
