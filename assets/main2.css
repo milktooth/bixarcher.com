@@ -168,8 +168,15 @@ a:hover, a:active {
 }
 
 @keyframes flip {
-  0% {transform: translateX(-100%)}
-  100% {transform: translateX(170%)}
+  0% {transform: translateX(-100%);}
+  100% {transform: translateX(170%);}
+}
+
+@keyframes drop {
+  0% {transform: translateY(0%);}
+  90% {transform: translateY(-110%);}
+  91% {transform: translateY(110%);}
+  100% {transform: translateY(0%);}
 }
 
 .nav_card {
@@ -223,6 +230,12 @@ nav {
     transform: translateX(-100%);
     animation: flip 6s linear infinite;
 }
+
+#selected-card {
+  color: white;
+  animation: drop 10s linear infinite;
+}
+
 @media only screen and (max-width: 600px) {
   nav {
   left: 0;
