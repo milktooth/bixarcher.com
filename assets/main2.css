@@ -107,7 +107,7 @@ section {
 
 body {
   line-height: 1;
-  /* animation: colorflux 120s linear infinite; */
+  animation: colorflux 120s linear infinite;
 }
 
 ol,
@@ -149,8 +149,7 @@ a:hover, a:active {
 
 #content_wrapper {
   display: flex;
-  margin: 200px 0px 50px 0px;
-
+  margin: 100px 0px 50px 0px;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -197,8 +196,8 @@ a:hover, a:active {
   width: 345px;
   height: 500px;
   vertical-align: top;
+  border: solid 3px white;
   text-align: left;
-  background: lightgreen;
 }
 
 
@@ -211,12 +210,13 @@ a:hover, a:active {
 }
 
 nav {
-  position: fixed;
   top: 0;
-  left: 20px;
   z-index: 10000;
+  width: 100%;
   border-bottom: none;
   font-size: 16px;
+  background: white;
+  display: block;
 }
 
 #title_pos {
@@ -254,16 +254,22 @@ nav {
 
 @media only screen and (max-width: 600px) {
   nav {
-  left: 0;
+  height: 177px;
+  }
 
-  transform: scale(.75);
-  transform-origin: left top;
+  .nav_card {
+    height: 200px;
   }
 
   #content_wrapper {
     margin: auto;
-    margin-top: 150px;
+    margin-top: 20px;
     width: 100%;
+  }
+
+  #title_pos {
+    transform: scale(.75);
+    transform-origin: left top;
   }
 }
 
