@@ -152,8 +152,11 @@ nav {
     margin: 0px 40px 0px 0px;
     top: 40px;
     left: 40px;
+    padding: 40px;
     position: fixed;
     z-index: 100;
+    background: white;
+    border: solid 2px rgba(80, 73, 255, 1);
 }
 
 nav a {
