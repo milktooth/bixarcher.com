@@ -17,18 +17,18 @@
         </div>
     </div>
     <div>
-      <a class="nav-link" href="#" data-related="selected-works">selected works</a>
+      <a class="sw-link" href="#" data-related="selected-works">selected works</a>
 
-      <a class="nav-link" href="#" data-related="archive">archive</a>
+      <a class="av-link"href="#" data-related="archive">archive</a>
 
-      <a class="nav-link" href="#" data-related="about">about</a>
+      <a class="ab-link"href="#" data-related="about">about</a>
     </div>
   </nav>
 
   <div id="slash">
   </div>
 
-  <div id="selected-works" class="chocolat-parent" data-chocolat-title="set title">
+  <div id="selected-works" class="chocolat-parent" data-chocolat-title="set title" style="display: none">
     <a class="chocolat-image" href="/assets/images/365.jpg" title="caption image 1">
       <img src="/assets/images/365-500px.jpg" />
     </a>
@@ -40,6 +40,14 @@
     <a class="chocolat-image" href="/assets/images/red-painting.jpg" title="caption image 3">
       <img src="/assets/images/red-painting-500px.jpg"/>
     </a>
+  </div>
+
+  <div id="archive" style="display: none">
+    archive
+  </div>
+
+  <div id="about" style="display: none">
+    about
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -54,16 +62,18 @@
     });
   </script>
   <script>
-    $('.nav-link').click(function() {
-         e.preventDefault();
-         var id = $(this).attr('data-related');
-         $("div").each(function(){
-               $(this).hide();
-               if($(this).attr('id') == id) {
-                   $(this).show();
-               }
-           });
+    $('.sw-link').click(function() {
+      $('#selected-works').toggle();
     });
+
+    $('.av-link').click(function() {
+      $('#archive').toggle();
+    });
+
+    $('.ab-link').click(function() {
+      $('#about').toggle();
+    });
+
   </script>
 </body>
 </html>
