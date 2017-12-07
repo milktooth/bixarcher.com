@@ -4,7 +4,7 @@
 <head>
   <title>bix archer</title>
   <link href="/assets/main3.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400" rel="stylesheet">
+  <link rel="stylesheet" href="assets/chocolat/chocolat.css" type="text/css" media="screen" charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -25,7 +25,31 @@
     </div>
   </nav>
 
+  <div id="content" class="chocolat-parent" data-chocolat-title="set title">
+    <a class="chocolat-image" href="/assets/images/365.jpg" title="caption image 1">
+        selected works
+    </a>
+    <a class="chocolat-image" href="/assets/images/north-bay-fires.jpg" title="caption image 2">
+
+    </a>
+    <a class="chocolat-image" href="/assets/images/red-painting.jpg" title="caption image 3">
+
+    </a>
+  </div>
+
+  <div id="#img-container">
+  </div>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="/assets/chocolat/jquery.chocolat.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.chocolat-parent').Chocolat(
+        {
+          container: '#img-container'
+        }
+      );
+    });
+  </script>
 </body>
 </html>
