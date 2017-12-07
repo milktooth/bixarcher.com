@@ -147,13 +147,12 @@ a:hover, a:active {
 
 nav {}
 
-nav>a {}
+nav a {}
 
 #title_pos {
     display: inline-block;
     margin: 25px;
     color: rgba(80, 73, 255, 1);
-    animation: textflux 120s linear infinite;
 }
 
 @media only screen and (max-width: 600px) {
