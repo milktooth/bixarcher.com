@@ -24,7 +24,7 @@
       <a href="#">about</a>
     </div>
   </nav>
-
+<!--
   <div id="content" class="chocolat-parent" data-chocolat-title="set title">
     <a class="chocolat-image" href="/assets/images/365.jpg" title="caption image 1">
         selected works
@@ -36,13 +36,19 @@
 
     </a>
   </div>
+-->
+  <div id="#img-container">
+  </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="/assets/chocolat/jquery.chocolat.min.js"></script>
   <script>
     $(document).ready(function(){
-      $('.chocolat-parent').Chocolat(
+      $().Chocolat(
         {
+          container: '#img-container',
+          imageSize: 'contain'
+          images: [{src:'/assets/images/365.jpg', title: 'title'}, {src:'/assets/images/north-bay-fires.jpg', title: 'title'}, {src:'/assets/images/red-painting.jpg', title: 'title'}, ]
         }
       );
     });
