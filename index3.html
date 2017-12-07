@@ -24,20 +24,22 @@
       <a href="#">about</a>
     </div>
   </nav>
-<!--
-  <div id="content" class="chocolat-parent" data-chocolat-title="set title">
-    <a class="chocolat-image" href="/assets/images/365.jpg" title="caption image 1">
-        selected works
-    </a>
-    <a class="chocolat-image" href="/assets/images/north-bay-fires.jpg" title="caption image 2">
 
-    </a>
-    <a class="chocolat-image" href="/assets/images/red-painting.jpg" title="caption image 3">
-
-    </a>
+  <div id="slash">
   </div>
--->
-  <div id="#img-container">
+
+  <div id="selected-works" class="chocolat-parent" data-chocolat-title="set title">
+    <a class="chocolat-image" href="/assets/images/365.jpg" title="caption image 1">
+      <img src="/assets/images/365-500px.jpg" />
+    </a>
+
+    <a class="chocolat-image" href="/assets/images/north-bay-fires.jpg" title="caption image 2">
+      <img src="/assets/images/north-bay-fires-500px.jpg" />
+    </a>
+
+    <a class="chocolat-image" href="/assets/images/red-painting.jpg" title="caption image 3">
+      <img src="/assets/images/red-painting-500px.jpg"/>
+    </a>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -46,9 +48,7 @@
     $(document).ready(function(){
       $().Chocolat(
         {
-          container: '#img-container',
           imageSize: 'contain'
-          images: [{src:'/assets/images/365.jpg', title: 'title'}, {src:'/assets/images/north-bay-fires.jpg', title: 'title'}, {src:'/assets/images/red-painting.jpg', title: 'title'}, ]
         }
       );
     });
