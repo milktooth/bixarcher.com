@@ -17,11 +17,11 @@
         </div>
     </div>
     <div>
-      <a href="#">selected works</a>
+      <a class="nav-link" href="#" data-related="selected-works">selected works</a>
 
-      <a href="#">archive</a>
+      <a class="nav-link" href="#" data-related="archive">archive</a>
 
-      <a href="#">about</a>
+      <a class="nav-link" href="#" data-related="about">about</a>
     </div>
   </nav>
 
@@ -51,6 +51,18 @@
           imageSize: 'contain'
         }
       );
+    });
+  </script>
+  <script>
+    $('.nav-link').click(function() {
+         e.preventDefault();
+         var id = $(this).attr('data-related');
+         $("div").each(function(){
+               $(this).hide();
+               if($(this).attr('id') == id) {
+                   $(this).show();
+               }
+           });
     });
   </script>
 </body>
