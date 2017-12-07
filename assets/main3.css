@@ -149,7 +149,11 @@ nav {
     color: rgba(80, 73, 255, 1);
     width: 200px;
     font-size: 16px;
-    margin: 40px;
+    margin: 0px 40px 0px 0px;
+    top: 40px;
+    left: 40px;
+    position: fixed;
+    z-index: 100;
 }
 
 nav a {
@@ -167,7 +171,16 @@ nav a {
 
 #selected-works {}
 
-#slash {}
+#slash {
+    width: 100vh;
+    border-bottom: solid 2px rgba(80, 73, 255, 1);
+    transform: rotate(-45deg);
+    height: 300px;
+    position: fixed;
+    left: -390px;
+    top: 0;
+    background: white;
+}
 
 @media only screen and (max-width: 600px) {
 }
