@@ -14,7 +14,7 @@
   </div>
   <div id="slash2">
   </div>
-  
+
   <nav>
     <div id="title_pos">
         <div id="warped-title">
@@ -32,8 +32,8 @@
   </nav>
 
 
-
-  <div id="selected-works" class="content chocolat-parent" data-chocolat-title="set title" style="display: none">
+<!--
+  <div id="selected-works" class="content chocolat-parent" data-chocolat-title="set title">
     <a class="chocolat-image" href="/assets/images/365.jpg" title="365 (Uniform)">
       <img src="/assets/images/365-500px.jpg" />
     </a>
@@ -46,13 +46,10 @@
       <img src="/assets/images/red-painting-500px.jpg"/>
     </a>
   </div>
+-->
 
-  <div id="archive" class="content" style="display: none">
-    archive
-  </div>
+  <div id="content">
 
-  <div id="about" class="content" style="display: none">
-    about
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -65,6 +62,16 @@
         }
       );
     });
+
+    $(function(){
+        var instance = $('#content').Chocolat({
+            setTitle : 'set title',
+            loop: true,
+            images : [
+                {src : '/assets/images/north-bay-fires.jpg', title : 'caption 1'},
+                {src : '/assets/images/365.jpg', title : 'caption 2'},
+                {src : '/assets/images/red-painting-500px.jpg', title : 'caption 3'},
+            ],
   </script>
 </body>
 </html>
