@@ -146,17 +146,17 @@ a:hover, a:active {
 }
 
 nav {
-    color: rgba(80, 73, 255, 1);
+    color: white;
     width: 200px;
     font-size: 16px;
-    margin: 0px 40px 0px 0px;
-    top: 40px;
-    left: 40px;
+    left: 80px;
     padding: 40px;
+    top: 0;
+    padding-top: 80px;
     position: fixed;
-    z-index: 100;
+    z-index: 10;
     background: white;
-    border: solid 2px rgba(80, 73, 255, 1);
+    background: rgba(80, 73, 255, 1);
 }
 
 nav a {
@@ -172,17 +172,27 @@ nav a {
     padding-bottom: 20px;
 }
 
-#selected-works {}
+#selected-works {
+    display: flex;
+    margin-top: 200px;
+}
+
+#selected-works img {
+  margin: 40px;
+}
 
 #slash {
-    width: 100vh;
+    width: 100%;
     border-bottom: solid 2px rgba(80, 73, 255, 1);
-    transform: rotate(-45deg);
-    height: 300px;
+    /* transform: rotate(-45deg); */
+    height: 0px;
     position: fixed;
-    left: -390px;
     top: 0;
     background: white;
+}
+
+.content {
+  margin-left: 440px;
 }
 
 @media only screen and (max-width: 600px) {
