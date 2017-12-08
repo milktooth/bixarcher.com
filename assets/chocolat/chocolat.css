@@ -13,7 +13,6 @@
     z-index:10;
     background-color:#fff;
     display: none;
-    opacity: 0.8;
 }
 .chocolat-wrapper{
     height:100%;
@@ -23,7 +22,7 @@
     left:0;
     top:0;
     z-index:16;
-    color: #fff;
+    color: rgba(80, 73, 255, 1);
 }
 .chocolat-zoomable .chocolat-img{
     cursor : zoom-in;
@@ -108,16 +107,16 @@
 }
 .chocolat-wrapper .chocolat-bottom{
     position:absolute;
-    bottom:0;
-    left: 0;
-    right: 0;
+    bottom: 60px;
+    left: 60px;
+    right: 60px;
     line-height:40px;
     height:40px;
-    font-size:12px;
+    font-size: 18px;
     z-index: 17;
     padding-left: 15px;
     padding-right: 15px;
-    background: rgba(0, 0, 0, 0.2);
+    background: none;
     text-align: right;
     margin-top: 10px;
 }
@@ -131,15 +130,13 @@
     float: right;
     display: inline-block;
     padding-left: 15px;
-    padding-right: 15px;
-    margin-right: 15px;
     /*border-right: 1px solid rgba(255, 255, 255, 0.2);*/
 }
 .chocolat-wrapper .chocolat-fullscreen{
     width: 16px;
     height: 40px;
     background: url(../images/fullscreen.png) 50% 50% no-repeat;
-    display: block;
+    display: none;
     margin:auto;
     cursor: pointer;
     float: right;

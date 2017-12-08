@@ -9,6 +9,11 @@
 </head>
 
 <body id="background">
+  <div id="slash">
+  </div>
+  <div id="slash2">
+  </div>
+  
   <nav>
     <div id="title_pos">
         <div id="warped-title">
@@ -25,8 +30,7 @@
     </div>
   </nav>
 
-  <div id="slash">
-  </div>
+
 
   <div id="selected-works" class="content chocolat-parent" data-chocolat-title="set title" style="display: none">
     <a class="chocolat-image" href="/assets/images/365.jpg" title="caption image 1">
@@ -52,28 +56,6 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="/assets/chocolat/jquery.chocolat.min.js"></script>
-  <script>
-    $(document).ready(function(){
-      $('.chocolat-parent').Chocolat(
-        {
-          imageSize: 'contain'
-        }
-      );
-    });
-  </script>
-  <script>
-    $('.sw-link').click(function() {
-      $('#selected-works').toggle();
-    });
 
-    $('.av-link').click(function() {
-      $('#archive').toggle();
-    });
-
-    $('.ab-link').click(function() {
-      $('#about').toggle();
-    });
-
-  </script>
 </body>
 </html>

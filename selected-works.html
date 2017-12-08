@@ -3,15 +3,18 @@
 
 <head>
   <title>bix archer</title>
-  <link href="/assets/main2.css" rel="stylesheet" type="text/css">
-
+  <link href="/assets/main3.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="assets/chocolat/chocolat.css" type="text/css" media="screen" charset="utf-8">
-  <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,600" rel="stylesheet">
-
+  <script type="text/javascript" src="/assets/chocolat/jquery.chocolat.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body id="background">
+  <div id="slash">
+  </div>
+  <div id="slash2">
+  </div>
+  
   <nav>
     <div id="title_pos">
         <div id="warped-title">
@@ -19,39 +22,49 @@
           <span class="w10"> </span><span class="w11">c</span><span class="w12"> </span><span class="w13">h</span><span class="w14"> </span><span class="w15">e</span><span class="w16"> </span><span class="w17">r</span><span class="w18"> </span>
         </div>
     </div>
+    <div>
+      <a class="sw-link" href="#" data-related="selected-works">selected works</a>
+
+      <a class="av-link"href="#" data-related="archive">archive</a>
+
+      <a class="ab-link"href="#" data-related="about">about</a>
+    </div>
   </nav>
-  <div id="content_wrapper" class="chocolat-parent" data-chocolat-title="set title">
-    <a class="chocolat-image" href="/assets/images/365.jpg" title="caption image 1">
-        <img src="/assets/images/365-500px.jpg" />
-    </a>
-    <a class="chocolat-image" href="/assets/images/north-bay-fires.jpg" title="caption image 2">
-        <img src="/assets/images/north-bay-fires-500px.jpg" />
-    </a>
-    <a class="chocolat-image" href="/assets/images/red-painting.jpg" title="caption image 3">
-        <img src="/assets/images/red-painting-500px.jpg"/>
+
+
+
+  <div id="selected-works" class="content chocolat-parent" data-chocolat-title="set title" style="display: none">
+    <a class="chocolat-image" href="/assets/images/365.jpg" title="365 (Uniform)">
+      <img src="/assets/images/365-500px.jpg" />
     </a>
 
+    <a class="chocolat-image" href="/assets/images/north-bay-fires.jpg" title="North Bay Fires">
+      <img src="/assets/images/north-bay-fires-500px.jpg" />
+    </a>
+
+    <a class="chocolat-image" href="/assets/images/red-painting.jpg" title="Untitled">
+      <img src="/assets/images/red-painting-500px.jpg"/>
+    </a>
+  </div>
+
+  <div id="archive" class="content" style="display: none">
+    archive
+  </div>
+
+  <div id="about" class="content" style="display: none">
+    about
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="/assets/chocolat/jquery.chocolat.min.js"></script>
-  <script src="/assets/jquery.unveil.js" type="text/javascript" charset="utf-8"></script>
-  <script>
-    $(document).ready(function() {
-      $("img").unveil(200);
-    });
-  </script>
   <script>
     $(document).ready(function(){
-      $('.chocolat-parent').Chocolat();
+      $('.chocolat-parent').Chocolat(
+        {
+          imageSize: 'contain',
+          container: '#slash'
+        }
+      );
     });
   </script>
-
-
-
-
-
-
 </body>
-
 </html>

@@ -146,22 +146,21 @@ a:hover, a:active {
 }
 
 nav {
-    color: white;
-    width: 200px;
+    color: rgba(80, 73, 255, 1);
+    height: 200px;
     font-size: 16px;
-    left: 80px;
     padding: 40px;
-    top: 0;
-    padding-top: 80px;
+    top: 20px;
+    left: 20px;
     position: fixed;
     z-index: 10;
-    background: white;
-    background: rgba(80, 73, 255, 1);
+    border: solid 2px rgba(80, 73, 255, 1);
 }
 
 nav a {
     display: block;
     margin-bottom: 10px;
+    font-size: 18px;
 }
 
 #title_pos {
@@ -174,25 +173,47 @@ nav a {
 
 #selected-works {
     display: flex;
-    margin-top: 200px;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 #selected-works img {
   margin: 40px;
+  max-width: 300px;
 }
 
 #slash {
-    width: 100%;
-    border-bottom: solid 2px rgba(80, 73, 255, 1);
-    /* transform: rotate(-45deg); */
-    height: 0px;
+    border: solid 2px rgba(80, 73, 255, 1);
     position: fixed;
-    top: 0;
-    background: white;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    display: block;
+    z-index: 1000;
+    background: none;
+    pointer-events: none;
+}
+
+
+#slash2 {
+  border: solid 20px white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  z-index: 999;
+  pointer-events: none;
 }
 
 .content {
-  margin-left: 440px;
+  =: 440px
+  margin-top:;
+  margin: 150px 300px 0px 450px;
+  padding: 50px;
+  /* border: solid 2px black; */
 }
 
 @media only screen and (max-width: 600px) {
