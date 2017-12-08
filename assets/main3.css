@@ -172,14 +172,14 @@ nav a {
 }
 
 #selected-works {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
 }
 
 #selected-works img {
-  margin: 40px;
-  max-width: 300px;
+  margin: 20px;
+  max-width: 400px;
+  max-height: 400px;
+  display: inline-block;
+  vertical-align: top;
 }
 
 #slash {
@@ -211,9 +211,7 @@ nav a {
 .content {
   =: 440px
   margin-top:;
-  margin: 150px 300px 0px 450px;
-  padding: 50px;
-  /* border: solid 2px black; */
+  margin: 22px 80px 0px 350px;
 }
 
 @media only screen and (max-width: 600px) {
