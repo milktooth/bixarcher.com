@@ -5,8 +5,20 @@
   <title>bix archer</title>
   <link href="/assets/main3.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="assets/chocolat/chocolat.css" type="text/css" media="screen" charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="/assets/chocolat/jquery.chocolat.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+
+      $(function(){
+                  $('#example2').Chocolat({
+                      container      : '#container1',
+                      imageSize     : 'contain',
+                      loop           : true,
+                  })
+
+            });
+  </script>
 </head>
 
 <body id="background">
@@ -48,30 +60,20 @@
   </div>
 -->
 
-  <div id="content">
+    <div id="example2" data-chocolat-title="set title">
+        <a class="chocolat-image" href="/assets/images/north-bay-fires.jpg" title="Rose">
+            A
+        </a>
+        <a class="chocolat-image" href="/assets/images/365.jpg" title="Black">
+            B
+        </a>
+        <a class="chocolat-image" href="/assets/images/red-painting-500px.jpg" title="Yellow">
+            C
+        </a>
+    </div>
+    <!-- Container (notice the relative width) :  -->
+    <div id="container1" style="width: 80%; max-width:1000px; height: 600px; background: #E0E0E0; margin:auto;"></div>
 
-  </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script>
-    $(document).ready(function(){
-      $('.chocolat-parent').Chocolat(
-        {
-          imageSize: 'contain',
-          container: '#slash'
-        }
-      );
-    });
-
-    $(function(){
-        var instance = $('#content').Chocolat({
-            setTitle : 'set title',
-            loop: true,
-            images : [
-                {src : '/assets/images/north-bay-fires.jpg', title : 'caption 1'},
-                {src : '/assets/images/365.jpg', title : 'caption 2'},
-                {src : '/assets/images/red-painting-500px.jpg', title : 'caption 3'},
-            ],
-  </script>
 </body>
 </html>
