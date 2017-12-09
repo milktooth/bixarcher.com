@@ -175,9 +175,9 @@ nav a {
 }
 
 #selected-works img {
-  margin: 20px;
-  max-width: 400px;
-  max-height: 400px;
+  margin: 1.5vw 0vw 1.5vw 1.5vw;
+  max-width: 20vw;
+  max-height: 20vw;
   display: inline-block;
   vertical-align: top;
 }
@@ -211,10 +211,24 @@ nav a {
 .content {
   =: 440px
   margin-top:;
-  margin: 22px 80px 0px 350px;
+  margin: 22px 22px 0px 287px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1000px) {
+  #selected-works img {
+    max-width: 30vw;
+    max-height: 30vw;
+    margin: 20px;
+  }
+
+  nav {
+    width: -webkit-fill-available;
+    position: relative;
+}
+
+  .content {
+    margin: 20px;
+  }
 }
 
 /* title */
