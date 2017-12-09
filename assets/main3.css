@@ -263,6 +263,20 @@ nav a {
   }
 }
 
+
+@media only screen and (max-width: 620px) {
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#selected-works img {
+    max-width: 40vw;
+    max-height: 40vw;
+    margin: 5vw;
+}
+}
+
 /* title */
 #warped-title {position: relative;display: inline-block;margin-top: -87px;margin-left: -92px;width: 366px;height: 225px;transform: scale(.5);}
 
