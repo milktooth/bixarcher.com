@@ -38,7 +38,7 @@
     z-index:11;
     background: rgba(80, 73, 255, 1);
     display:none;
-    animation: spin .3s ease-in infinite;
+    animation: spin .75s ease infinite;
 }
 
 @keyframes spin {
