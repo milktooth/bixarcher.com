@@ -221,19 +221,10 @@ nav a {
     margin: 20px;
   }
 
-  #title_pos {
+  #slash {display:none;}
+  #slash2 {display: none;}
 
-    height: 83px;
-    width: 183px;
-    margin-bottom: 20px;
-    position: relative;
-    margin-left: 60px;
-    top: 0;
-    margin-top: 40px;
-    right: 0;
-    padding-bottom: 20px;
-    border-bottom: none;
-  }
+  #title_pos {height: 83px;width: 183px;margin-bottom: 20px;position: relative;margin-left: 5%;top: 0;margin-top: 40px;right: 0;padding-bottom: 20px;border-bottom: none;}
 
   nav {
     position: relative;
@@ -243,6 +234,7 @@ nav a {
     border: none;
     border-bottom: solid 2px;
     width: 100%;
+    top: 0;
 }
 
   .content {
@@ -258,7 +250,7 @@ nav a {
     display: inline-block;
     vertical-align: middle;
     position: absolute;
-    right: 60px;
+    right: 5%;
     top: 40px;
   }
 }
@@ -268,12 +260,12 @@ nav a {
 .content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
 }
 #selected-works img {
-    max-width: 40vw;
-    max-height: 40vw;
-    margin: 5vw;
+    max-width: 300px;
+    max-height: 300px;
+    margin: 20px;
 }
 }
 
