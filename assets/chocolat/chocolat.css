@@ -36,8 +36,14 @@
     margin-left:-16px;
     margin-top:-16px;
     z-index:11;
-    background:url(../images/loader.gif);
+    background: rgba(80, 73, 255, 1);
     display:none;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@@keyframes spin {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(90deg);}
 }
 .chocolat-content{
     position:fixed;
