@@ -59,8 +59,8 @@
 
 .chocolat-content .chocolat-img{
     position:absolute;
-    width: 90%;
     height: 80%;
+    padding-top: 3%;
 }
 .chocolat-wrapper .chocolat-left{
     position:absolute;
@@ -104,6 +104,7 @@
      content: '>';
      position:absolute;
      width: 100%;
+     text-align: right;
      height: 100%;
      color: inherit;
      font-weight: bold;
