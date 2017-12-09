@@ -114,6 +114,7 @@
     top: 0;
     right: 0;
     background:url(../images/close.png) 50% 50% no-repeat;
+    content: 'x';
 }
 .chocolat-wrapper .chocolat-bottom{
     position:absolute;
