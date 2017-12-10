@@ -88,7 +88,7 @@
 
 .chocolat-wrapper .chocolat-right{
     position:absolute;
-    right:60px;
+    right: 20px;
     width:50px;
     height:100px;
     top: 50%;
@@ -107,6 +107,7 @@
      text-align: right;
      height: 100%;
      color: inherit;
+     right: 40px;
      font-weight: bold;
      font-size: 18px;
      font-family: inherit;
@@ -242,12 +243,14 @@ body.chocolat-open>.chocolat-content{
     .chocolat-wrapper .chocolat-right {
     padding: 100px 0px 75px 0px;
     margin-top: -150px;
-    right: 40px;
+    right: 0;
+    padding-right: 40px;
 }
     .chocolat-wrapper .chocolat-left {
     padding: 100px 0px 75px 0px;
     margin-top: -150px;
-    left: 40px;
+    left: 0;
+    padding-left: 40px;
 }
     .chocolat-wrapper .chocolat-close {}
 }
