@@ -150,11 +150,11 @@ nav {
     height: 200px;
     font-size: 16px;
     padding: 40px;
-    top: 20px;
+    bottom: 20px;
     left: 20px;
     position: fixed;
     z-index: 10;
-    border: solid 2px rgba(80, 73, 255, 1);
+    /* border: solid 2px rgba(80, 73, 255, 1); */
 }
 
 nav a {
@@ -176,9 +176,8 @@ nav a {
 
 #selected-works img {
   margin: 1.5vw 0vw 1.5vw 1.5vw;
-  max-width: 20vw;
-  max-height: 20vw;
-  display: inline-block;
+  max-width: 30vw;
+  max-height: 30vw;
   vertical-align: top;
 }
 
@@ -211,10 +210,10 @@ nav a {
 .content {
   =: 440px
   margin-top:;
-  margin: 22px 22px 0px 287px;
+  margin: 22px 22px 0px 22px;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 900px) {
   #selected-works img {
     max-width: 30vw;
     max-height: 30vw;
