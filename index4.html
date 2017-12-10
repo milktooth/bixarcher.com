@@ -56,6 +56,18 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="/assets/chocolat/jquery.chocolat.min.js"></script>
+  <script type="text/javascript">
 
+    $('.sw-link').on( "click", function(e) {
+        e.preventDefault();
+        var id = $(this).attr('data-related');
+        $(".content").each(function(){
+            $(this).slideToggle();
+            if($(this).attr('id') == id) {
+                $(this).slideToggle();
+            }
+        });
+    });
+  </script>
 </body>
 </html>
