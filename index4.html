@@ -62,9 +62,9 @@
         e.preventDefault();
         var id = $(this).attr('data-related');
         $(".content").each(function(){
-            $(this).slideToggle();
+            $(this).hide();
             if($(this).attr('id') == id) {
-                $(this).slideToggle();
+                $(this).show();
             }
         });
     });
