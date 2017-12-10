@@ -57,28 +57,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="/assets/chocolat/jquery.chocolat.min.js"></script>
   <script type="text/javascript">
-    $('.sw-link').click(function() {
-        var id = $(this).attr('data-related');
-        $(".content").each(function(){
-            if($(this).attr('id') == id) {
-                $(this).slideToggle();
-            }
-            else {
-                  $(this).slideUp();
-            }
-        });
-    });
+  $('.sw-link').click(function() {
+    var id = $(this).attr('data-related');
+    $( "#background" ).find( 'id' == id).slideToggle();
+            $('.content').not($(this).next()).slideUp('normal');
 
-
-      $('.accordion').find('.accordion-toggle').click(function() {
-
-        //Expand or collapse this panel
-        $(this).next().slideToggle('normal');
-
-        //Hide the other panels
-        $(".accordion-content").not($(this).next()).slideUp('normal');
-
-      });
     });
 
   </script>
