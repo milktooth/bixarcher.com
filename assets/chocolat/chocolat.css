@@ -136,7 +136,7 @@
     cursor:pointer;
     position: absolute;
     top: 17px;
-    right: 0;
+    right: 0px;
     z-index: 16;
     /*background:url(../images/close.png) 50% 50% no-repeat;*/
 }
@@ -235,3 +235,19 @@ body.chocolat-open>.chocolat-content{
     opacity: 0;
 }
 */
+
+
+
+@media only screen and (max-width: 620px) {
+    .chocolat-wrapper .chocolat-right {
+    padding: 100px 0px 75px 0px;
+    margin-top: -150px;
+    right: 40px;
+}
+    .chocolat-wrapper .chocolat-left {
+    padding: 100px 0px 75px 0px;
+    margin-top: -150px;
+    left: 40px;
+}
+    .chocolat-wrapper .chocolat-close {}
+}
