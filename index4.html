@@ -57,17 +57,34 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="/assets/chocolat/jquery.chocolat.min.js"></script>
   <script type="text/javascript">
-
     $('.sw-link').on( "click", function(e) {
         e.preventDefault();
         var id = $(this).attr('data-related');
         $(".content").each(function(){
-            $(this).hide();
             if($(this).attr('id') == id) {
-                $(this).show();
+                $(this).slideToggle();
             }
         });
     });
+
+
+      $('.accordion').find('.accordion-toggle').click(function() {
+
+        //Expand or collapse this panel
+        $(this).next().slideToggle('normal');
+
+        //Hide the other panels
+        $(".accordion-content").not($(this).next()).slideUp('normal');
+
+      });
+    });
+
+    $(document).ready(function(){
+      var colors = ["lightskyblue", "lightcoral", "lightgreen"];
+      var rand = Math.floor(Math.random()*colors.length);
+      $('#background').css("background-color", colors[rand]);
+    });
+
   </script>
 </body>
 </html>
