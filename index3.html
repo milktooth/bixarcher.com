@@ -1,61 +1,304 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-<head>
-  <title>bix archer</title>
-  <link href="/assets/main3.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="assets/chocolat/chocolat.css" type="text/css" media="screen" charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/stylesheet-unmin2.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro" rel="stylesheet">
+    <title></title>
+  </head>
 
-<body id="background">
-  <div id="slash">
-  </div>
-  <div id="slash2">
-  </div>
-  
-  <nav>
-    <div id="title_pos">
-        <div id="warped-title">
-          <span class="w0">B</span><span class="w1"> </span><span class="w2">i</span><span class="w3"> </span><span class="w4">x</span><span class="w5"> </span><span class="w6"> </span><span class="w7">A</span><span class="w8"> </span><span class="w9">r</span>
-          <span class="w10"> </span><span class="w11">c</span><span class="w12"> </span><span class="w13">h</span><span class="w14"> </span><span class="w15">e</span><span class="w16"> </span><span class="w17">r</span><span class="w18"> </span>
+  <body>
+    <div id="big-wrap">
+      <div id="about">
+        Bix Archer is a girl from San Francisco. She is currently an undergraduate at Yale College. These are her
+        <a href="#image-gallery" rel="image-gallery" id="selected-toggle">selected works</a> and this is her
+        <a href="#archive" rel="archive">archive</a>.
+      </div>
+      <div id="modals">
+        <div id="image-gallery" style="display: none;">
+          <div id="library-canvas">
+            <figure class="image make-drag">
+              <div class="image-close">x</div>
+              <img src="assets/images/red-painting.jpg">
+              <figcaption>
+                <span class="img-title">Red Painting</span>
+                <span class="img-year">2017</span>
+              </figcaption>
+            </figure>
+            <figure class="image make-drag">
+              <div class="image-close">x</div>
+              <img src="assets/images/north-bay-fires.jpg">
+              <figcaption>
+                <span class="img-title">Red Painting</span>
+                <span class="img-year">2017</span>
+              </figcaption>
+            </figure>
+
+            <figure class="image make-drag">
+              <div class="image-close">x</div>
+              <img src="assets/images/365.jpg">
+              <figcaption>
+                <span class="img-title">Red Painting</span>
+                <span class="img-year">2017</span>
+              </figcaption>
+            </figure>
+            <figure class="image make-drag">
+              <div class="image-close">x</div>
+              <img src="assets/images/true-story.jpg">
+              <figcaption>
+                <span class="img-title">Red Painting</span>
+                <span class="img-year">2017</span>
+              </figcaption>
+            </figure>
+
+            <figure class="image make-drag">
+              <div class="image-close">x</div>
+              <img src="assets/images/the-water-is-fine.jpg">
+              <figcaption>
+                <span class="img-title">Red Painting</span>
+                <span class="img-year">2017</span>
+              </figcaption>
+            </figure>
+          </div>
         </div>
+
+        <div id="archive" style="display: none;">
+          <div id="works-list" class="archive-list make-drag">
+            <div class="archive-close">x</div>
+            <ul>
+              <li>this is a link to an image</li>
+              <li>this is a link to an image too</li>
+              <li>as is this</li>
+              <li>as is this</li>
+              <li>as is this</li>
+              <li>as is this</li>
+              <li>as is this</li>
+              <li>as is this</li>
+              <li>as is this</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="canvas-size">
+      </div>
+
     </div>
-    <div>
-      <a class="sw-link" href="#" data-related="selected-works">selected works</a>
-
-      <a class="av-link"href="#" data-related="archive">archive</a>
-
-      <a class="ab-link"href="#" data-related="about">about</a>
-    </div>
-  </nav>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      (function($)
+      {
+        var counter = 0;
+        $.fn.drags = function(opt)
+        {
 
 
-  <div id="selected-works" class="content chocolat-parent" data-chocolat-title="set title" style="display: none">
-    <a class="chocolat-image" href="/assets/images/365.jpg" title="caption image 1">
-      <img src="/assets/images/365-500px.jpg" />
-    </a>
+          opt = $.extend(
+          {
+            handle: "",
+            cursor: "move"
+          }, opt);
 
-    <a class="chocolat-image" href="/assets/images/north-bay-fires.jpg" title="caption image 2">
-      <img src="/assets/images/north-bay-fires-500px.jpg" />
-    </a>
+          if (opt.handle === "")
+          {
+            var $el = this;
+          }
+          else
+          {
+            var $el = this.find(opt.handle);
+          }
 
-    <a class="chocolat-image" href="/assets/images/red-painting.jpg" title="caption image 3">
-      <img src="/assets/images/red-painting-500px.jpg"/>
-    </a>
-  </div>
+          return $el.css('cursor', opt.cursor).on("mousedown", function(e)
+          {
+            if (opt.handle === "")
+            {
+              var $drag = $(this).addClass('draggable');
+            }
+            else
+            {
+              var $drag = $(this).addClass('active-handle').parent().addClass('draggable');
+            }
+            var z_idx = $drag.css('z-index'),
+              drg_h = $drag.outerHeight(),
+              drg_w = $drag.outerWidth(),
+              pos_y = $drag.offset().top + drg_h - e.pageY,
+              pos_x = $drag.offset().left + drg_w - e.pageX;
+            $drag.css('z-index', 999999).parents().on("mousemove", function(e)
+            {
+              $('.draggable').offset(
+              {
+                top: e.pageY + pos_y - drg_h,
+                left: e.pageX + pos_x - drg_w
+              }).on("mouseup", function()
+              {
+                counter++;
+                $(this).removeClass('draggable').css('z-index', z_idx);
+                $(this).css('z-index', counter);
+              });
+            });
+            e.preventDefault(); // disable selection
+          }).on("mouseup", function()
+          {
+            if (opt.handle === "")
+            {
+              $(this).removeClass('draggable');
+            }
+            else
+            {
+              $(this).removeClass('active-handle').parent().removeClass('draggable');
+            }
+          });
+        }
+      })(jQuery);
 
-  <div id="archive" class="content" style="display: none">
-    archive
-  </div>
 
-  <div id="about" class="content" style="display: none">
-    about
-  </div>
+      $('.make-drag').drags();
+    </script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="/assets/chocolat/jquery.chocolat.min.js"></script>
+    <script>
+      function randomFromTo(from, to)
+      {
+        return Math.floor(Math.random() * (to - from + 1) + from);
+      }
 
-</body>
+      function moveRandom(obj)
+      {
+        /* get container position and size
+         * -- access method : cPos.top and cPos.left */
+        var cPos = $('#canvas-size').offset();
+        var cHeight = $('#canvas-size').height();
+        var cWidth = $('#canvas-size').width();
+
+        // get box padding (assume all padding have same value)
+        var pad = parseInt($('#canvas-size').css('padding-top').replace('px', ''));
+
+        // get movable box size
+        var bHeight = obj.height();
+        var bWidth = obj.width();
+
+        // set maximum position
+        maxY = cPos.top + cHeight - bHeight - pad;
+        maxX = cPos.left + cWidth - bWidth - pad;
+
+        // set minimum position
+        minY = cPos.top + pad;
+        minX = cPos.left + pad;
+
+        // set new position
+        newY = randomFromTo(minY, maxY);
+        newX = randomFromTo(minX, maxX);
+
+        obj.animate(
+        {
+          top: newY,
+          left: newX
+        });
+      }
+
+      $('a').on('click', function()
+      {
+        var target = $(this).attr('rel');
+        $("#"+target).toggle().siblings("div").hide();
+      });
+
+      $(".image-close").click(function()
+      {
+        $(this).parent().toggle();
+      });
+
+      $(".archive-close").click(function()
+      {
+        $(this).parent().toggle();
+      });
+
+      $(document).ready(function() {
+        $('.image').each(function()
+        {
+          moveRandom($(this));
+        });
+      });
+
+      $('a').on('click', function()
+      {
+        $(".make-drag").css(
+        {
+          display: "flex"
+        });
+      });
+
+      $(document).ready(function()
+      {
+        var counter2 = 0;
+
+        var numItems = $('.image').length;
+
+        $('.image-close').click(function()
+        {
+          counter2++;
+          if (counter2 == numItems)
+          {
+            counter2 = 0;
+            $("#image-gallery").toggle();
+          }
+        });
+
+        $('a').on('click', function()
+        {
+          counter2 = 0;
+        }
+        )
+      });
+
+      $(document).ready(function()
+      {
+        var counter2 = 0;
+
+        var numItems = $('.archive-list').length;
+
+        $('.archive-close').click(function()
+        {
+          counter2++;
+          if (counter2 == numItems)
+          {
+            $("#archive").toggle();
+            counter2 = 0;
+          }
+        });
+      });
+
+      jQuery.expr.filters.offscreen = function(el) {
+        var rect = el.getBoundingClientRect();
+        return (
+                 (rect.x + rect.width) < 0
+                   || (rect.y + rect.height) < 0
+                   || (rect.x > window.innerWidth || rect.y > window.innerHeight)
+               );
+      };
+
+      var id;
+        $(window).resize(function() {
+            clearTimeout(id);
+            id = setTimeout(doneResizing, 500);
+
+        });
+
+        function doneResizing(){
+          if ($('.make-drag').is(':offscreen')) {
+            $('.make-drag').each(function()
+            {
+              moveRandom($(this));
+            });
+          }
+        }
+      /*
+        Javascript Credits
+        Offscreen detection: https://stackoverflow.com/questions/8897289/how-to-check-if-an-element-is-off-screen#8897628
+        Random position: https://stackoverflow.com/questions/20924613/move-multiple-divs-randomly-using-jquery
+        Dragable w/out jQuery UI: https://css-tricks.com/snippets/jquery/draggable-without-jquery-ui/
+        Resize trigger adjustment: http://jsfiddle.net/Zevan/c9UE5/1/
+      */
+    </script>
+  </body>
+
 </html>

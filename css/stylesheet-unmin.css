@@ -1,0 +1,260 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+  font-size: 60px;
+  font-family: sans-serif;
+  counter-reset: section;
+  overflow-x: hidden;
+}
+
+a:link, a:visited {
+	color: inherit;
+	text-decoration: none;
+	background: white;
+}
+
+a:hover, a:active {
+	color: inherit;
+	text-decoration: none;
+	background: yellow;
+}
+
+:root {
+	--step-up-5: 2em;
+	--step-up-4: 1.7511em;
+	--step-up-3: 1.5157em;
+	--step-up-2: 1.3195em;
+	--step-up-1: 1.1487em;
+	/* baseline: 1em */
+	--step-down-1: .8706em;
+	--step-down-2: .7579em;
+	--step-down-3: .6599em;
+	--step-down-4: .5745em;
+	--step-down-5: .5em;
+}
+
+nav {
+	position: fixed;
+	right: 50px;
+	bottom: 50px;
+	left: 50px;
+	z-index: 100;
+	font-size: var(--step-down-5);
+}
+
+nav > div {
+	display: inline-block;
+}
+
+nav a {
+	display: inline-block;
+	margin-top: 10px;
+	border-bottom: solid 5px;
+	font-weight: bold;
+}
+
+h1 {
+	font-weight: bold;
+}
+
+#title-wrap {
+	display: inline-block;
+	margin-left: -10px;
+	height: 184px;
+}
+
+#title-pos {
+	top: 0;
+	left: 0;
+	z-index: 100;
+	display: block;
+	padding: 50px;
+	color: black;
+	font-size: var(--step-up-3);
+}
+
+#content-wrap {
+
+}
+
+#content-wrap img {
+	max-width: 90%;
+	max-width: calc(100% - 100px);
+	max-height: 90vh;
+}
+
+#content-wrap div {
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: center;
+	-ms-flex-align: center;
+	padding: 5vh 0;
+	width: 100%;
+	-webkit-box-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	align-items: center;
+}
+
+#content-wrap p {
+	margin: 5vh auto;
+	width: 90%;
+	position: relative;
+	max-width: 830px;
+}
+
+@media screen and (max-width: 600px) {
+	#title-pos {
+		text-align: center;
+		padding: 5vh 5%;
+	}
+
+	#title-wrap {
+		margin-left: -18px;
+	}
+
+	nav > div {
+		display: block;
+	}
+
+	#content-wrap img {
+		max-width: 90%;
+	}
+
+	nav {
+		left: 5vw;
+		bottom: 5vw;
+	}
+}
+
+@media screen and (max-width: 450px){
+	#title-wrap {
+		transform: scale(.75);
+		margin-left: -54px;
+	}
+
+}
+
+/* title */
+#warped-title {position: relative;display: inline-block;margin-top: -61px;width: 401px;height: 225px;}
+
+#warped-title>span[class^=w]:nth-of-type(n+0){position:absolute;
+display:block; -webkit-transform-origin:50% 100%; transform-origin:50% 100%; }
+
+#warped-title span{overflow:visible;padding:0px;white-space:pre;font-weight:regular;font-style:normal;font-size: inherit;line-height:1.1;}
+
+#warped-title .w0 {top: 169.25px;left: 26.12px;
+width: 29px; height: 50px; -webkit-transform: rotate(-7.15rad);transform: rotate(-7.15rad);
+}
+
+#warped-title .w1 {top: 150.8px;left: 51.83px; width:
+14px; height: 50px; -webkit-transform: rotate(-7rad);transform: rotate(-7rad); }
+
+#warped-title .w2 {top: 136.98px;left: 73.19px;width: 12px;height: 50px;-webkit-transform: rotate(-6.8rad);transform: rotate(-6.8rad);}
+
+#warped-title .w3 {top: 131.58px;left: 81.73px;
+width: 14px; height: 50px; -webkit-transform: rotate(-6.7rad);transform: rotate(-6.7rad);
+}
+
+#warped-title .w4 {top: 124.67px;left: 99.55px;
+width: 23px; height: 50px; -webkit-transform: rotate(-6.48rad);transform: rotate(-6.48rad);
+}
+
+#warped-title .w5 {top: 122.59px;left: 127.56px;
+width: 14px; height: 50px; -webkit-transform: rotate(-6.29rad);transform: rotate(-6.29rad);
+}
+
+#warped-title .w6 {top: 123.71px;left: 146.76px;
+width: 14px; height: 50px; -webkit-transform: rotate(-6.18rad);transform: rotate(-6.18rad);
+}
+
+#warped-title .w7 {top: 127.71px;left: 165.6px;
+width: 31px; height: 50px; -webkit-transform: rotate(-6.12rad);transform: rotate(-6.12rad);
+}
+
+#warped-title .w8 {top: 132.1px;left: 201.01px;
+width: 14px; height: 50px; -webkit-transform: rotate(-6.15rad);transform: rotate(-6.15rad);
+}
+
+#warped-title .w9 {top: 135.23px;left: 225.85px;width: 18px;height: 50px;-webkit-transform: rotate(-6.28rad);transform: rotate(-6.28rad);}
+
+#warped-title .w10 {top: 134.06px;left: 242.89px;
+width: 14px; height: 50px; -webkit-transform: rotate(-6.37rad);transform: rotate(-6.37rad);
+}
+
+#warped-title .w11 {top: 130.15px;left: 261.48px;
+width: 22px; height: 50px; -webkit-transform: rotate(-6.56rad);transform: rotate(-6.56rad);
+}
+
+#warped-title .w12 {top: 121.76px;left: 287.09px;
+width: 14px; height: 50px; -webkit-transform: rotate(-6.76rad);transform: rotate(-6.76rad);
+}
+
+#warped-title .w13 {top: 108.2px;left: 301.86px;
+width: 27px; height: 50px; -webkit-transform: rotate(-6.95rad);transform: rotate(-6.95rad);
+}
+
+#warped-title .w14 {top: 91.16px;left: 327.26px;
+width: 14px; height: 50px; -webkit-transform: rotate(-7.09rad);transform: rotate(-7.09rad);
+}
+
+#warped-title .w15 {top: 76.16px;left: 337.19px;width: 25px;height: 50px;-webkit-transform: rotate(-7.2rad);transform: rotate(-7.2rad);}
+
+#warped-title .w16 {top: 50.92px;left: 359.94px;
+width: 14px; height: 50px; -webkit-transform: rotate(-7.13rad);transform: rotate(-7.13rad);
+}
+
+#warped-title .w17 {top: 41.31px;left: 363.43px;width: 18px;height: 50px;-webkit-transform: rotate(-6.86rad);transform: rotate(-7.13rad);}
+
+#warped-title .w18 {top: 31.56px;left: 394.74px;
+width: 0px; height: 50px; -webkit-transform: rotate(-6.58rad);transform: rotate(-6.58rad);
+}
