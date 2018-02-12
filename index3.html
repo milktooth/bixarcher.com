@@ -157,6 +157,8 @@
     </script>
 
     <script>
+      /*random position within canvas*/
+
       function randomFromTo(from, to)
       {
         return Math.floor(Math.random() * (to - from + 1) + from);
@@ -196,22 +198,26 @@
         });
       }
 
+      /*open modal*/
       $('a').on('click', function()
       {
         var target = $(this).attr('rel');
-        $("#"+target).toggle().siblings("div").hide();
+        $("#"+target).toggle();
       });
 
+      /*image closer*/
       $(".image-close").click(function()
       {
         $(this).parent().toggle();
       });
 
+      /*archive closer*/
       $(".archive-close").click(function()
       {
         $(this).parent().toggle();
       });
 
+      /*randomize image postion on open*/
       $(document).ready(function() {
         $('.image').each(function()
         {
@@ -219,6 +225,7 @@
         });
       });
 
+      /*reset image desplay state*/
       $('a').on('click', function()
       {
         $(".make-drag").css(
@@ -227,6 +234,7 @@
         });
       });
 
+      /*counter for image gallery items*/
       $(document).ready(function()
       {
         var counter2 = 0;
@@ -250,6 +258,7 @@
         )
       });
 
+      /*counter for archive items*/
       $(document).ready(function()
       {
         var counter2 = 0;
@@ -267,6 +276,7 @@
         });
       });
 
+      /*detect offscreen items*/
       jQuery.expr.filters.offscreen = function(el) {
         var rect = el.getBoundingClientRect();
         return (
@@ -276,6 +286,7 @@
                );
       };
 
+      /*randomize positions if items are offscreen after resize with delay*/
       var id;
         $(window).resize(function() {
             clearTimeout(id);
