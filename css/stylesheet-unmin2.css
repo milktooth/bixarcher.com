@@ -405,9 +405,9 @@ img {
 	margin: auto;
 	max-width: 800px;
 	box-shadow: none;
-	font-size: var(--step-down-3);
 	width: inherit;
 	cursor: initial;
+	font-size: 45px;
 }
 
 #no-drag-archive {
