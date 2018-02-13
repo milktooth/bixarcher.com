@@ -237,6 +237,10 @@ h1 {
 	padding-bottom: 50px;
 }
 
+.red {
+	background: red;
+}
+
 .body figure {
 	width: 75%;
 	margin: 50px 12.5%;
