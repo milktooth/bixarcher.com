@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+
 a,
 abbr,
 acronym,
@@ -91,7 +92,6 @@ video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-
 article,
 aside,
 details,
@@ -133,8 +133,11 @@ table {
 	border-spacing: 0;
 }
 
-body {
+:root {
 	font-size: 7vw;
+}
+
+body {
 	counter-reset: section;
 	overflow-x: hidden;
 	font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -145,11 +148,12 @@ a:link,
 a:visited {
 	color: white;
 	text-decoration: none;
+	text-shadow: 0 0 2px black;
 }
 
 a:active,
 a:hover {
-	color: white;
+	color: black;
 	text-decoration: none;
 }
 
@@ -159,7 +163,6 @@ a:hover {
 	text-decoration: none;
 	z-index: 5;
 	position: relative;
-	text-shadow: 0 0 1px black;
 }
 
 #about a:active,
@@ -185,8 +188,7 @@ a:hover {
 
 nav {
 	display: block;
-	margin: .5em;
-	margin-bottom: 0;
+	margin: .5em .5em 0;
 }
 
 nav > div {
@@ -199,14 +201,9 @@ nav > div:last-child {
 }
 
 nav a {
-	display: block;
 	font-weight: bold;
 	margin-bottom: 12.5px;
 	text-align: left;
-}
-
-nav a:hover {
-	color: black;
 }
 
 h1 {
@@ -396,6 +393,26 @@ img {
 	font-size: 45px;
 }
 
+#no-drag-archive .archive-list {
+	position: relative;
+	padding: 0;
+	left: auto;
+	margin: auto;
+	max-width: 800px;
+	box-shadow: none;
+	font-size: var(--step-down-3);
+	width: inherit;
+	cursor: initial;
+}
+
+#no-drag-archive {
+	margin: .5rem;
+}
+
+#no-drag-archive .archive-close {
+	display: none;
+}
+
 .archive-list {
 	position: absolute;
 	text-align: center;
@@ -409,6 +426,10 @@ img {
 
 .archive-list:hover {
 	background: yellow;
+}
+
+#no-drag-archive ul {
+	width: initial;
 }
 
 .archive-list ul {
@@ -426,35 +447,32 @@ img {
 
 #works-list {}
 
-
 #no-drag-gallery {
-
-margin: .5em;
+	margin: .5rem;
+	font-size: 0;
 }
-
 
 #no-drag-gallery .image-close {
 	display: none;
 }
 
 #no-drag-gallery .make-drag {
-
-box-shadow: none;
-
-border: solid 2px;
-
-margin-right: 1em;
-
-margin-bottom: 1em;
-
-vertical-align: top;
-
-position: relative;
-
-display: inline-block;
+	box-shadow: none;
+	border: solid 2px;
+	margin-bottom: 1em;
+	vertical-align: top;
+	position: relative;
+	display: inline-block;
+	margin-bottom: .5em;
+	width: 30%;
+	box-sizing: border-box;
+	min-width: 200px;
+	cursor: initial;
 }
 
-
+#no-drag-gallery .make-drag:nth-child(3n+2) {
+	margin: 0 5% .5rem;
+}
 
 .make-drag {
 	cursor: move;
@@ -472,12 +490,33 @@ display: inline-block;
 }
 
 @media screen and (max-width: 800px) {
-	body {
+	:root {
 		font-size: 63px;
 	}
+
+	#no-drag-gallery .make-drag {
+		width: 47.5%;
+	}
+
+	#no-drag-gallery .make-drag:nth-child(3n+2) {
+		margin: 0 0 .5em;
+	}
+
+	#no-drag-gallery .make-drag:nth-child(even) {
+		margin-left: 5%;
+	}
 }
+
 @media screen and (max-width: 550px) {
-	body {
+	:root {
 		font-size: 11.45vw;
+	}
+
+	#no-drag-gallery .make-drag {
+		width: 100%;
+	}
+
+	#no-drag-gallery .make-drag:nth-child(even) {
+		margin-left: 0;
 	}
 }
