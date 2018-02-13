@@ -90,7 +90,9 @@
     <script>
       /*detect touch event*/
       window.addEventListener('touchstart', function() {
-        $('body').addClass('red')
+        $('body').addClass('red');
+        $('.make-drag').addClass('no-drag');
+        $('.no-drag').removeClass('make-drag')
       });
 
       /*Dragable*/
