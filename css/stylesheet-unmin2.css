@@ -2,7 +2,6 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
 a,
 abbr,
 acronym,
@@ -92,6 +91,7 @@ video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
+
 article,
 aside,
 details,
@@ -159,7 +159,7 @@ a:hover {
 	text-decoration: none;
 	z-index: 5;
 	position: relative;
-	text-shadow: 0 0 2px black;
+	text-shadow: 0 0 1px black;
 }
 
 #about a:active,
@@ -184,7 +184,9 @@ a:hover {
 }
 
 nav {
-	display: inline;
+	display: block;
+	margin: .5em;
+	margin-bottom: 0;
 }
 
 nav > div {
@@ -262,7 +264,6 @@ h1 {
 	bottom: 0;
 	left: 0;
 	pointer-events: none;
-	font-family: "Anonymous Pro", "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
 	z-index: 6;
 	font-weight: normal;
 	right: 0;
@@ -299,10 +300,12 @@ h1 {
 	font-size: 45px;
 	padding: 25px;
 	justify-content: center;
+	font-family: "Anonymous Pro", "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
 	vertical-align: top;
 	align-items: center;
 	position: absolute;
 	overflow: hidden;
+	font-weight: normal;
 	padding-bottom: 50px;
 	transition-property: top, left;
 }
@@ -311,7 +314,8 @@ h1 {
 	background: yellow;
 }
 
-.whole-gallery-close, .whole-archive-close {
+.whole-archive-close,
+.whole-gallery-close {
 	position: fixed;
 	z-index: 100;
 	top: 1em;
@@ -321,11 +325,12 @@ h1 {
 	font-weight: bold;
 }
 
-.whole-gallery-close:hover, .whole-archive-close:hover {
+.whole-archive-close:hover,
+.whole-gallery-close:hover {
 	cursor: pointer;
 }
 
-.no-drag figcaption{
+.no-drag figcaption {
 	background: none;
 	padding: 1em 5em;
 	width: calc(100% - 10em);
@@ -360,7 +365,8 @@ img {
 	max-height: 100%;
 }
 
-.image-close, .archive-close {
+.archive-close,
+.image-close {
 	position: absolute;
 	top: 5px;
 	height: 13px;
@@ -412,9 +418,43 @@ img {
 	width: calc(300px + 2vw);
 }
 
-.archive-list ul li {font-size: var(--step-down-3);margin: 6.25px 25px;padding: 6.25px 0;}
+.archive-list ul li {
+	font-size: var(--step-down-3);
+	margin: 6.25px 25px;
+	padding: 6.25px 0;
+}
 
 #works-list {}
+
+
+#no-drag-gallery {
+
+margin: .5em;
+}
+
+
+#no-drag-gallery .image-close {
+	display: none;
+}
+
+#no-drag-gallery .make-drag {
+
+box-shadow: none;
+
+border: solid 2px;
+
+margin-right: 1em;
+
+margin-bottom: 1em;
+
+vertical-align: top;
+
+position: relative;
+
+display: inline-block;
+}
+
+
 
 .make-drag {
 	cursor: move;
@@ -422,64 +462,13 @@ img {
 	box-shadow: 0 0 20px black;
 }
 
-.no-drag {
-	position: relative;
-	padding: 10vh 37.5%;
-	align-items: center;
-	max-width: 25%;
-	font-size: 45px;
-	background: white;
-}
-
-
-.no-drag#works-list {
-
-padding: 0;
-
-top: 0;
-
-position: absolute;
-
-right: 0;
-
-left: 0;
-
-background: white;
-
-right: 0;
-
-min-height: 100vh;
-
-max-width: initial;
-}
-
-
-.no-drag ul {
-
-position: relative;
-
-margin: auto;
-
-margin-top: 5rem;
-}
-
-.no-drag img {
-	max-height: 100%;
-}
-
 #canvas-size {
-
-position: absolute;
-
-margin: auto;
-
-font-size: 0;
-
-width: 100%;
-
-height: 20vh;
-
-top: 0;
+	position: absolute;
+	margin: auto;
+	font-size: 0;
+	width: 100%;
+	height: 20vh;
+	top: 0;
 }
 
 @media screen and (max-width: 800px) {
@@ -487,7 +476,6 @@ top: 0;
 		font-size: 63px;
 	}
 }
-
 @media screen and (max-width: 550px) {
 	body {
 		font-size: 11.45vw;

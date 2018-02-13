@@ -7,6 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      /*inject toggles if there is Javascript*/
+      $(document).ready(function()
+      {
+        $('#archive-toggle').toggle()
+        $('#selected-toggle').toggle()
+      });
+
+      /*detect touch event*/
+      window.addEventListener('touchstart', function()
+      {
+        $(document).ready(function()
+        {
+          $('#archive-toggle').toggle()
+          $('#selected-toggle').toggle()
+          $('#archive-link').toggle()
+          $('#selected-link').toggle()
+        });
+      });
+    </script>
+    <script async src="assets/main.js"></script>
     <title></title>
   </head>
 
@@ -88,27 +109,6 @@
       </div>
 
     </div>
-    <script src="assets/main.js"></script>
-    <script>
-      /*inject toggles if there is Javascript*/
-      $(document).ready(function()
-      {
-        $('#archive-toggle').toggle()
-        $('#selected-toggle').toggle()
-      });
-
-      /*detect touch event*/
-      window.addEventListener('touchstart', function()
-      {
-        $(document).ready(function()
-        {
-          $('#archive-toggle').toggle()
-          $('#selected-toggle').toggle()
-          $('#archive-link').toggle()
-          $('#selected-link').toggle()
-        });
-      });
-    </script>
   </body>
 
 </html>
