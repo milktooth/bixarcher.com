@@ -62,6 +62,7 @@
               </figcaption>
             </figure>
           </div>
+          <div style="display: none;" class="whole-gallery-close">X</div>
         </div>
 
         <div id="archive" style="display: none;">
@@ -79,6 +80,7 @@
               <li>as is this</li>
             </ul>
           </div>
+          <div style="display: none;" class="whole-archive-close">X</div>
         </div>
       </div>
       <div id="canvas-size">
@@ -90,9 +92,29 @@
     <script>
       /*detect touch event*/
       window.addEventListener('touchstart', function() {
-        $('body').addClass('red');
+        /*kill dragables*/
         $('.make-drag').addClass('no-drag');
-        $('.no-drag').removeClass('make-drag')
+        $('.no-drag').removeClass('make-drag');
+        $('.no-drag').attr( "style", "" );
+
+        /*remove random image positioning*/
+        $('.image').addClass('static-image');
+        $('.static-image').removeClass('image');
+
+        /*style changes for touch situation */
+        $('#image-gallery').css({
+                               'overflow' : 'visible',
+                               'pointer-events' : 'all'
+                            });
+        $('.image-close').hide()
+        $('.whole-gallery-close').show()
+
+        $('#archive').css({
+                         'overflow' : 'visible',
+                         'pointer-events' : 'all'
+                      });
+        $('.archive-close').hide()
+        $('.whole-archive-close').show()
       });
 
       /*Dragable*/
@@ -218,10 +240,20 @@
         $(this).parent().toggle();
       });
 
+      $(".whole-gallery-close").click(function()
+      {
+        $("#image-gallery").toggle();
+      });
+
       /*archive closer*/
       $(".archive-close").click(function()
       {
         $(this).parent().toggle();
+      });
+
+      $(".whole-archive-close").click(function()
+      {
+        $("#archive").toggle();
       });
 
       /*randomize image postion on open*/
@@ -309,12 +341,14 @@
             });
           }
         }
+
       /*
         Javascript Credits
         Offscreen detection: https://stackoverflow.com/questions/8897289/how-to-check-if-an-element-is-off-screen#8897628
         Random position: https://stackoverflow.com/questions/20924613/move-multiple-divs-randomly-using-jquery
         Dragable w/out jQuery UI: https://css-tricks.com/snippets/jquery/draggable-without-jquery-ui/
         Resize trigger adjustment: http://jsfiddle.net/Zevan/c9UE5/1/
+        Brilliantly simple touch device detection: https://codeburst.io/the-only-way-to-detect-touch-with-javascript-7791a3346685
       */
     </script>
   </body>

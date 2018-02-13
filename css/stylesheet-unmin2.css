@@ -265,7 +265,6 @@ h1 {
 	font-family: "Anonymous Pro", "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
 	z-index: 6;
 	font-weight: normal;
-	/* background: rgba(255, 255, 255, .5); */
 	right: 0;
 }
 
@@ -294,7 +293,7 @@ h1 {
 	height: 50vh;
 }
 
-#library-canvas figure {
+.make-drag {
 	width: calc(300px + 2vw);
 	pointer-events: all;
 	font-size: 45px;
@@ -312,7 +311,32 @@ h1 {
 	background: yellow;
 }
 
-#library-canvas figcaption {
+.whole-gallery-close, .whole-archive-close {
+	position: fixed;
+	z-index: 100;
+	top: 1em;
+	right: 1em;
+	font-size: 45px;
+	font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight: bold;
+}
+
+.whole-gallery-close:hover, .whole-archive-close:hover {
+	cursor: pointer;
+}
+
+.no-drag figcaption{
+	background: none;
+	padding: 1em 5em;
+	width: calc(100% - 10em);
+	left: initial;
+	justify-content: space-between;
+	background: yellow;
+	display: block;
+	position: relative;
+}
+
+figcaption {
 	font-size: var(--step-down-5);
 	position: absolute;
 	left: 0;
@@ -357,7 +381,9 @@ img {
 
 #about {
 	margin: .5em;
+	position: fixed;
 	z-index: -1;
+	margin-bottom: 0;
 }
 
 #archive {
@@ -394,6 +420,51 @@ img {
 	cursor: move;
 	background: white;
 	box-shadow: 0 0 20px black;
+}
+
+.no-drag {
+	position: relative;
+	padding: 10vh 37.5%;
+	align-items: center;
+	max-width: 25%;
+	font-size: 45px;
+	background: white;
+}
+
+
+.no-drag#works-list {
+
+padding: 0;
+
+top: 0;
+
+position: absolute;
+
+right: 0;
+
+left: 0;
+
+background: white;
+
+right: 0;
+
+min-height: 100vh;
+
+max-width: initial;
+}
+
+
+.no-drag ul {
+
+position: relative;
+
+margin: auto;
+
+margin-top: 5rem;
+}
+
+.no-drag img {
+	max-height: 100%;
 }
 
 #canvas-size {
