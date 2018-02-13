@@ -233,6 +233,7 @@ h1 {
 	overflow-y: scroll;
 	bottom: 0;
 	top: 52px;
+	color: red;
 	padding-bottom: 50px;
 }
 
