@@ -1,62 +1,151 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-<head>
-  <title>bix archer</title>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/stylesheet-unmin2.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      /*inject toggles if there is Javascript*/
+      $(document).ready(function()
+      {
+        $('#archive-toggle').toggle();
+        $('#selected-toggle').toggle();
+      });
 
+      /*detect touch event & toggle links accordingly*/
+      window.addEventListener('touchstart', function()
+      {
+        $(document).ready(function()
+        {
+          $('#archive-toggle').toggle();
+          $('#selected-toggle').toggle();
+          $('#archive-link').toggle();
+          $('#selected-link').toggle();
+        });
+      });
 
-  <link href="//cdn.rawgit.com/noelboss/featherlight/1.7.10/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+      /*detect small screen & toggle links accordingly*/
+      $(document).ready(function() {
+        if ($(window).width() < 768)
+        {
+          $('#archive-toggle').toggle();
+          $('#selected-toggle').toggle();
+          $('#archive-link').toggle();
+          $('#selected-link').toggle();
+        }
+      });
 
-  <link href="/assets/main.css" rel="stylesheet" type="text/css">
+    </script>
+    <script async src="assets/main.js"></script>
+    <title></title>
+  </head>
 
-  <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,600" rel="stylesheet">
+  <body>
+    <!-- this contains everything on the page -->
+    <div id="big-wrap">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+      <!-- this is the text you see on the landing page.
+      the things you see wrapped in "noscript" and "<a>" tags
+      are a bunch of different links which trigger according to
+      the device size and if a touch screen is used. this is
+      controlled by the script in the head. it might look redundant,
+      but it's not!!! -->
+      <div id="about">
+        Bix Archer is a girl from San Francisco. She is currently an undergraduate at Yale College. These are her
+        <noscript><a href="selected-works">selected works</a></noscript><a href="#image-gallery" rel="image-gallery" id="selected-toggle">selected works</a><a href="selected-works" id="selected-link">selected works</a> and this is her
+        <noscript><a href="archive">archive</a></noscript><a href="#archive" rel="archive" id="archive-toggle">archive</a><a href="archive" id="archive-link">archive</a>.
+      </div>
 
-<body id="background">
-  <nav>
-    <div id="title_pos">
-      <div id="title_wrap">
-        <div id='warped-title'>
-          <span class='w0'>B</span><span class='w1'> </span><span class='w2'>i</span><span class='w3'> </span><span class='w4'>x</span><span class='w5'> </span><span class='w6'> </span><span class='w7'>A</span><span class='w8'> </span><span class='w9'>r</span>
-          <span class='w10'> </span><span class='w11'>c</span><span class='w12'> </span><span class='w13'>h</span><span class='w14'> </span><span class='w15'>e</span><span class='w16'> </span><span class='w17'>r</span><span class='w18'> </span>
+      <!-- these are the two modal popups -->
+      <div id="modals">
+
+        <!-- this is the image gallery wrapper -->
+        <div id="image-gallery" style="display: none;">
+
+          <!-- this is the div within which the images will load -->
+          <div id="library-canvas">
+
+          <!-- this is an image -->
+            <figure class="image make-drag">
+              <div class="image-close">x</div>
+              <img src="assets/images/red-painting.jpg">
+              <figcaption>
+                <span class="img-title">Red Painting</span>
+                <span class="img-year">2017</span>
+              </figcaption>
+            </figure>
+
+            <figure class="image make-drag">
+              <div class="image-close">x</div>
+              <img src="assets/images/north-bay-fires.jpg">
+              <figcaption>
+                <span class="img-title">Red Painting</span>
+                <span class="img-year">2017</span>
+              </figcaption>
+            </figure>
+
+            <figure class="image make-drag">
+              <div class="image-close">x</div>
+              <img src="assets/images/365.jpg">
+              <figcaption>
+                <span class="img-title">Red Painting</span>
+                <span class="img-year">2017</span>
+              </figcaption>
+            </figure>
+
+            <figure class="image make-drag">
+              <div class="image-close">x</div>
+              <img src="assets/images/true-story.jpg">
+              <figcaption>
+                <span class="img-title">Red Painting</span>
+                <span class="img-year">2017</span>
+              </figcaption>
+            </figure>
+
+            <figure class="image make-drag">
+              <div class="image-close">x</div>
+              <img src="assets/images/the-water-is-fine.jpg">
+              <figcaption>
+                <span class="img-title">Red Painting</span>
+                <span class="img-year">2017</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- this is the archive wrapper -->
+        <div id="archive" style="display: none;">
+
+          <!-- this is the work list (you can add additional lists!,
+          just make a new one with the same structure of this one as
+          a sibling to it. use the same classes and style simply with an ID) -->
+          <div id="works-list" class="archive-list make-drag">
+            <div class="archive-close">x</div>
+            <ul>
+              <li>this is a link to an image</li>
+              <li>this is a link to an image too</li>
+              <li>as is this</li>
+              <li>as is this</li>
+              <li>as is this</li>
+              <li>as is this</li>
+              <li>as is this</li>
+              <li>as is this</li>
+              <li>as is this</li>
+            </ul>
+          </div>
         </div>
       </div>
+
+      <!-- this empty div determines the space within
+      which modals will randomly be placed. resize it to controlled
+      the mechanic without messing with the JS -->
+      <div id="canvas-size">
+      </div>
+
     </div>
-  </nav>
-  <div id="content_wrapper">
-
-      <div class="content_item">
-        <a data-featherlight="<p>Bix Archer is a girl from San Francisco. She is currently an undergraduate at Yale College. <br> contact: bixarcher@gmail.com</p>" href="#"><h1> <div id='warped-about'>
-                           <span class='w0'>a</span><span class='w1'>b</span><span class='w2'>o</span><span class='w3'>u</span><span class='w4'>t</span><span class='w5'> </span><span class='w6'>a</span><span class='w7'>b</span><span class='w8'>o</span><span class='w9'>u</span><span class='w10'>t</span><span class='w11'> </span><span class='w12'>a</span><span class='w13'>b</span><span class='w14'>o</span><span class='w15'>u</span><span class='w16'>t</span><span class='w17'> </span><span class='w18'>a</span><span class='w19'>b</span><span class='w20'>o</span><span class='w21'>u</span><span class='w22'>t</span><span class='w23'> </span><span class='w24'>a</span><span class='w25'>b</span><span class='w26'>o</span><span class='w27'>u</span><span class='w28'>t</span><span class='w29'> </span><span class='w30'>a</span><span class='w31'>b</span><span class='w32'>o</span><span class='w33'>u</span><span class='w34'>t</span>
-        </div></h1></a>
-      </div>
-      <div class="content_item">
-        <a data-featherlight="/assets/images/north-bay-fires.jpg" href="#"><img data-src="/assets/images/north-bay-fires-500px.jpg"></a>
-      </div>
-      <div class="content_item">
-        <a data-featherlight="/assets/images/the-water-is-fine.jpg" href="#"><img data-src="/assets/images/the-water-is-fine-500px.jpg"></a>
-      </div>
-      <div class="content_item">
-        <a data-featherlight="/assets/images/365.jpg" href="#"><img data-src="/assets/images/365-500px.jpg"></a>
-      </div>
-      <div class="content_item">
-        <a data-featherlight="/assets/images/red-painting.jpg" href="#"><img data-src="/assets/images/red-painting-500px.jpg"></a>
-      </div>
-      <div class="content_item">
-        <a data-featherlight="/assets/images/true-story.jpg" href="#"><img data-src="/assets/images/true-story-500px.jpg"></a>
-      </div>
-  </div>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="//cdn.rawgit.com/noelboss/featherlight/1.7.10/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/assets/jquery.unveil.js" type="text/javascript" charset="utf-8"></script>
-  <script>
-    $(document).ready(function() {
-      $("img").unveil(200);
-    });
-  </script>
-</body>
+  </body>
 
 </html>

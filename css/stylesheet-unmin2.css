@@ -236,21 +236,9 @@ h1 {
 	padding-bottom: 50px;
 }
 
-.red {
-	background: red;
-}
-
 .body figure {
 	width: 75%;
 	margin: 50px 12.5%;
-}
-
-#left > .body {
-	direction: rtl;
-}
-
-#right > .body {
-	direction: ltr;
 }
 
 #archive,
@@ -388,6 +376,23 @@ img {
 	z-index: -1;
 	margin-bottom: 0;
 }
+
+#selected-toggle {
+	display: none;
+}
+
+#selected-link {
+	display: none;
+}
+
+#archive-toggle {
+	display: none;
+}
+
+#archive-link {
+	display: none;
+}
+
 
 #archive {
 	font-size: 45px;
