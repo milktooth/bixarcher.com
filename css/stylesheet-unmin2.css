@@ -144,11 +144,11 @@ body {
 	font-weight: bold;
 }
 
+
 a:link,
 a:visited {
-	color: white;
+	color: gainsboro;
 	text-decoration: none;
-	text-shadow: 0 0 2px black;
 }
 
 a:active,
@@ -157,19 +157,56 @@ a:hover {
 	text-decoration: none;
 }
 
-#about a:link,
-#about a:visited {
-	color: white;
-	text-decoration: none;
-	z-index: 5;
-	position: relative;
+@supports
+	((-webkit-text-stroke-color: black)
+	and
+	(-webkit-text-fill-color: white))
+	or
+	((-moz-text-stroke-color: black)
+	and
+	(-moz-text-fill-color: white)) {
+
+	a:link,
+	a:visited {
+		   -moz-text-fill-color: white;
+		-webkit-text-fill-color: white;
+		   -moz-text-stroke-color: black;
+		-webkit-text-stroke-color: black;
+		   -moz-text-stroke-width: 1px;
+		-webkit-text-stroke-width: 1px;
+	}
+
+
+	a:active,
+	a:hover {
+		   -moz-text-fill-color: black;
+		   -webkit-text-fill-color: black;
+		   -moz-text-stroke-color: transparent;
+		   -webkit-text-stroke-color: transparent;
+	}
 }
 
-#about a:active,
-#about a:hover {
-	color: black;
-	text-decoration: none;
-	text-shadow: 0 0 0 black;
+@supports not
+	((-webkit-text-stroke-color: black)
+	and
+	(-webkit-text-fill-color: white))
+	or
+	((-moz-text-stroke-color: black)
+	and
+	(-moz-text-fill-color: white)) {
+
+	a:link,
+	a:visited {
+		color: white;
+		text-shadow: 0px 0px 2px black;
+	}
+
+
+	a:active,
+	a:hover {
+		color: black;
+		box-shadow: 0px 0px 0px black;
+	}
 }
 
 :root {
@@ -340,6 +377,10 @@ figcaption {
 	transition: .3s ease-out;
 }
 
+#no-drag-gallery {
+	padding: 12.5px 6.25px;
+}
+
 figcaption span {
 	font-size: var(--step-down-3);
 	vertical-align: top;
@@ -403,11 +444,11 @@ img {
 	padding: 0;
 	left: auto;
 	margin: auto;
-	max-width: 800px;
+	width: 100%;
 	box-shadow: none;
 	width: inherit;
 	cursor: initial;
-	font-size: 45px;
+	font-size: inherit;
 }
 
 #no-drag-archive {
@@ -425,29 +466,79 @@ img {
 	top: 20%;
 	pointer-events: all;
 	padding: 25px;
+	max-width: 600px;
+	width: 80vw;
 	transition: .3s ease-out;
 	transition-property: background;
 }
 
-.archive-list:hover {
+.table ul {
+	display: flex;
+	justify-content: space-between;
+	font-size: var(--step-down-2);
+}
+
+.table ul li {
+	padding: 12.5px 12.5px 12.5px 25px;
+}
+
+.table ul li:first-child {
+	width: 34%;
+	padding-left: 12.5px;
+}
+
+
+.table ul li:nth-child(2n) {
+	width: 40%;
+	border-left: solid 1px black;
+	padding-left: 25px;
+}
+
+
+.table ul li:nth-child(3n) {
+	width: 14%;
+	border-left: 1px solid black;
+}
+
+
+#no-drag-archive .table {
+	width: initial;
+	font-size: var(--step-down-5);
+}
+
+.archive-list .table {
+	background: white;
+	font-size: var(--step-down-5);
+	text-align: left;
+	width: 100%;
+	cursor: pointer;
+}
+
+.archive-list td {
+	padding: 12.5px 12.5px 12.5px 25px;
+	border-left: solid 1px black;
+}
+
+
+.archive-list td:first-child {
+	border-left: none;
+}
+
+.archive-list .table>* {
+	border-bottom: solid 1px black;
+	transition: .3s ease-out;
+}
+
+#no-drag-archive .table>* {
+	font-size: var(--step-down-3);
+}
+
+.archive-list .table ul:hover {
 	background: yellow;
 }
 
-#no-drag-archive ul {
-	width: initial;
-}
-
-.archive-list ul {
-	background: white;
-	font-size: var(--step-down-5);
-	padding: 12.5px;
-	width: calc(300px + 2vw);
-}
-
-.archive-list ul li {
-	font-size: var(--step-down-3);
-	margin: 6.25px 25px;
-	padding: 6.25px 0;
+.archive-list .table>*:last-child {
+	border-bottom: none;
 }
 
 #works-list {}
@@ -463,7 +554,7 @@ img {
 
 #no-drag-gallery .make-drag {
 	box-shadow: none;
-	border: solid 2px;
+	border: none;
 	margin-bottom: 1em;
 	vertical-align: top;
 	position: relative;
@@ -472,7 +563,9 @@ img {
 	width: 30%;
 	box-sizing: border-box;
 	min-width: 200px;
+	padding: 0;
 	cursor: initial;
+	padding-bottom: 50px;
 }
 
 #no-drag-gallery .make-drag:nth-child(3n+2) {
@@ -512,6 +605,48 @@ img {
 	}
 }
 
+@media screen and (max-width: 768px) {
+	a:active,
+	a:hover {
+		color: gainsboro;
+		text-decoration: none;
+	}
+
+	@supports
+		((-webkit-text-stroke-color: black)
+		and
+		(-webkit-text-fill-color: white))
+		or
+		((-moz-text-stroke-color: black)
+		and
+		(-moz-text-fill-color: white)) {
+
+		a:active,
+		a:hover {
+			   -moz-text-fill-color: white;
+			-webkit-text-fill-color: white;
+			   -moz-text-stroke-color: black;
+			-webkit-text-stroke-color: black;
+		}
+	}
+
+	@supports not
+		((-webkit-text-stroke-color: black)
+		and
+		(-webkit-text-fill-color: white))
+		or
+		((-moz-text-stroke-color: black)
+		and
+		(-moz-text-fill-color: white)) {
+
+		a:active,
+		a:hover {
+			color: white;
+			box-shadow: 0px 0px 2px black;
+		}
+	}
+}
+
 @media screen and (max-width: 550px) {
 	:root {
 		font-size: 11.45vw;
@@ -524,4 +659,24 @@ img {
 	#no-drag-gallery .make-drag:nth-child(even) {
 		margin-left: 0;
 	}
+}
+
+
+.table a {
+
+color: black;
+
+-moz-text-fill-color: initial;
+
+display: block;
+
+-webkit-text-fill-color: initial;
+
+-moz-text-stroke-color: inherit;
+
+-webkit-text-stroke-color: initial;
+
+-moz-text-stroke-width: 0;
+
+-webkit-text-stroke-width: 0;
 }

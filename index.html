@@ -20,10 +20,10 @@
       {
         $(document).ready(function()
         {
-          $('#archive-toggle').toggle();
-          $('#selected-toggle').toggle();
-          $('#archive-link').toggle();
-          $('#selected-link').toggle();
+          $('#archive-toggle').hide();
+          $('#selected-toggle').hide();
+          $('#archive-link').show();
+          $('#selected-link').show();
         });
       });
 
@@ -31,13 +31,12 @@
       $(document).ready(function() {
         if ($(window).width() < 768)
         {
-          $('#archive-toggle').toggle();
-          $('#selected-toggle').toggle();
-          $('#archive-link').toggle();
-          $('#selected-link').toggle();
+          $('#archive-toggle').hide();
+          $('#selected-toggle').hide();
+          $('#archive-link').show();
+          $('#selected-link').show();
         }
       });
-
     </script>
     <script async src="assets/main.js"></script>
     <title></title>
@@ -124,17 +123,43 @@
           a sibling to it. use the same classes and style simply with an ID) -->
           <div id="works-list" class="archive-list make-drag">
             <div class="archive-close">x</div>
-            <ul>
-              <li>this is a link to an image</li>
-              <li>this is a link to an image too</li>
-              <li>as is this</li>
-              <li>as is this</li>
-              <li>as is this</li>
-              <li>as is this</li>
-              <li>as is this</li>
-              <li>as is this</li>
-              <li>as is this</li>
-            </ul>
+            <div class="table">
+                <a href="#">
+              		<ul>
+              			<li>Red Painting</li>
+              			<li>paint on canvas</li>
+              			<li>2017</li>
+              		</ul>
+                </a>
+                <a href="#">
+                  <ul>
+              			<li>True Story</li>
+              			<li>screen print</li>
+              			<li>2017</li>
+              		</ul>
+                </a>
+                <a href="#">
+                  <ul>
+              			<li>title</li>
+              			<li>medium</li>
+              			<li>year</li>
+              		</ul>
+                </a>
+                <a href="#">
+                  <ul>
+              			<li>title</li>
+              			<li>medium</li>
+              			<li>year</li>
+              		</ul>
+                </a>
+                <a href="#">
+                  <ul>
+              			<li>title</li>
+              			<li>medium</li>
+              			<li>year</li>
+              		</ul>
+                </a>
+            </div>
           </div>
         </div>
       </div>

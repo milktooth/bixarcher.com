@@ -147,7 +147,7 @@ $(document).ready(function()
 });
 
 /*reset image desplay state*/
-$('a').on('click', function()
+$('#selected-toggle').on('click', function()
 {
   $(".make-drag").css(
   {
