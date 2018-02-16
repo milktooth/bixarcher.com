@@ -48,12 +48,14 @@ a:link,
 a:visited {
 	color: black;
 	text-decoration: none;
+	border-bottom: dashed 2px;
 }
 
 a:active,
 a:hover {
 	color: black;
 	text-decoration: none;
+	border-bottom: solid 2px;
 }
 
 :root {
@@ -70,16 +72,6 @@ a:hover {
 	--step-down-5: .5em;
 }
 
-figcaption {
-	font-size: var(--step-down-5);
-	padding: 6.25px 12.5px;
-	line-height: 25px;
-	transition: .3s ease-out;
-}
-
-figcaption span {
-	font-size: var(--step-down-3);
-}
 
 img {
 	max-width: 100%;
@@ -93,30 +85,92 @@ img {
 #about {
 	z-index: -1;
 	margin-bottom: 0;
+	font-weight: bold;
+}
+
+#selected-toggle,
+#archive-toggle {
+	display: none;
+}
+
+#archive, #gallery {
+	display: none;
 }
 
 section {
 	font-family: "Anonymous Pro", "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
 	font-weight: normal;
-	margin: .5rem 0;
-	padding: .5rem;
-	box-shadow: inset 0 0 20px black;
+	position: absolute;
+	z-index: 6;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	border: 0;
+	overflow: hidden;
+	pointer-events: none;
+}
+
+section *{
+	pointer-events: all;
+}
+
+section>*  {
+	background: white;
 }
 
 #gallery {
 	font-size: 0;
 }
 
+.make-drag {
+	box-shadow: 0 0 20px black;
+}
+
 .image {
-	vertical-align: top;
-	position: relative;
-	flex-direction: column;
+	position: absolute;
 	justify-content: flex-start;
-	display: inline-flex;
+	align-items: center;
 	margin-bottom: .5em;
-	transition: .3s ease-out;
-	width: 30%;
 	font-size: 45px;
+	padding: 25px 25px 0 25px;
+	width: calc(300px + 2vw);
+	flex-wrap: wrap;
+	transition: .3s ease-out;
+	transition-property: background;
+	top: calc(-400px - 2vw);
+	left: calc(-400px - 2vw);
+}
+
+.archive-close,
+.image-close {
+	position: absolute;
+	top: 5px;
+	height: 13px;
+	padding: 3px;
+	font-weight: bold;
+	line-height: 11px;
+	right: 5px;
+	font-size: var(--step-down-5);
+	cursor: pointer;
+	font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+figcaption {
+	font-size: var(--step-down-5);
+	line-height: 25px;
+	transition: .3s ease-out;
+	width: 100%;
+	padding: 12.5px 25px;
+	margin: 0 -25px;
+}
+
+figure:hover figcaption {
+	background: yellow;
+}
+
+figcaption span {
+	font-size: var(--step-down-3);
 }
 
 .img-title {}
@@ -129,9 +183,10 @@ section {
 	position: relative;
 	padding: 0;
 	left: auto;
+	padding: 25px;
 	margin: auto;
 	width: 100%;
-	max-width: 800px;
+	max-width: 650px;
 	cursor: initial;
 	z-index: 10;
 	font-size: inherit;
@@ -165,13 +220,11 @@ section {
 
 .table ul li:first-child {
 	width: 34%;
-	padding-left: 12.5px;
 }
 
 .table ul li:nth-child(2n) {
 	width: 40%;
 	border-left: solid 1px black;
-	padding-left: 25px;
 }
 
 .table ul li:nth-child(3n) {
@@ -180,7 +233,6 @@ section {
 }
 
 #archive .table {
-	width: initial;
 	font-size: var(--step-down-4);
 }
 
@@ -207,21 +259,19 @@ section {
 	border-bottom: none;
 }
 
-.image:hover {
-	background: yellow;
-}
-
-#gallery .image:nth-child(3n+2) {
-	margin: 0 5% .5rem;
+#canvas-size {
+	position: absolute;
+	margin: auto;
+	font-size: 0;
+	width: 100%;
+	height: 20vh;
+	z-index: -100;
+	top: 0;
 }
 
 @media screen and (max-width: 800px) {
 	:root {
 		font-size: 63px;
-	}
-
-	#gallery .image {
-		width: 47.5%;
 	}
 
 	#gallery .image:nth-child(3n+2) {
@@ -236,6 +286,50 @@ section {
 		width: initial;
 		font-size: var(--step-down-5);
 	}
+}
+
+
+@media screen and (max-width: 768px) {
+	section {
+		margin: .5rem 0;
+		padding: .5rem;
+		box-shadow: inset 0 0 20px black;
+		overflow: auto;
+		position: relative;
+	}
+
+	#archive, #gallery {
+		display: block;
+	}
+
+	#archive .archive-list {
+		padding: 0;
+	}
+
+	.make-drag {
+		box-shadow: none;
+	}
+
+	.image {
+		width: 47.5%;
+		padding: 0;
+		position: relative;
+		vertical-align: top;
+		display: inline-flex;
+		top: 0;
+		left: 0;
+	}
+
+	.archive-close,
+	.image-close {
+		display: none;
+	}
+
+	figcaption {
+		padding: 6.25px 12.5px;
+		margin: 0;
+	}
+
 }
 
 @media screen and (max-width: 550px) {

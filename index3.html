@@ -3,9 +3,47 @@
 
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="css/stylesheet-unmin3.css">
+    <link rel="stylesheet" type="text/css" href="css/stylesheet-unmin4.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      /*inject toggles if there is Javascript*/
+      $(document).ready(function()
+      {
+        if ( $(window).width() > 768 ) {
+          $('#archive-toggle').show();
+          $('#selected-toggle').show();
+          $('#archive-text').hide();
+          $('#selected-text').hide();
+        }
+
+        else {
+          $('#archive-toggle').hide();
+          $('#selected-toggle').hide();
+          $('#archive-text').show();
+          $('#selected-text').show();
+        }
+      });
+
+
+      $(window).resize(function(event) {
+          if ( $(window).width() > 768 ) {
+            $('#archive-toggle').show();
+            $('#selected-toggle').show();
+            $('#archive-text').hide();
+            $('#selected-text').hide();
+          }
+
+          else {
+            $('#archive-toggle').hide();
+            $('#selected-toggle').hide();
+            $('#archive-text').show();
+            $('#selected-text').show();
+          }
+      });
+    </script>
+    <script async src="assets/main2.js"></script>
 
     <title></title>
   </head>
@@ -14,11 +52,13 @@
     <!-- this contains everything on the page -->
     <div id="big-wrap">
       <div id="about">
-        Bix Archer is a girl from San Francisco. She is currently an undergraduate at Yale College.
-        These are her selected works
+        Bix Archer is a girl from San Francisco. She is currently an undergraduate at Yale College. These are her
+        <a href="#image-gallery" rel="gallery" id="selected-toggle">selected works</a><span id="selected-text">selected works</span>
+
         <section id="gallery">
 
           <figure class="image make-drag">
+            <div class="image-close">x</div>
             <img src="assets/images/red-painting.jpg">
             <figcaption>
               <span class="img-title">Red Painting</span>
@@ -27,6 +67,7 @@
           </figure>
 
           <figure class="image make-drag">
+            <div class="image-close">x</div>
             <img src="assets/images/north-bay-fires.jpg">
             <figcaption>
               <span class="img-title">Red Painting</span>
@@ -35,6 +76,7 @@
           </figure>
 
           <figure class="image make-drag">
+            <div class="image-close">x</div>
             <img src="assets/images/365.jpg">
             <figcaption>
               <span class="img-title">Red Painting</span>
@@ -43,6 +85,7 @@
           </figure>
 
           <figure class="image make-drag">
+            <div class="image-close">x</div>
             <img src="assets/images/true-story.jpg">
             <figcaption>
               <span class="img-title">Red Painting</span>
@@ -51,6 +94,7 @@
           </figure>
 
           <figure class="image make-drag">
+            <div class="image-close">x</div>
             <img src="assets/images/the-water-is-fine.jpg">
             <figcaption>
               <span class="img-title">Red Painting</span>
@@ -59,9 +103,12 @@
           </figure>
         </section>
 
-        and this is her archive
+        and this is her
+        <a href="#archive" rel="archive" id="archive-toggle">archive</a><span id="archive-text">archive</span>
+
         <section id="archive">
           <div id="works-list" class="archive-list make-drag">
+            <div class="archive-close">x</div>
             <div class="table">
               <a href="#">
                 <ul>
@@ -132,6 +179,7 @@
       </div>
     </div>
 
+    <div id="canvas-size"></div>
   </body>
 
 </html>

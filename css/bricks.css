@@ -1,0 +1,386 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+	overflow-x: hidden;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+:root {
+	font-size: 3em;
+	font-size: 3.5vw;
+	font-family: 'Chivo', Helvetica , Arial, "Lucida Grande", sans-serif;
+	font-weight: lighter;
+}
+
+:root {
+	--step-up-5: 2em;
+	--step-up-4: 1.7511em;
+	--step-up-3: 1.5157em;
+	--step-up-2: 1.3195em;
+	--step-up-1: 1.1487em;
+	/* baseline: 1em */
+	--step-down-1: .8706em;
+	--step-down-2: .7579em;
+	--step-down-3: .6599em;
+	--step-down-4: .5745em;
+	--step-down-5: .5em;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+h2 {
+	font-size: .5rem;
+	text-align: right;
+	padding: .5em;
+	margin-bottom: 1em;
+	border-bottom: dashed 1px black;
+}
+
+#selected-works h2 {
+	text-align: left;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+#big-wrap {
+    position: relative;
+    margin: 1rem 1rem;
+    overflow: visible;
+}
+
+#about{
+
+color: black;
+
+padding: 1em;
+
+border: solid 1px;
+
+font-size: inherit;
+}
+
+#selected-works {
+    font-size: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#archive {}
+
+.box {
+    background: white;
+    position: relative;
+    box-sizing: border-box;
+    margin-bottom: 2rem;
+    font-size: 35.8px;
+    width: calc(50% - 1rem);
+}
+
+.front {
+
+z-index: 1;
+
+top: .5rem;
+
+left: .5rem;
+}
+
+.middle {
+
+top: 0;
+
+left: 0;
+
+z-index: 0;
+}
+
+.back {
+
+top: -.5rem;
+
+left: -.5rem;
+
+z-index: -1;
+}
+
+.table {
+	font-size: var(--step-down-5);
+}
+
+.table ul {
+	display: flex;
+	justify-content: space-between;
+}
+
+.table ul li {
+	padding: 12.5px 12.5px 12.5px 25px;
+}
+
+.table ul li:first-child {
+	width: 34%;
+}
+
+.table ul li:nth-child(2n) {
+	width: 40%;
+	border-left: solid 1px black;
+	padding-left: 25px;
+}
+
+.table ul li:nth-child(3n) {
+	width: 14%;
+	border-left: 1px solid black;
+}
+
+.table a {
+	border-bottom: solid 1px black;
+	display: block;
+}
+
+
+.table a:hover {
+	background: yellow;
+	transition: .3s ease-out;
+}
+
+.table a:last-child {
+	border-bottom: none;
+}
+
+figure {
+	vertical-align: top;
+	position: relative;
+	flex-direction: column;
+	justify-content: flex-start;
+	display: inline-flex;
+	margin-bottom: 1em;
+	transition: .3s ease-out;
+	width: 30%;
+	font-size: 35.8px;
+}
+
+figure {
+	width: 47.5%;
+}
+
+figure:nth-child(3n+2) {
+	margin: 0 0 1em 0;
+}
+
+figure:nth-child(odd) {
+	margin-left: 5%;
+}
+
+figure:nth-last-of-type(-n+2) {
+	margin-bottom: 0;
+}
+
+figcaption {
+	font-size: var(--step-down-5);
+	display: flex;
+	justify-content: space-between;
+	padding: .5em .25em;
+	transition: .3s ease-out;
+}
+
+figure:hover figcaption {
+	background: yellow;
+}
+
+@media screen and (max-width: 900px) {
+
+	:root {
+		font-size: 30px;
+	}
+
+	.box {
+
+width: 100%;
+
+margin-bottom: 1rem;
+	}
+
+
+#selected-works h2 {
+	text-align: right;
+}
+
+	#selected-works {
+		position: relative;
+	}
+
+
+	#archive {
+		}
+
+h2 {
+	font-size: 1rem;
+	padding: .5em 1rem;
+}
+}
+
+@media screen and (max-width: 625px) {
+	:root {
+		font-size: 4.5vw;
+	}
+}
+
+
+@media screen and (max-width: 500px) {
+	:root {
+		font-size: 22.5px;
+	}
+
+	figure {
+		width: 100%;
+		margin-bottom: 1em;
+	}
+
+	figure:nth-child(odd) {
+		margin-left: 0;
+		margin-bottom: 1em;
+	}
+
+	.table ul li:nth-child(2n) {
+		display: none;
+	}
+
+	.table ul li:nth-child(3n) {
+		width: 22%;
+	}
+}

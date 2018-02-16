@@ -22,8 +22,8 @@
         {
           $('#archive-toggle').hide();
           $('#selected-toggle').hide();
-          $('#archive-link').show();
-          $('#selected-link').show();
+          $('#archive-text').show();
+          $('#selected-text').show();
         });
       });
 
@@ -33,8 +33,25 @@
         {
           $('#archive-toggle').hide();
           $('#selected-toggle').hide();
-          $('#archive-link').show();
-          $('#selected-link').show();
+          $('#archive-text').show();
+          $('#selected-text').show();
+        }
+      });
+
+      $(window).resize(function() {
+        if ($(window).width() < 768)
+        {
+          $('#archive-toggle').hide();
+          $('#selected-toggle').hide();
+          $('#archive-text').show();
+          $('#selected-text').show();
+        }
+
+        else {
+          $('#archive-toggle').show();
+          $('#selected-toggle').show();
+          $('#archive-text').hide();
+          $('#selected-text').hide();
         }
       });
     </script>
@@ -54,13 +71,7 @@
       but it's not!!! -->
       <div id="about">
         Bix Archer is a girl from San Francisco. She is currently an undergraduate at Yale College. These are her
-        <noscript><a href="selected-works">selected works</a></noscript><a href="#image-gallery" rel="image-gallery" id="selected-toggle">selected works</a><a href="selected-works" id="selected-link">selected works</a> and this is her
-        <noscript><a href="archive">archive</a></noscript><a href="#archive" rel="archive" id="archive-toggle">archive</a><a href="archive" id="archive-link">archive</a>.
-      </div>
-
-      <!-- these are the two modal popups -->
-      <div id="modals">
-
+        <noscript><a href="selected-works">selected works</a></noscript><a href="#image-gallery" rel="image-gallery" id="selected-toggle">selected works</a><span id="selected-text">selected works</span>
         <!-- this is the image gallery wrapper -->
         <div id="image-gallery" style="display: none;">
 
@@ -114,51 +125,52 @@
             </figure>
           </div>
         </div>
+        and this is her
+        <noscript><a href="archive">archive</a></noscript><a href="#archive" rel="archive" id="archive-toggle">archive</a><span id="archive-text">archive</span>.  <!-- this is the archive wrapper -->
+          <div id="archive" style="display: none;">
 
-        <!-- this is the archive wrapper -->
-        <div id="archive" style="display: none;">
-
-          <!-- this is the work list (you can add additional lists!,
-          just make a new one with the same structure of this one as
-          a sibling to it. use the same classes and style simply with an ID) -->
-          <div id="works-list" class="archive-list make-drag">
-            <div class="archive-close">x</div>
-            <div class="table">
-                <a href="#">
-              		<ul>
-              			<li>Red Painting</li>
-              			<li>paint on canvas</li>
-              			<li>2017</li>
-              		</ul>
-                </a>
-                <a href="#">
-                  <ul>
-              			<li>True Story</li>
-              			<li>screen print</li>
-              			<li>2017</li>
-              		</ul>
-                </a>
-                <a href="#">
-                  <ul>
-              			<li>title</li>
-              			<li>medium</li>
-              			<li>year</li>
-              		</ul>
-                </a>
-                <a href="#">
-                  <ul>
-              			<li>title</li>
-              			<li>medium</li>
-              			<li>year</li>
-              		</ul>
-                </a>
-                <a href="#">
-                  <ul>
-              			<li>title</li>
-              			<li>medium</li>
-              			<li>year</li>
-              		</ul>
-                </a>
+            <!-- this is the work list (you can add additional lists!,
+            just make a new one with the same structure of this one as
+            a sibling to it. use the same classes and style simply with an ID) -->
+            <div id="works-list" class="archive-list make-drag">
+              <div class="archive-close">x</div>
+              <div class="table">
+                  <a href="#">
+                		<ul>
+                			<li>Red Painting</li>
+                			<li>paint on canvas</li>
+                			<li>2017</li>
+                		</ul>
+                  </a>
+                  <a href="#">
+                    <ul>
+                			<li>True Story</li>
+                			<li>screen print</li>
+                			<li>2017</li>
+                		</ul>
+                  </a>
+                  <a href="#">
+                    <ul>
+                			<li>title</li>
+                			<li>medium</li>
+                			<li>year</li>
+                		</ul>
+                  </a>
+                  <a href="#">
+                    <ul>
+                			<li>title</li>
+                			<li>medium</li>
+                			<li>year</li>
+                		</ul>
+                  </a>
+                  <a href="#">
+                    <ul>
+                			<li>title</li>
+                			<li>medium</li>
+                			<li>year</li>
+                		</ul>
+                  </a>
+              </div>
             </div>
           </div>
         </div>
