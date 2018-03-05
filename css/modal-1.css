@@ -48,14 +48,14 @@ a:link,
 a:visited {
 	color: black;
 	text-decoration: none;
-	border-bottom: dashed 2px;
+	padding-bottom: 0;
+	transition-property: background;
 }
 
 a:active,
 a:hover {
 	color: black;
 	text-decoration: none;
-	border-bottom: solid 2px;
 }
 
 :root {
@@ -86,11 +86,39 @@ img {
 	z-index: -1;
 	margin-bottom: 0;
 	font-weight: bold;
+	line-height: 1;
 }
 
 #selected-toggle,
 #archive-toggle {
 	display: none;
+	position: relative;
+}
+
+#selected-toggle:after,
+#archive-toggle:after
+{
+	content: "";
+	position: absolute;
+	width: 100%;
+	pointer-events: none;
+	left: 0;
+	bottom: 0;
+	height: .85em;
+	border-bottom: solid 0.075em;
+	transition-delay: .05s;
+	z-index: -1;
+	transition: .3s ease-out;
+	transition-property: background;
+}
+
+#selected-toggle:hover:after,
+#archive-toggle:hover:after {
+	background: yellow;
+}
+
+.opened-modal::after {
+	background: yellow;
 }
 
 #archive, #gallery {
@@ -291,15 +319,14 @@ figcaption span {
 
 @media screen and (max-width: 768px) {
 	section {
-		margin: .5rem 0;
-		padding: .5rem;
-		box-shadow: inset 0 0 20px black;
+		margin: 1rem 0 0 0;
 		overflow: auto;
 		position: relative;
 	}
 
 	#archive, #gallery {
 		display: block;
+		overflow-y: hidden;
 	}
 
 	#archive .archive-list {
@@ -334,7 +361,7 @@ figcaption span {
 
 @media screen and (max-width: 550px) {
 	:root {
-		font-size: 11.45vw;
+		font-size: 11.3vw;
 	}
 
 	#gallery .image {
@@ -345,6 +372,13 @@ figcaption span {
 	#gallery .image:nth-child(even) {
 		margin-left: 0;
 		margin-bottom: 1em;
+	}
+
+	.table ul li:nth-child(2n) {
+		display: none;
+	}
+	.table ul li:first-child {
+		width: 100%;
 	}
 }
 

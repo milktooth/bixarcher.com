@@ -1,7 +1,6 @@
 /*Dragable*/
 (function($)
 {
-  var counter = 0;
   $.fn.drags = function(opt)
   {
 
@@ -36,7 +35,7 @@
         drg_w = $drag.outerWidth(),
         pos_y = $drag.offset().top + drg_h - e.pageY,
         pos_x = $drag.offset().left + drg_w - e.pageX;
-      $drag.css('z-index', 999999).parents().on("mousemove", function(e)
+      $drag.css('z-index', 8).parents().on("mousemove", function(e)
       {
         $('.draggable').offset(
         {
@@ -44,14 +43,20 @@
           left: e.pageX + pos_x - drg_w
         }).on("mouseup", function()
         {
-          counter++;
-          $(this).removeClass('draggable').css('z-index', z_idx);
-          $(this).css('z-index', counter);
         });
       });
       e.preventDefault(); // disable selection
     }).on("mouseup", function()
     {
+      $('.make-drag').each(function() {
+        var currentZindex = $(this).css('z-index');
+        currentZindex = currentZindex - 1;
+
+        $(this).css('z-index', currentZindex);
+      });
+
+      $(this).css('z-index', 6);
+
       if (opt.handle === "")
       {
         $(this).removeClass('draggable');
@@ -105,71 +110,68 @@ function moveRandom(obj)
   });
 }
 
-/*image closer*/
-$(".image-close").click(function()
+/*closer*/
+$(".close").click(function()
 {
   $(this).parent().toggle();
+  $(this).parent().toggleClass('closed-item');
 });
 
-/*archive closer*/
-$(".archive-close").click(function()
+/*open modal*/
+$('a').on('click', function()
 {
-  $(this).parent().toggle();
-});
+  var target = $(this).attr('rel');
+  $("#" + target).toggle();
 
-/*reset image desplay state*/
-$('#selected-toggle').on('click', function()
-{
-  $(".image").css(
-  {
-    display: "flex"
+  if ( $("#" + target).css('display') == 'block' ) {
+    $(this).addClass('opened-modal');
+  }
+
+  else {
+    $(this).removeClass('opened-modal');
+  }
+
+  $("#" + target + " .make-drag").css(
+    {
+    display: "flex",
   });
+
+  $("#" + target + " .make-drag").css('z-index', '4');
+
 });
 
-$('#archive-toggle').on('click', function()
-{
-  $(".archive-list").css(
-  {
-    display: "flex"
-  });
-});
-/*counter for image gallery items*/
 $(document).ready(function()
 {
-  var counter2 = 0;
+  var totalItems = $('.image').length;
 
-  var numItems = $('.image').length;
-
-  $('.image-close').click(function()
+  $('.close').click(function()
   {
-    counter2++;
-    if (counter2 == numItems)
+    var closedItems = $('#gallery .closed-item').length;
+
+    if (totalItems == closedItems)
     {
-      counter2 = 0;
-      $("#image-gallery").toggle();
+      $("#gallery").toggle();
+      $(".image").toggle();
+      $(".image").removeClass('closed-item');
+      $('#selected-toggle').toggleClass('opened-modal');
     }
   });
-
-  $('a').on('click', function()
-  {
-    counter2 = 0;
-  })
 });
 
-/*counter for archive items*/
 $(document).ready(function()
 {
-  var counter2 = 0;
+  var totalItems = $('.archive-list').length;
 
-  var numItems = $('.archive-list').length;
-
-  $('.archive-close').click(function()
+  $('.close').click(function()
   {
-    counter2++;
-    if (counter2 == numItems)
+    var closedItems = $('#archive .closed-item').length;
+
+    if (totalItems == closedItems)
     {
       $("#archive").toggle();
-      counter2 = 0;
+      $(".archive-list").toggle();
+      $(".archive-list").removeClass('closed-item');
+      $('#archive-toggle').toggleClass('opened-modal');
     }
   });
 });
@@ -204,13 +206,6 @@ function doneResizing()
   }
 }
 
-/*open modal*/
-$('a').on('click', function()
-{
-  var target = $(this).attr('rel');
-  $("#" + target).toggle();
-});
-
 $(document).ready(function() {
     if ( $(window).width() > 768 ) {
       $('.make-drag').drags();
@@ -233,6 +228,7 @@ $(document).ready(function() {
 $(window).resize(function(event) {
     if ( $(window).width() > 768 ) {
       $('.make-drag').drags();
+      $('.image').css('display', 'flex');
     }
 
     else {
@@ -242,6 +238,27 @@ $(window).resize(function(event) {
       $('#archive').show();
     }
 });
+
+$(window).resize(function(event) {
+    if ( $('#gallery').css('display') == 'block' ) {
+      $('#selected-toggle').addClass('opened-modal');
+    }
+
+    else {
+      $('#selected-toggle').removeClass('opened-modal');
+    }
+});
+
+$(window).resize(function(event) {
+  if ( $('#archive').css('display') == 'block' ) {
+    $('#archive-toggle').addClass('opened-modal');
+  }
+
+  else {
+    $('#archive-toggle').removeClass('opened-modal');
+  }
+});
+
 
 /*
   Javascript Credits

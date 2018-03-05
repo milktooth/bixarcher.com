@@ -64,9 +64,6 @@
   }
 })(jQuery);
 
-
-$('.make-drag').drags();
-
 /*random position within canvas*/
 
 function randomFromTo(from, to)
@@ -108,13 +105,6 @@ function moveRandom(obj)
   });
 }
 
-/*open modal*/
-$('a').on('click', function()
-{
-  var target = $(this).attr('rel');
-  $("#" + target).toggle();
-});
-
 /*image closer*/
 $(".image-close").click(function()
 {
@@ -125,15 +115,6 @@ $(".image-close").click(function()
 $(".archive-close").click(function()
 {
   $(this).parent().toggle();
-});
-
-/*randomize image postion on open*/
-$(document).ready(function()
-{
-  $('.image').each(function()
-  {
-    moveRandom($(this));
-  });
 });
 
 /*reset image desplay state*/
@@ -166,6 +147,7 @@ $(document).ready(function()
     {
       counter2 = 0;
       $("#image-gallery").toggle();
+      $('#selected-toggle').toggleClass('opened-modal');
     }
   });
 
@@ -188,6 +170,7 @@ $(document).ready(function()
     if (counter2 == numItems)
     {
       $("#archive").toggle();
+      $('#archive-toggle').toggleClass('opened-modal');
       counter2 = 0;
     }
   });
@@ -210,12 +193,11 @@ $(window).resize(function()
 {
   clearTimeout(id);
   id = setTimeout(doneResizing, 500);
-
 });
 
 function doneResizing()
 {
-  if ($('.make-drag').is(':offscreen'))
+  if ($('.make-drag').is(':offscreen') && $(window).width() > 768)
   {
     $('.make-drag').each(function()
     {
@@ -223,6 +205,46 @@ function doneResizing()
     });
   }
 }
+
+/*open modal*/
+$('a').on('click', function()
+{
+  var target = $(this).attr('rel');
+  $("#" + target).toggle();
+  $(this).toggleClass('opened-modal');
+});
+
+$(document).ready(function() {
+    if ( $(window).width() > 768 ) {
+      $('.make-drag').drags();
+
+      /*randomize image postion on open*/
+      $('.image').each(function()
+      {
+        moveRandom($(this));
+      });
+    }
+
+    else {
+      $('.make-drag').off();
+      $('.make-drag').removeAttr('style');
+      $('#gallery').show();
+      $('#archive').show();
+    }
+});
+
+$(window).resize(function(event) {
+    if ( $(window).width() > 768 ) {
+      $('.make-drag').drags();
+    }
+
+    else {
+      $('.make-drag').off();
+      $('.make-drag').removeAttr('style');
+      $('#gallery').show();
+      $('#archive').show();
+    }
+});
 
 /*
   Javascript Credits
