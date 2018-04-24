@@ -49,6 +49,7 @@ a:visited {
 	color: black;
 	text-decoration: none;
 	padding-bottom: 0;
+	-webkit-transition-property: background;
 	transition-property: background;
 }
 
@@ -94,9 +95,14 @@ img {
 #archive-toggle {
 	display: none;
 	position: relative;
+	-webkit-transition: .2s linear;
 	transition: .2s linear;
+	-webkit-transition-property: -webkit-transform;
+	transition-property: -webkit-transform;
 	transition-property: transform;
-	transform-origin: bottom left;
+	transition-property: transform, -webkit-transform;
+	-webkit-transform-origin: bottom left;
+	        transform-origin: bottom left;
 }
 
 #selected-toggle span,
@@ -114,7 +120,9 @@ img {
 	display: inline-block;
 	margin-bottom: .75em;
 	opacity: 0;
-	transform-origin: bottom left;
+	-webkit-transform-origin: bottom left;
+	        transform-origin: bottom left;
+	-webkit-transition: .1s ease-out;
 	transition: .1s ease-out;
 }
 
@@ -128,8 +136,12 @@ img {
 	width: 0;
 	border-left: solid black .025em;
 	position: absolute;
+	-webkit-transition: .2s linear;
 	transition: .2s linear;
+	-webkit-transition-property: -webkit-transform;
+	transition-property: -webkit-transform;
 	transition-property: transform;
+	transition-property: transform, -webkit-transform;
 }
 
 .opened-modal#selected-toggle div,
@@ -141,26 +153,31 @@ img {
 
 #selected-toggle div:before,
 #archive-toggle div:before {
-	transform: rotate(90deg) skew(-10deg);
+	-webkit-transform: rotate(90deg) skew(-10deg);
+	        transform: rotate(90deg) skew(-10deg);
 }
 
 .opened-modal#selected-toggle div:before,
 .opened-modal#archive-toggle div:before {
-	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	        transform: rotate(45deg);
 }
 
 #selected-toggle div:after,
 #archive-toggle div:after {
-	transform: rotate(-90deg) skew(-10deg);
+	-webkit-transform: rotate(-90deg) skew(-10deg);
+	        transform: rotate(-90deg) skew(-10deg);
 }
 
 .opened-modal#selected-toggle div:after,
 .opened-modal#archive-toggle div:after {
-	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	        transform: rotate(-45deg);
 }
 
 #about>.opened-modal {
-	transform: skew(-10deg);
+	-webkit-transform: skew(-10deg);
+	        transform: skew(-10deg);
 }
 
 
@@ -173,8 +190,12 @@ section {
 	font-weight: normal;
 	position: absolute;
 	z-index: 3;
-	justify-content: center;
-	align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	top: 0;
 	left: 0;
 	bottom: 0;
@@ -197,19 +218,27 @@ section>*  {
 }
 
 .make-drag {
-	box-shadow: 0 0 20px black;
+	-webkit-box-shadow: 0 0 20px black;
+	        box-shadow: 0 0 20px black;
 }
 
 .image {
 	position: absolute;
-	justify-content: flex-start;
-	align-items: center;
+	-webkit-box-pack: start;
+	    -ms-flex-pack: start;
+	        justify-content: flex-start;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	margin-bottom: .5em;
 	font-size: 45px;
 	padding: 25px 25px 0 25px;
 	width: calc(300px + 2vw);
-	flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-webkit-transition: .3s ease-out;
 	transition: .3s ease-out;
+	-webkit-transition-property: background;
 	transition-property: background;
 	top: calc(-400px - 2vw);
 	left: calc(-400px - 2vw);
@@ -231,6 +260,7 @@ section>*  {
 figcaption {
 	font-size: var(--step-down-5);
 	line-height: 25px;
+	-webkit-transition: .3s ease-out;
 	transition: .3s ease-out;
 	width: 100%;
 	padding: 12.5px 25px;
@@ -277,13 +307,19 @@ figcaption span {
 	pointer-events: all;
 	padding: 25px;
 	width: 80vw;
+	-webkit-transition: .3s ease-out;
 	transition: .3s ease-out;
+	-webkit-transition-property: background;
 	transition-property: background;
 }
 
 .table ul {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-between;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 }
 
 .table ul li {
@@ -316,6 +352,7 @@ figcaption span {
 
 .archive-list .table > * {
 	border-bottom: solid 1px black;
+	-webkit-transition: .3s ease-out;
 	transition: .3s ease-out;
 }
 
@@ -381,7 +418,8 @@ figcaption span {
 	}
 
 	.make-drag {
-		box-shadow: none;
+		-webkit-box-shadow: none;
+		        box-shadow: none;
 	}
 
 	.image {
@@ -389,6 +427,8 @@ figcaption span {
 		padding: 0;
 		position: relative;
 		vertical-align: top;
+		display: -webkit-inline-box;
+		display: -ms-inline-flexbox;
 		display: inline-flex;
 		top: 0;
 		left: 0;

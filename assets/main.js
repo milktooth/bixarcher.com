@@ -140,6 +140,7 @@ $('a').on('click', function()
 
 });
 
+
 $(document).ready(function()
 {
   var totalItems = $('.image').length;
@@ -258,7 +259,6 @@ $(window).resize(function(event) {
     $('#archive-toggle').removeClass('opened-modal');
   }
 });
-
 
 /*
   Javascript Credits
