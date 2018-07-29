@@ -14,7 +14,6 @@
 
     //y dist
     var randomized_top = getRandomFloat(y_min, y_max);
-    console.log(randomized_top);
 
     //x range
     var x_width = $(this).outerWidth(),
@@ -23,7 +22,6 @@
 
     //y dist
     var randomized_left = getRandomFloat(x_min, x_max);
-    console.log(randomized_left);
 
     //set left and top
     $(this).offset({
@@ -50,14 +48,32 @@ $('.main-toggle').on('click', function() {
 
   if ($(this).hasClass('toggle-active')) {
     $(this).removeClass('toggle-active');
+
+    /* remove inline css top on close */
+    if (target == 'archive') {
+      console.log('hey!');
+      $('#archive-wrap').css('top', '');
+    }
   } else {
     $(this).addClass('toggle-active');
+
+    /* randomize image pos on opening gallery */
     if (target == 'gallery') {
       $('.image').removeClass('image-closed');
         $('.make-drag').each(function() {
           $(this).randomizePosition();
         });
     }
+
+    /* convert the 60vh from top to px */
+    if (target == 'archive') {
+      var arch_height = $('#archive-wrap').outerHeight(),
+        win_height = $(window).height(),
+        final_height = (win_height - (arch_height*(2/3)));
+        console.log(final_height);
+      $('#archive-wrap').css('top', final_height);
+    }
+
   }
 });
 
@@ -74,6 +90,7 @@ $(document).click(function(event){
 // close image when x'd out
 // reset selected when all are closed
 $('.close').click(function(event) {
+  $(this).parent('#archive-wrap').css('top', '');
   $(this).parent('#archive-wrap').toggleClass('section-open');
   $("button[rel^='archive']").removeClass('toggle-active');
 
