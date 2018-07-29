@@ -1,0 +1,382 @@
+/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:0;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-0.25em}sup{top:-0.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,[type="button"],[type="reset"],[type="submit"]{-webkit-appearance:button}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type="checkbox"],[type="radio"]{box-sizing:border-box;padding:0}[type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button{height:auto}[type="search"]{-webkit-appearance:textfield;outline-offset:-2px}[type="search"]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
+
+a:link,
+a:visited {
+	color: black;
+	text-decoration: none;
+}
+
+a:active,
+a:hover {
+	color: black;
+	text-decoration: none;
+}
+
+:root {
+	--step-up-5: 2em;
+	--step-up-4: 1.7511em;
+	--step-up-3: 1.5157em;
+	--step-up-2: 1.3195em;
+	--step-up-1: 1.1487em;
+	/* baseline: 1em */
+	--step-down-1: .8706em;
+	--step-down-2: .7579em;
+	--step-down-3: .6599em;
+	--step-down-4: .5745em;
+	--step-down-5: .5em;
+}
+
+body {
+	overflow-x: hidden;
+	overflow-y: scroll;
+	background: #eac263;
+	color: white;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  line-height: inherit;
+}
+
+ol, ul, li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+/* text wrap styling */
+
+#text-wrap {
+  font-size: 6.5vw;
+  font-family: "Work Sans", Helvetica, Arial, "Lucida Grande", sans-serif;
+  margin: 0 .5em;
+  padding: .625em .125em 0 .125em;
+  line-height: 1;
+}
+
+#text-wrap.archive-is-open {
+  position: fixed;
+  left: 0;
+}
+
+/* section button toggle styling */
+
+#text-wrap button {
+  transition: .1s linear transform;
+  transform-origin: bottom left;
+  cursor: pointer;
+  border-bottom: dashed .025em;
+  height: .94em;
+  color: white;
+}
+
+#text-wrap button.toggle-active {
+  transform: skew(-10deg);
+  color: black;
+}
+
+.section-toggle span:after, .section-toggle span:before, .close.section-toggle span:after {
+	content: "";
+	height: .25em;
+	width: 0;
+	position: absolute;
+	border-left: solid white .03em;
+	right: -.0375em;
+	top: 0;
+	transition: .2s linear;
+	transition-property: transform;
+}
+
+.close.section-toggle span:after, .close.section-toggle span:before {
+	left: .25em;
+	right: 0;
+}
+
+.section-toggle span {
+	opacity: 0;
+	transition: .1s linear;
+	transition-property: opacity;
+}
+
+.section-toggle.toggle-active span {
+}
+
+.section-toggle.toggle-active span, .close.section-toggle span:after, .close.section-toggle span {
+	opacity: 1;
+}
+
+.section-toggle span:before {
+	        transform: rotate(90deg) skew(10deg);
+}
+
+.section-toggle.toggle-active span:before, .close.section-toggle span:before {
+	        transform: rotate(45deg);
+	        border-left: solid black .03em;
+}
+
+
+.section-toggle span:after {
+	        transform: rotate(-90deg) skew(-10deg);
+}
+
+.section-toggle.toggle-active span:after, .close.section-toggle span:after {
+	        transform: rotate(-45deg);
+	        border-left: solid black .03em;
+}
+
+ .close.section-toggle span {
+ }
+
+/* section styling and toggling stuff */
+
+#archive-wrap, #gallery-wrap {
+  font-family: "Anonymous Pro", "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+  visibility: hidden;
+  z-index: 1000;
+  position: fixed;
+}
+
+#archive-wrap.section-open, #gallery-wrap.section-open {
+	visibility: visible;
+}
+
+#archive-wrap.section-open {
+	position: absolute;
+	background: white;
+	left: 0;
+	right: 0;
+}
+
+.close {
+	position: absolute;
+	font-family: "Work Sans", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight: bold;
+	top: .1375em;
+	right: .1375em;
+	display: inline-flex;
+	transform: skew(-10deg);
+	width: .375em;
+	cursor: pointer;
+	font-size: 4.5em;
+	height: .375em;
+	z-index: 1000;
+	pointer-events: all;
+}
+
+section .close {
+	transform: none;
+}
+
+/* selected works styling */
+figure.image {
+
+min-width: 325px;
+
+width: 18vw;
+
+position: fixed;
+
+padding: 2em 2em 1em 2em;
+margin: 0;
+background: white;
+
+box-shadow: 0 0 6px #000000a3;
+}
+
+.image img {
+	display: block;
+}
+
+.image .image-title {
+}
+
+.image .image-year {
+}
+
+figure.image figcaption {
+	color: black;
+	display: flex;
+	padding-top: 1em;
+	justify-content: space-between;
+}
+
+.image-closed {
+	visibility: hidden;
+	pointer-events: none;
+}
+
+/* archive styling */
+
+#archive-wrap {
+
+width: 100%;
+
+top: 100%;
+
+box-shadow: 0 0 6px #000000a3;
+
+background: white;
+
+transition: .3s ease-out;
+}
+
+#archive-wrap.section-open {
+
+top: 60%;
+}
+
+.table {
+
+position: relative;
+
+margin: 0 auto;
+
+max-width: 1200px;
+
+padding: 25px .625em;
+
+font-size: 6.5vw;
+}
+
+.table ul {
+	border-bottom: solid black 1px;
+	display: flex;
+	justify-content: space-between;
+	font-size: 16px;
+	transition: .2s ease-out background;
+}
+
+.table ul:hover {
+	background: #eac263;
+}
+
+.table ul li {
+	padding: 12.5px 12.5px 12.5px 25px;
+}
+
+.table ul li:first-child {
+	width: 34%;
+}
+
+.table ul li:nth-child(2n) {
+	width: 40%;
+}
+
+.table ul li:nth-child(3n) {
+	width: 14%;
+}
+
+#archive .table {
+	font-size: var(--step-down-4);
+}
+
+.table>*:last-child>ul {
+	border-bottom: none;
+}
+
+
+/*screen is a transparent layer above each of the "selected images" on large screens it does nothing but on mobile (small screens) it catches clicks to close the images, since the jquery to disable the drag effect would be super elaborate */
+
+figure .screen {
+	opacity: 0;
+	pointer-events: none;
+	width: initial;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transform: none;
+	height: initial;
+}
+
+@media only screen and (max-width: 768px) {
+	figure.image {
+		pointer-events: none;
+	}
+
+
+	figure .close {
+		visibility: hidden;
+		pointer-events: none;
+	}
+
+	.section-open .screen {
+		opacity: 0;
+		pointer-events: all;
+		visibility: visible;
+	}
+
+	figure.image-closed .screen, figure .screen {
+		pointer-events: none;
+	}
+
+	#text-wrap, .table {
+		font-size: 50px;
+	}
+
+	.table ul li:nth-child(2n) {
+	visibility: hidden;
+	position: fixed;
+	}
+	.table ul li:first-child {
+		width: 75%;
+	}
+	.table ul li:nth-child(3n) {
+		width: 15%;
+	}
+
+	 #gallery-wrap.section-open {
+
+top: 1em;
+
+left: 1em;
+
+right: 1em;
+
+bottom: 1em;
+}
+
+#text-wrap button {
+	border-width: .0375em;
+}
+
+}
+
+@media only screen and (max-width: 525px) {
+		figure.image {
+
+min-width: unset;
+
+width: 62vw;
+
+padding: 6vw 6vw 3vw 6vw;
+}
+
+figure.image figcaption {
+	font-size: .8706em;
+	padding-top: 3vw;
+	justify-content: center;
+}
+
+.table ul>* {
+	font-size: .8706em;
+}
+
+.image .image-year {
+	display: none;
+}
+}
+
+@media only screen and (max-width: 485px) {
+	#text-wrap, .table {
+		font-size: 10.25vw;
+	}
+}
