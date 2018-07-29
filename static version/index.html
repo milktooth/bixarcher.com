@@ -1,186 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-
+ <!-- test -->
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-      /*inject toggles if there is Javascript*/
-      $(document).ready(function()
-      {
-        if ( $(window).width() > 768 ) {
-          $('#archive-toggle').css("display", "inline-block");
-          $('#selected-toggle').css("display", "inline-block");
-          $('#archive-text').hide();
-          $('#selected-text').hide();
-        }
-
-        else {
-          $('#archive-toggle').hide();
-          $('#selected-toggle').hide();
-          $('#archive-text').show();
-          $('#selected-text').show();
-        }
-      });
-
-
-      $(window).resize(function(event) {
-          if ( $(window).width() > 768 ) {
-            $('#archive-toggle').css("display", "inline-block");
-            $('#selected-toggle').css("display", "inline-block");
-            $('#archive-text').hide();
-            $('#selected-text').hide();
-          }
-
-          else {
-            $('#archive-toggle').hide();
-            $('#selected-toggle').hide();
-            $('#archive-text').show();
-            $('#selected-text').show();
-          }
-      });
-    </script>
     <script async src="assets/main.js"></script>
 
     <title>Bix Archer</title>
   </head>
 
   <body>
-    <!-- this contains everything on the page -->
-    <div id="big-wrap">
-      <div id="about">
-        Bix Archer is a girl from San Francisco. She is currently an undergraduate at Yale College. These are her
-        <a href="#image-gallery" rel="gallery" id="selected-toggle"><span>selected works</span><div></div></a><span id="selected-text">selected works</span>
-
-        <section id="gallery">
-
-          <figure class="image make-drag">
-            <div class="close">x</div>
-            <img src="assets/images/red-painting.jpg">
-            <figcaption>
-              <span class="img-title">Red Painting</span>
-              <span class="img-year">2017</span>
-            </figcaption>
-          </figure>
-
-          <figure class="image make-drag">
-            <div class="close">x</div>
-            <img src="assets/images/north-bay-fires.jpg">
-            <figcaption>
-              <span class="img-title">Red Painting</span>
-              <span class="img-year">2017</span>
-            </figcaption>
-          </figure>
-
-          <figure class="image make-drag">
-            <div class="close">x</div>
-            <img src="assets/images/365.jpg">
-            <figcaption>
-              <span class="img-title">Red Painting</span>
-              <span class="img-year">2017</span>
-            </figcaption>
-          </figure>
-
-          <figure class="image make-drag">
-            <div class="close">x</div>
-            <img src="assets/images/true-story.jpg">
-            <figcaption>
-              <span class="img-title">Red Painting</span>
-              <span class="img-year">2017</span>
-            </figcaption>
-          </figure>
-
-          <figure class="image make-drag">
-            <div class="close">x</div>
-            <img src="assets/images/the-water-is-fine.jpg">
-            <figcaption>
-              <span class="img-title">Red Painting</span>
-              <span class="img-year">2017</span>
-            </figcaption>
-          </figure>
-        </section>
-
-        and this is her
-        <a href="#archive" rel="archive" id="archive-toggle"><span>archive</span><div></div></a><span id="archive-text">archive</span>
-
-        <section id="archive">
-          <div id="works-list" class="archive-list">
-            <div class="close">x</div>
-            <div class="table">
-              <a href="#">
-                <ul>
-                  <li>Red Painting</li>
-                  <li>paint on canvas</li>
-                  <li>2017</li>
-                </ul>
-              </a>
-              <a href="#">
-                <ul>
-                  <li>True Story</li>
-                  <li>screen print</li>
-                  <li>2017</li>
-                </ul>
-              </a>
-              <a href="#">
-                <ul>
-                  <li>title</li>
-                  <li>medium</li>
-                  <li>year</li>
-                </ul>
-              </a>
-              <a href="#">
-                <ul>
-                  <li>title</li>
-                  <li>medium</li>
-                  <li>year</li>
-                </ul>
-              </a>
-              <a href="#">
-                <ul>
-                  <li>title</li>
-                  <li>medium</li>
-                  <li>year</li>
-                </ul>
-              </a>
-              <a href="#">
-                <ul>
-                  <li>title</li>
-                  <li>medium</li>
-                  <li>year</li>
-                </ul>
-              </a>
-              <a href="#">
-                <ul>
-                  <li>title</li>
-                  <li>medium</li>
-                  <li>year</li>
-                </ul>
-              </a>
-              <a href="#">
-                <ul>
-                  <li>title</li>
-                  <li>medium</li>
-                  <li>year</li>
-                </ul>
-              </a>
-              <a href="#">
-                <ul>
-                  <li>title</li>
-                  <li>medium</li>
-                  <li>year</li>
-                </ul>
-              </a>
-            </div>
-          </div>
-        </section>
+    <section id="text-wrap">
+      Bix Archer is a girl from San Francisco. She is currently an undergraduate at Yale College. These are her <button class="main-toggle section-toggle" rel="gallery" type="button" name="selected works gallery">selected works<span></span></button>
+      and this is her <button class="main-toggle section-toggle" rel="archive" type="button" name="selected works gallery">archive<span></span></button>.
+    </section>
+    <section id="gallery-wrap">
+      <figure class="image make-drag">
+        <div class="close screen"></div>
+        <button class="close section-toggle"><span></span></button>
+        <img src="assets/images/red-painting.jpg">
+        <figcaption>
+          <span class="image-title">Red Painting</span>
+          <span class="image-year">2017</span>
+        </figcaption>
+      </figure>
+      <figure class="image make-drag">
+        <div class="close screen"></div>
+        <button class="close section-toggle"><span></span></button>
+        <img src="assets/images/the-water-is-fine.jpg">
+        <figcaption>
+          <span class="image-title">The Water is Fine</span>
+          <span class="image-year">2016</span>
+        </figcaption>
+      </figure>
+    </section>
+    <section id="archive-wrap">
+      <button class="close section-toggle"><span></span></button>
+      <div class="table">
+        <a href="#">
+          <ul>
+            <li>Red Painting</li>
+            <li>paint on canvas</li>
+            <li>2017</li>
+          </ul>
+        </a>
+        <a href="#">
+          <ul>
+            <li>True Story</li>
+            <li>screen print</li>
+            <li>2017</li>
+          </ul>
+        </a>
+        <a href="#">
+          <ul>
+            <li>title</li>
+            <li>medium</li>
+            <li>year</li>
+          </ul>
+        </a>
+        <a href="#">
+          <ul>
+            <li>title</li>
+            <li>medium</li>
+            <li>year</li>
+          </ul>
+        </a>
+        <a href="#">
+          <ul>
+            <li>title</li>
+            <li>medium</li>
+            <li>year</li>
+          </ul>
+        </a>
+        <a href="#">
+          <ul>
+            <li>title</li>
+            <li>medium</li>
+            <li>year</li>
+          </ul>
+        </a>
+        <a href="#">
+          <ul>
+            <li>title</li>
+            <li>medium</li>
+            <li>year</li>
+          </ul>
+        </a>
+        <a href="#">
+          <ul>
+            <li>title</li>
+            <li>medium</li>
+            <li>year</li>
+          </ul>
+        </a>
+        <a href="#">
+          <ul>
+            <li>title</li>
+            <li>medium</li>
+            <li>year</li>
+          </ul>
+        </a>
       </div>
-    </div>
-
-    <div id="canvas-size"></div>
+    </section>
   </body>
-
 </html>

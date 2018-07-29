@@ -1,0 +1,27 @@
+Title: Home
+
+----
+
+Text: Bix Archer is a girl from San Francisco. She is currently an undergraduate at Yale College.
+
+----
+
+Gallery: north-bay-fires-500px.jpg,the-water-is-fine-500px.jpg
+
+----
+
+Archive: 
+
+- 
+  title: Red
+  medium: Paint
+  year: "2018"
+  image: north-bay-fires-500px.jpg
+
+----
+
+About: Bix Archer is a girl from San Francisco. She is currently an undergraduate at Yale College.
+
+----
+
+Selectedworks: 

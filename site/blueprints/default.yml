@@ -1,10 +1,52 @@
 title: Page
-pages: true
+pages: false
 files: true
 fields:
   title:
     label: Title
     type:  text
-  text:
-    label: Text
+
+  about:
+    label: About
     type:  textarea
+    required: true
+    validate:
+      min: 0
+      max: 100
+    help: This is your about section. The text here goes before the sentence "These are her selected works and this is her archive." You only get a sentence or two here as the whole section needs to fit on the screen at once.
+
+  selectedworks:
+    label: Selected Works
+    type: structure
+    style: table
+    fields:
+      image:
+        label: Image
+        type: selector
+        mode: single
+        types:
+                - image
+      year:
+        label: Year
+        type: number
+
+  archive:
+    label: Archive
+    type: structure
+    style: table
+    fields:
+      image:
+        label: Image
+        type: selector
+        mode: single
+        types:
+                - image
+      title:
+        label: Title
+        type: text
+      medium:
+        label: Medium
+        type: text
+      year:
+        label: Year
+        type: number

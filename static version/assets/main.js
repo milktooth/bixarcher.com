@@ -1,4 +1,131 @@
-/*Dragable*/
+// Designed and coded by Jacob Brussel Faria. Completed in the summer of 2018 despite the best efforts of buggy code and one infected wisdom tooth.
+// All content is copyright of Beatrix Archer.
+// All code is copyright of Jacob Brussel Faria unless otherwise cited.
+// All non-proprietary code is cited at the bottom of the relevant file.
+
+//randomize position for selected works within middle 90% of total screen size
+(function ($)
+{
+  $.fn.randomizePosition = function(rdmitem) {
+    //y range
+    var y_height = $(this).outerHeight(),
+      y_max = (($(window).height() * .95) - y_height),
+      y_min = ($(window).height() * .05);
+
+    //y dist
+    var randomized_top = getRandomFloat(y_min, y_max);
+
+    //x range
+    var x_width = $(this).outerWidth(),
+      x_max = (($(window).width() * .95) - x_width),
+      x_min = ($(window).width() * .05);
+
+    //y dist
+    var randomized_left = getRandomFloat(x_min, x_max);
+
+    //set left and top
+    $(this).offset({
+      top: randomized_top,
+      left: randomized_left
+    });
+  };
+}(jQuery));
+
+//detect offscreen elements
+jQuery.expr.filters.offscreen = function(el) {
+  var rect = el.getBoundingClientRect();
+  return (
+           (rect.x + rect.width) < 0
+             || (rect.y + rect.height) < 0
+             || (rect.x > window.innerWidth || rect.y > window.innerHeight)
+         );
+};
+
+// open content section on button click
+$('.main-toggle').on('click', function() {
+  var target = $(this).attr('rel');
+  $("#" + target + "-wrap").toggleClass('section-open');
+
+  if ($(this).hasClass('toggle-active')) {
+    $(this).removeClass('toggle-active');
+
+    /* remove inline css top on close */
+    if (target == 'archive') {
+      console.log('hey!');
+      $('#archive-wrap').css('top', '');
+    }
+  } else {
+    $(this).addClass('toggle-active');
+
+    /* randomize image pos on opening gallery */
+    if (target == 'gallery') {
+      $('.image').removeClass('image-closed');
+        $('.make-drag').each(function() {
+          $(this).randomizePosition();
+        });
+    }
+
+    /* convert the 60vh from top to px */
+    if (target == 'archive') {
+      var arch_height = $('#archive-wrap').outerHeight(),
+        win_height = $(window).height(),
+        final_height = (win_height - (arch_height*(2/3)));
+        console.log(final_height);
+      $('#archive-wrap').css('top', final_height);
+    }
+
+  }
+});
+
+// fix text-wrap if archive is open
+$(document).click(function(event){
+  if ($('#archive-wrap').hasClass('section-open')) {
+    $('#text-wrap').addClass('archive-is-open');
+  } else {
+    $('#text-wrap').removeClass('archive-is-open');
+  }
+});
+
+// remove active status from toggle if archive is closed
+// close image when x'd out
+// reset selected when all are closed
+$('.close').click(function(event) {
+  $(this).parent('#archive-wrap').css('top', '');
+  $(this).parent('#archive-wrap').toggleClass('section-open');
+  $("button[rel^='archive']").removeClass('toggle-active');
+
+  $(this).parent('.image').addClass('image-closed');
+  if ( $('.image').length == $('.image-closed').length) {
+    $('#gallery-wrap').removeClass('section-open');
+    $("button[rel^='gallery']").removeClass('toggle-active');
+      $(this).addClass('toggle-active');
+  }
+});
+
+// integer limiter
+function valBetween(v, min, max) {
+    return (Math.min(max, Math.max(min, v)));
+}
+
+/**
+ * Get a random floating point number between `min` and `max`.
+ *
+ * @param {number} min - min number
+ * @param {number} max - max number
+ * @return {number} a random floating point number
+ */
+function getRandomFloat(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+// trigger randomizer on load
+$(document).ready(function() {
+  $('.make-drag').each(function() {
+    $(this).randomizePosition();
+  });
+});
+
+// drag function
 (function($)
 {
   $.fn.drags = function(opt)
@@ -37,10 +164,21 @@
         pos_x = $drag.offset().left + drg_w - e.pageX;
       $drag.css('z-index', 8).parents().on("mousemove", function(e)
       {
+        //constrain dragable to page
+        var top_dist = e.pageY + pos_y - drg_h,
+          max_y = $(window).height() - $drag.outerHeight(),
+          min_y = 0,
+          const_pos_y = valBetween( top_dist, min_y, max_y),
+
+          left_dist = e.pageX + pos_x - drg_w,
+          max_x = $(window).width() - $drag.outerWidth(),
+          min_x = 0,
+          const_pos_x = valBetween( left_dist, min_x, max_x);
+
         $('.draggable').offset(
         {
-          top: e.pageY + pos_y - drg_h,
-          left: e.pageX + pos_x - drg_w
+          top: const_pos_y,
+          left: const_pos_x
         }).on("mouseup", function()
         {
         });
@@ -69,202 +207,56 @@
   }
 })(jQuery);
 
-/*random position within canvas*/
-
-function randomFromTo(from, to)
-{
-  return Math.floor(Math.random() * (to - from + 1) + from);
-}
-
-function moveRandom(obj)
-{
-  /* get container position and size
-   * -- access method : cPos.top and cPos.left */
-  var cPos = $('#canvas-size').offset();
-  var cHeight = $('#canvas-size').height();
-  var cWidth = $('#canvas-size').width();
-
-  // get box padding (assume all padding have same value)
-  var pad = parseInt($('#canvas-size').css('padding-top').replace('px', ''));
-
-  // get movable box size
-  var bHeight = obj.height();
-  var bWidth = obj.width();
-
-  // set maximum position
-  maxY = cPos.top + cHeight - bHeight - pad;
-  maxX = cPos.left + cWidth - bWidth - pad;
-
-  // set minimum position
-  minY = cPos.top + pad;
-  minX = cPos.left + pad;
-
-  // set new position
-  newY = randomFromTo(minY, maxY);
-  newX = randomFromTo(minX, maxX);
-
-  obj.animate(
-  {
-    top: newY,
-    left: newX
-  });
-}
-
-/*closer*/
-$(".close").click(function()
-{
-  $(this).parent().toggle();
-  $(this).parent().toggleClass('closed-item');
-});
-
-/*open modal*/
-$('a').on('click', function()
-{
-  var target = $(this).attr('rel');
-  $("#" + target).toggleClass('open-modal-container');
-
-  if ( $("#" + target).hasClass('open-modal-container') ) {
-    $(this).addClass('opened-modal');
-  }
-
-  else {
-    $(this).removeClass('opened-modal');
-  }
-
-  $("#" + target + " .make-drag").css(
-    {
-    display: "flex",
-  });
-
-  $("#" + target + " .make-drag").css('z-index', '4');
-
-});
-
-
-$(document).ready(function()
-{
-  var totalItems = $('.image').length;
-
-  $('.close').click(function()
-  {
-    var closedItems = $('#gallery .closed-item').length;
-
-    if (totalItems == closedItems)
-    {
-      $("#gallery").removeClass('open-modal-container');
-      $(".image").toggle();
-      $(".image").removeClass('closed-item');
-      $('#selected-toggle').removeClass('opened-modal');
-    }
-  });
-});
-
-$(document).ready(function()
-{
-  var totalItems = $('.archive-list').length;
-
-  $('.close').click(function()
-  {
-    var closedItems = $('#archive .closed-item').length;
-
-    if (totalItems == closedItems)
-    {
-      $("#archive").removeClass('open-modal-container');
-      $(".archive-list").toggle();
-      $(".archive-list").removeClass('closed-item');
-      $('#archive-toggle').removeClass('opened-modal');
-    }
-  });
-});
-
-/*detect offscreen items*/
-jQuery.expr.filters.offscreen = function(el)
-{
-  var rect = el.getBoundingClientRect();
-  return (
-    (rect.x + rect.width) < 0 ||
-    (rect.y + rect.height) < 0 ||
-    (rect.x > window.innerWidth || rect.y > window.innerHeight)
-  );
-};
-
-/*randomize positions if items are offscreen after resize with delay*/
-var id;
-$(window).resize(function()
-{
-  clearTimeout(id);
-  id = setTimeout(doneResizing, 500);
-});
-
-function doneResizing()
-{
-  if ($('.make-drag').is(':offscreen') && $(window).width() > 768)
-  {
-    $('.make-drag').each(function()
-    {
-      moveRandom($(this));
-    });
-  }
-}
-
+// if object has the class "make-drag", make it draggable
 $(document).ready(function() {
-    if ( $(window).width() > 768 ) {
       $('.make-drag').drags();
+});
 
-      /*randomize image postion on open*/
-      $('.image').each(function()
-      {
-        moveRandom($(this));
+// timer used to detect when resize is finished
+var resizeTimer;
+
+$(window).resize(function(event) {
+  $('.image').each(function() {
+    // detect if it's touching the right side
+    var rt_offset = ($(window).width() - ($(this).offset().left + $(this).outerWidth()));
+    // if it is set right to zero & nix left
+    if (rt_offset <= 0) {
+      $(this).css({
+       'left' : 'initial',
+       'right' : '0'
       });
     }
 
-    else {
-      $('.make-drag').off();
-      $('.make-drag').removeAttr('style');
-      $('#gallery').show();
-      $('#archive').show();
+    // detect if it's touching the bottom
+    var bt_offset = ($(window).height() - ($(this).offset().top + $(this).outerHeight()));
+    // if it is set bottom to zero & nix top
+    if (bt_offset <= 0) {
+      $(this).css({
+       'top' : 'initial',
+       'bottom' : '0'
+      });
     }
+  });
+
+  // once resizing is over unset right, bottom and reset left, top to current position
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(function() {
+    $('.image').each(function() {
+      var lf_offset = $(this).offset().left, //get dist from left
+        tp_offset = $(this).offset().top; //get dist from top
+
+      $(this).css({
+       'left' : lf_offset,
+       'right' : 'initial',
+       'top' : tp_offset,
+       'bottom' : 'initial'
+      });
+    });
+  }, 10);
+
 });
 
-$(window).resize(function(event) {
-    if ( $(window).width() > 768 ) {
-      $('.make-drag').drags();
-      $('.image').css('display', 'flex');
-    }
-
-    else {
-      $('.make-drag').off();
-      $('.make-drag').removeAttr('style');
-      $('#gallery').show();
-      $('#archive').show();
-    }
-});
-
-$(window).resize(function(event) {
-    if ( $('#gallery').hasClass('open-modal-container') ) {
-      $('#selected-toggle').addClass('opened-modal');
-    }
-
-    else {
-      $('#selected-toggle').removeClass('opened-modal');
-    }
-});
-
-$(window).resize(function(event) {
-  if ( $('#archive').hasClass('open-modal-container')) {
-    $('#archive-toggle').addClass('opened-modal');
-  }
-
-  else {
-    $('#archive-toggle').removeClass('opened-modal');
-  }
-});
-
-/*
-  Javascript Credits
-  Offscreen detection: https://stackoverflow.com/questions/8897289/how-to-check-if-an-element-is-off-screen#8897628
-  Random position: https://stackoverflow.com/questions/20924613/move-multiple-divs-randomly-using-jquery
-  Dragable w/out jQuery UI: https://css-tricks.com/snippets/jquery/draggable-without-jquery-ui/
-  Resize trigger adjustment: http://jsfiddle.net/Zevan/c9UE5/1/
-  Brilliantly simple touch device detection: https://codeburst.io/the-only-way-to-detect-touch-with-javascript-7791a3346685
-*/
+// dragable jquery https://codepen.io/SusanneLundblad/pres/vNOWqK
+// integer limiter http://www.hnldesign.nl/work/code/javascript-limit-integer-min-max/
+// random floating point within range https://gist.github.com/kerimdzhanov/7529623
+// run after resize is finished https://css-tricks.com/snippets/jquery/done-resizing-event/
