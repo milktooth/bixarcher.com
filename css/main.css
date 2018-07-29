@@ -83,6 +83,7 @@ img {
 	margin: .5em;
 	overflow: hidden;
 	padding: .25em;
+	box-sizing: border-box;
 }
 
 #about {
@@ -182,7 +183,18 @@ img {
 
 
 #archive, #gallery {
-	display: none;
+	visibility: hidden;
+}
+
+#archive.open-modal-container, #gallery.open-modal-container {
+	visibility: visible;
+	transition-delay: -.1s;
+	transition-duration: .4s;
+}
+
+#archive.open-modal-container {
+
+bottom: 0;
 }
 
 section {
@@ -191,12 +203,11 @@ section {
 	position: absolute;
 	z-index: 3;
 	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
 	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
-	top: 0;
+	-ms-flex-align: center;
+	align-items: center;
 	left: 0;
 	bottom: 0;
 	right: 0;
@@ -215,11 +226,12 @@ section>*  {
 
 #gallery {
 	font-size: 0;
+	top: 0;
 }
 
 .make-drag {
-	-webkit-box-shadow: 0 0 20px black;
-	        box-shadow: 0 0 20px black;
+	-webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.8);
+	box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.8);
 }
 
 .image {
@@ -265,6 +277,7 @@ figcaption {
 	width: 100%;
 	padding: 12.5px 25px;
 	margin: 0 -25px;
+	transition-property: background;
 }
 
 figure:hover figcaption {
@@ -282,14 +295,15 @@ figcaption span {
 }
 
 #archive .archive-list {
-	position: relative;
 	padding: 0;
 	left: auto;
-	padding: 25px;
+	position: static;
+	padding: 1em;
 	margin: auto;
 	width: 100%;
-	max-width: 650px;
+	max-width: 0px;
 	cursor: initial;
+	max-width: 900px;
 	z-index: 4;
 	font-size: inherit;
 }
@@ -297,6 +311,13 @@ figcaption span {
 #archive {
 	pointer-events: none;
 	font-size: 45px;
+	display: flex;
+	position: fixed;
+	background: white;
+	bottom: -100%;
+	transition: .5s ease-out;
+	box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.8);
+	transition-delay: 0s;
 }
 
 .archive-list {
@@ -354,6 +375,7 @@ figcaption span {
 	border-bottom: solid 1px black;
 	-webkit-transition: .3s ease-out;
 	transition: .3s ease-out;
+	transition-property: background;
 }
 
 #archive .table > * {
@@ -409,8 +431,10 @@ figcaption span {
 	}
 
 	#archive, #gallery {
-		display: block;
+		visibility: visible;
+		box-shadow: none;
 		overflow-y: hidden;
+		position: relative;
 	}
 
 	#archive .archive-list {
