@@ -44,7 +44,7 @@ fields:
         mode: single
         types:
                 - image
-      title:
+      name:
         label: Title
         type: text
       medium:

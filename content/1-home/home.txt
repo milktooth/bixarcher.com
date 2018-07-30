@@ -24,6 +24,16 @@ Archive:
   medium: Monoprint
   year: "2016"
   name: The Water is Fine
+- 
+  image: 365.jpg
+  name: "365"
+  medium: Screenprint
+  year: "2017"
+- 
+  image: the-water-is-fine-500px.jpg
+  name: Test
+  medium: Magic
+  year: "2002"
 
 ----
 

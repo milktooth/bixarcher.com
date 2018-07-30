@@ -45,19 +45,23 @@
   <section id="archive-wrap">
     <button class="close section-toggle" rel="archiveclose"><span></span></button>
     <div class="table">
-      <!-- make archive structure into array -->
-      <?php $archive = yaml($page->archive()) ?>
+      <!-- convert structure to kirby objects and sort reverse chronologically  -->
 
-      <!-- parse array into the proper html -->
-      <?php foreach($archive as $archiveItem): ?>
-      <a href="<?= $page->image($archiveItem['image'])->url(); ?>" target="_blank">
+      <?php
+        $archive = $page->archive()->toStructure();
+        $sortedArchive = $archive->sortBy('year', 'desc');
+
+        foreach($sortedArchive as $archiveItem): ?>
+      <!-- construct as archive properly -->
+      <a href="<?= $page->image($archiveItem->image())->url(); ?>" target="_blank">
         <ul>
-          <li><?= $archiveItem['title'] ?></li>
-          <li><?= $archiveItem['medium'] ?></li>
-          <li><?= $archiveItem['year'] ?></li>
+          <li><?= $archiveItem->name()->html() ?></li>
+          <li><?= $archiveItem->medium()->html() ?></li>
+          <li><?= $archiveItem->year()->html() ?></li>
         </ul>
       </a>
       <?php endforeach ?>
+
     </div>
   </section>
 
