@@ -15,7 +15,7 @@ fields:
       max: 100
     help: This is your about section. The text here goes before the sentence "These are her selected works and this is her archive." You only get a sentence or two here as the whole section needs to fit on the screen at once.
 
-  selectedworks:
+  selectedWorks:
     label: Selected Works
     type: structure
     style: table
@@ -26,6 +26,9 @@ fields:
         mode: single
         types:
                 - image
+      title:
+        label: Title
+        type: text
       year:
         label: Year
         type: number

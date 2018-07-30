@@ -1,8 +1,3 @@
-// Designed and coded by Jacob Brussel Faria. Completed in the summer of 2018 despite the best efforts of buggy code and one infected wisdom tooth.
-// All content is copyright of Beatrix Archer.
-// All code is copyright of Jacob Brussel Faria unless otherwise cited.
-// All non-proprietary code is cited at the bottom of the relevant file.
-
 //randomize position for selected works within middle 90% of total screen size
 (function ($)
 {
@@ -51,7 +46,6 @@ $('.main-toggle').on('click', function() {
 
     /* remove inline css top on close */
     if (target == 'archive') {
-      console.log('hey!');
       $('#archive-wrap').css('top', '');
     }
   } else {
@@ -70,7 +64,6 @@ $('.main-toggle').on('click', function() {
       var arch_height = $('#archive-wrap').outerHeight(),
         win_height = $(window).height(),
         final_height = (win_height - (arch_height*(2/3)));
-        console.log(final_height);
       $('#archive-wrap').css('top', final_height);
     }
 
@@ -92,7 +85,11 @@ $(document).click(function(event){
 $('.close').click(function(event) {
   $(this).parent('#archive-wrap').css('top', '');
   $(this).parent('#archive-wrap').toggleClass('section-open');
-  $("button[rel^='archive']").removeClass('toggle-active');
+  var relation = $(this).attr('rel');
+  // if this is the archive close then remove the toggle active from the archive button
+  if (relation == "archiveclose") {
+    $("button[rel^='archive']").removeClass('toggle-active');
+  }
 
   $(this).parent('.image').addClass('image-closed');
   if ( $('.image').length == $('.image-closed').length) {

@@ -52,6 +52,11 @@ img {
 	max-height: 100%;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
 /* text wrap styling */
 
 #text-wrap {
@@ -260,6 +265,7 @@ font-size: 6.5vw;
 
 .table ul li {
 	padding: 12.5px 12.5px 12.5px 25px;
+	overflow: hidden;
 }
 
 .table ul li:first-child {

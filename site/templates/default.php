@@ -13,7 +13,6 @@
   <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro" rel="stylesheet">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <?= js('assets/js/main.js') ?>
 
 </head>
 <body>
@@ -22,15 +21,46 @@
     <p>
       <?= $page->about()->kirbytextRaw() ?>
       These are her <button class="main-toggle section-toggle" rel="gallery" type="button" name="selected works gallery">selected works<span></span></button>
-      and this is her <button class="main-toggle section-toggle" rel="archive" type="button" name="selected works gallery">archive<span></span></button>.
+      and this is her <button class="main-toggle section-toggle" rel="archive" type="button" name="archive">archive<span></span></button>.
     </p>
   </section>
   <section id="gallery-wrap">
-    <!-- gonna need to loop and parse that structure my guy -->
+    <!-- make selected works structure into array -->
+    <?php $selectedWorks = yaml($page->selectedworks()) ?>
+
+    <!-- parse array into the proper html -->
+    <?php foreach($selectedWorks as $work): ?>
+    <figure class="image make-drag">
+      <div class="close screen"></div>
+      <button class="close section-toggle"><span></span></button>
+      <img src="<?= $page->image($work['image'])->url(); ?>">
+      <figcaption>
+        <span class="image-title"><?= $work['title'] ?></span>
+        <span class="image-year"><?= $work['year'] ?></span>
+      </figcaption>
+    </figure>
+    <?php endforeach ?>
+
   </section>
   <section id="archive-wrap">
-    <!-- gonna need to loop and parse that structure my guy -->
+    <button class="close section-toggle" rel="archiveclose"><span></span></button>
+    <div class="table">
+      <!-- make archive structure into array -->
+      <?php $archive = yaml($page->archive()) ?>
+
+      <!-- parse array into the proper html -->
+      <?php foreach($archive as $archiveItem): ?>
+      <a href="<?= $page->image($archiveItem['image'])->url(); ?>" target="_blank">
+        <ul>
+          <li><?= $archiveItem['title'] ?></li>
+          <li><?= $archiveItem['medium'] ?></li>
+          <li><?= $archiveItem['year'] ?></li>
+        </ul>
+      </a>
+      <?php endforeach ?>
+    </div>
   </section>
-    <!-- add a lil thing on the bottom with a contact -->
+
+    <?= js('assets/js/main.js') ?>
 </body>
 </html>

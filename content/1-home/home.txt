@@ -1,4 +1,4 @@
-Title: Home
+Title: 365Home
 
 ----
 
@@ -13,10 +13,17 @@ Gallery: north-bay-fires-500px.jpg,the-water-is-fine-500px.jpg
 Archive: 
 
 - 
+  image: north-bay-fires-500px.jpg
   title: Red
   medium: Paint
   year: "2018"
-  image: north-bay-fires-500px.jpg
+  name: North Bay Fires
+- 
+  image: the-water-is-fine-500px.jpg
+  title: The Water is Fine
+  medium: Monoprint
+  year: "2016"
+  name: The Water is Fine
 
 ----
 
@@ -25,3 +32,12 @@ About: Bix Archer is a girl from San Francisco. She is currently an undergraduat
 ----
 
 Selectedworks: 
+
+- 
+  image: 365.jpg
+  title: "365"
+  year: "2014"
+- 
+  image: north-bay-fires-500px.jpg
+  title: North Bay Fires
+  year: "2017"
