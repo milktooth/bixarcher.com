@@ -1,4 +1,4 @@
-Title: 365Home
+Title: Home
 
 ----
 
@@ -51,3 +51,7 @@ Selectedworks:
   image: north-bay-fires-500px.jpg
   title: North Bay Fires
   year: "2017"
+
+----
+
+Contact: bixarcher@gmail.com

@@ -53,3 +53,7 @@ fields:
       year:
         label: Year
         type: number
+
+  contact:
+    label: Contact Email
+    type: text

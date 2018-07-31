@@ -23,6 +23,9 @@
       These are her <button class="main-toggle section-toggle" rel="gallery" type="button" name="selected works gallery">selected works<span></span></button>
       and this is her <button class="main-toggle section-toggle" rel="archive" type="button" name="archive">archive<span></span></button>.
     </p>
+    <div class="contact">
+      <span>Contact: <?= $page->contact()->kirbytextRaw() ?></span>
+    </div>
   </section>
   <section id="gallery-wrap">
     <!-- make selected works structure into array -->

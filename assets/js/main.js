@@ -115,11 +115,18 @@ function getRandomFloat(min, max) {
   return Math.random() * (max - min) + min;
 }
 
-// trigger randomizer on load
 $(document).ready(function() {
+  // trigger randomizer on load
   $('.make-drag').each(function() {
     $(this).randomizePosition();
   });
+
+  // set starting height for contact
+  var window_ht = $(window).height(),
+    main_ht = $('#text-wrap p').outerHeight() + $('#text-wrap p').offset().top,
+    ct_ht = window_ht - main_ht;
+    // min-height set in css
+    $('.contact').css('height', ct_ht);
 });
 
 // drag function
@@ -251,6 +258,12 @@ $(window).resize(function(event) {
     });
   }, 10);
 
+  // reset on resize height for contact
+  var window_ht = $(window).height(),
+    main_ht = $('#text-wrap p').outerHeight() + $('#text-wrap p').offset().top,
+    ct_ht = window_ht - main_ht;
+    // min-height set in css
+    $('.contact').css('height', ct_ht);
 });
 
 // dragable jquery https://codepen.io/SusanneLundblad/pres/vNOWqK
