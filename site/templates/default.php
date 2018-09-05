@@ -36,7 +36,7 @@
     <figure class="image make-drag">
       <div class="close screen"></div>
       <button class="close section-toggle"><span></span></button>
-      <img src="<?= $page->image($work['image'])->url(); ?>">
+      <img src="<?= $page->image($work['image'])->resize(500)->url(); ?>">
       <figcaption>
         <span class="image-title"><?= $work['title'] ?></span>
         <span class="image-year"><?= $work['year'] ?></span>

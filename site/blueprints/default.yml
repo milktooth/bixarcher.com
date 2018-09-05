@@ -26,6 +26,7 @@ fields:
         mode: single
         types:
                 - image
+        help: Images for the selected works section must be at least 500px wide
       title:
         label: Title
         type: text

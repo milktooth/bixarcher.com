@@ -34,14 +34,16 @@ body {
 }
 
 button {
-  background: none;
-  border: none;
-  outline: none;
-  padding: 0;
-  line-height: inherit;
+	background: none;
+	border: none;
+	outline: none;
+	padding: 0;
+	line-height: inherit;
 }
 
-ol, ul, li {
+li,
+ol,
+ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -53,42 +55,40 @@ img {
 }
 
 p {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
-
 /* text wrap styling */
-
 #text-wrap {
-  font-size: 6.5vw;
-  font-family: "Work Sans", Helvetica, Arial, "Lucida Grande", sans-serif;
-  margin: 0 .5em;
-  padding: .625em .125em 0 .125em;
-  line-height: 1;
+	font-size: 6.5vw;
+	font-family: "Work Sans", Helvetica, Arial, "Lucida Grande", sans-serif;
+	margin: 0 .5em;
+	padding: .625em .125em 0;
+	line-height: 1;
 }
 
 #text-wrap.archive-is-open {
-  position: fixed;
-  left: 0;
+	position: fixed;
+	left: 0;
 }
-
 /* section button toggle styling */
-
 #text-wrap button {
-  transition: .1s linear transform;
-  transform-origin: bottom left;
-  cursor: pointer;
-  border-bottom: dashed .025em;
-  height: .94em;
-  color: white;
+	transition: .1s linear transform;
+	transform-origin: bottom left;
+	cursor: pointer;
+	border-bottom: dashed .025em;
+	height: .94em;
+	color: white;
 }
 
 #text-wrap button.toggle-active {
-  transform: skew(-10deg);
-  color: black;
+	transform: skew(-10deg);
+	color: black;
 }
 
-.section-toggle span:after, .section-toggle span:before, .close.section-toggle span:after {
+.close.section-toggle span:after,
+.section-toggle span:after,
+.section-toggle span:before {
 	content: "";
 	height: .25em;
 	width: 0;
@@ -100,7 +100,8 @@ p {
 	transition-property: transform;
 }
 
-.close.section-toggle span:after, .close.section-toggle span:before {
+.close.section-toggle span:after,
+.close.section-toggle span:before {
 	left: .25em;
 	right: 0;
 }
@@ -111,45 +112,46 @@ p {
 	transition-property: opacity;
 }
 
-.section-toggle.toggle-active span {
-}
+.section-toggle.toggle-active span {}
 
-.section-toggle.toggle-active span, .close.section-toggle span:after, .close.section-toggle span {
+.close.section-toggle span,
+.close.section-toggle span:after,
+.section-toggle.toggle-active span {
 	opacity: 1;
 }
 
 .section-toggle span:before {
-	        transform: rotate(90deg) skew(10deg);
+	transform: rotate(90deg) skew(10deg);
 }
 
-.section-toggle.toggle-active span:before, .close.section-toggle span:before {
-	        transform: rotate(45deg);
-	        border-left: solid black .03em;
+.close.section-toggle span:before,
+.section-toggle.toggle-active span:before {
+	transform: rotate(45deg);
+	border-left: solid black .03em;
 }
-
 
 .section-toggle span:after {
-	        transform: rotate(-90deg) skew(-10deg);
+	transform: rotate(-90deg) skew(-10deg);
 }
 
-.section-toggle.toggle-active span:after, .close.section-toggle span:after {
-	        transform: rotate(-45deg);
-	        border-left: solid black .03em;
+.close.section-toggle span:after,
+.section-toggle.toggle-active span:after {
+	transform: rotate(-45deg);
+	border-left: solid black .03em;
 }
 
- .close.section-toggle span {
- }
-
+.close.section-toggle span {}
 /* section styling and toggling stuff */
-
-#archive-wrap, #gallery-wrap {
-  font-family: "Anonymous Pro", "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
-  visibility: hidden;
-  z-index: 1000;
-  position: fixed;
+#archive-wrap,
+#gallery-wrap {
+	font-family: "Anonymous Pro", "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+	visibility: hidden;
+	z-index: 1000;
+	position: fixed;
 }
 
-#archive-wrap.section-open, #gallery-wrap.section-open {
+#archive-wrap.section-open,
+#gallery-wrap.section-open {
 	visibility: visible;
 }
 
@@ -179,37 +181,30 @@ p {
 section .close {
 	transform: none;
 }
-
 /* selected works styling */
+
 figure.image {
-
-min-width: 325px;
-
-width: 18vw;
-
-position: fixed;
-
-padding: 2em 2em 1em 2em;
-margin: 0;
-background: white;
-
-box-shadow: 0 0 6px #000000a3;
+	min-width: 325px;
+	width: 18vw;
+	position: fixed;
+	padding: 2em 2em .75em;
+	margin: 0;
+	background: white;
+	box-shadow: 0 0 6px #000000a3;
 }
 
 .image img {
 	display: block;
 }
 
-.image .image-title {
-}
+.image .image-title {}
 
-.image .image-year {
-}
+.image .image-year {}
 
 figure.image figcaption {
 	color: black;
 	display: flex;
-	padding-top: 1em;
+	padding-top: .75em;
 	justify-content: space-between;
 }
 
@@ -217,38 +212,25 @@ figure.image figcaption {
 	visibility: hidden;
 	pointer-events: none;
 }
-
 /* archive styling */
-
 #archive-wrap {
-
-width: 100%;
-
-top: 100%;
-
-box-shadow: 0 0 6px #000000a3;
-
-background: white;
-
-transition: .3s ease-out;
+	width: 100%;
+	top: 100%;
+	box-shadow: 0 0 6px #000000a3;
+	background: white;
+	transition: .3s ease-out;
 }
 
 #archive-wrap.section-open {
-
-top: 60%;
+	top: 60%;
 }
 
 .table {
-
-position: relative;
-
-margin: 0 auto;
-
-max-width: 1200px;
-
-padding: 25px .625em;
-
-font-size: 6.5vw;
+	position: relative;
+	margin: 0 auto;
+	max-width: 1200px;
+	padding: 25px .625em;
+	font-size: 6.5vw;
 }
 
 .table ul {
@@ -284,13 +266,10 @@ font-size: 6.5vw;
 	font-size: var(--step-down-4);
 }
 
-.table>*:last-child>ul {
+.table > *:last-child > ul {
 	border-bottom: none;
 }
-
-
 /*screen is a transparent layer above each of the "selected images" on large screens it does nothing but on mobile (small screens) it catches clicks to close the images, since the jquery to disable the drag effect would be super elaborate */
-
 figure .screen {
 	opacity: 0;
 	pointer-events: none;
@@ -303,11 +282,34 @@ figure .screen {
 	height: initial;
 }
 
+div.contact {
+	font-size: 6.5vw;
+	font-family: "Work Sans", Helvetica, Arial, "Lucida Grande", sans-serif;
+	margin: -.625em 0 .625em 0;
+	padding-left: .075em;
+	height: 100px;
+	overflow: visible;
+	display: flex;
+	text-align: right;
+	flex-direction: column;
+	justify-content: flex-end;
+	min-height: 112px;
+}
+
+div.contact span {
+	font-size: 16px;
+	display: inline-block;
+}
+
+div.contact span:before {
+	content: "—";
+	display: block;
+}
+
 @media only screen and (max-width: 768px) {
 	figure.image {
 		pointer-events: none;
 	}
-
 
 	figure .close {
 		visibility: hidden;
@@ -320,69 +322,68 @@ figure .screen {
 		visibility: visible;
 	}
 
-	figure.image-closed .screen, figure .screen {
+	figure .screen,
+	figure.image-closed .screen {
 		pointer-events: none;
 	}
 
-	#text-wrap, .table {
+	#text-wrap, .table, div.contact {
 		font-size: 50px;
+		text-align: left;
+		min-height: 80px;
 	}
 
 	.table ul li:nth-child(2n) {
-	visibility: hidden;
-	position: fixed;
+		visibility: hidden;
+		position: fixed;
 	}
+
 	.table ul li:first-child {
 		width: 75%;
 	}
+
 	.table ul li:nth-child(3n) {
 		width: 15%;
 	}
 
-	 #gallery-wrap.section-open {
+	#gallery-wrap.section-open {
+		top: 1em;
+		left: 1em;
+		right: 1em;
+		bottom: 1em;
+	}
 
-top: 1em;
-
-left: 1em;
-
-right: 1em;
-
-bottom: 1em;
+	#text-wrap button {
+		border-width: .0375em;
+	}
 }
-
-#text-wrap button {
-	border-width: .0375em;
-}
-
-}
-
 @media only screen and (max-width: 525px) {
-		figure.image {
+	figure.image {
+		min-width: unset;
+		width: 62vw;
+		padding: 6vw 6vw 3vw;
+	}
 
-min-width: unset;
+	figure.image figcaption {
+		font-size: .8706em;
+		padding-top: 3vw;
+		justify-content: center;
+	}
 
-width: 62vw;
+	.table ul > * {
+		font-size: .8706em;
+	}
 
-padding: 6vw 6vw 3vw 6vw;
+	.image .image-year {
+		display: none;
+	}
 }
-
-figure.image figcaption {
-	font-size: .8706em;
-	padding-top: 3vw;
-	justify-content: center;
-}
-
-.table ul>* {
-	font-size: .8706em;
-}
-
-.image .image-year {
-	display: none;
-}
-}
-
 @media only screen and (max-width: 485px) {
-	#text-wrap, .table {
+	#text-wrap, .table, div.contact {
 		font-size: 10.25vw;
 	}
+	div.contact span {
+		font-size: .5em;
+	}
+
 }
