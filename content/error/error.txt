@@ -1,1 +1,9 @@
 Title: Error
+
+----
+
+About: Hi, this is an error page. Maybe you clicked a broken link or your browser is just messing with you. Either way, you can click (link: / text: here title: link to home page) to go to the home page.
+
+----
+
+Errormessage: This is an error page. Maybe you clicked a broken link or your browser is messing with you. Either way click (link: / text: here title: link to home page) to go to the home page.

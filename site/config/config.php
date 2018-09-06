@@ -28,3 +28,13 @@ make Kirby work. For more fine-grained configuration
 of the system, please check out http://getkirby.com/docs/advanced/options
 
 */
+
+ // html minifier config
+
+  c::set('plugin.html.minifier.active', true);
+
+
+ // image upload shrink config
+
+  c::set('ka.image.shrink.maxDimension', 2000);
+?>

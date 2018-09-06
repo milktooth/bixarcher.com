@@ -26,7 +26,7 @@ fields:
         mode: single
         types:
                 - image
-        help: Images for the selected works section must be at least 500px wide
+        help: Images must be at least 500px and at most 2000px wide
       title:
         label: Title
         type: text
@@ -45,7 +45,8 @@ fields:
         mode: single
         types:
                 - image
-      name:
+        help: Images must be at least 500px and at most 2000px wide
+      title:
         label: Title
         type: text
       medium:
@@ -57,4 +58,4 @@ fields:
 
   contact:
     label: Contact Email
-    type: text
+    type: email

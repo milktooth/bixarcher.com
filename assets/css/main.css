@@ -86,6 +86,22 @@ p {
 	color: black;
 }
 
+#text-wrap a:link, #text-wrap a:visited {
+	cursor: pointer;
+	border-bottom: dashed .025em;
+	height: .94em;
+	display: inline-block;
+	color: white;
+}
+
+#text-wrap a:hover, #text-wrap  a:active {
+	cursor: pointer;
+	border-bottom: dashed .025em;
+	height: .94em;
+	display: inline-block;
+	color: white;
+}
+
 .close.section-toggle span:after,
 .section-toggle span:after,
 .section-toggle span:before {
@@ -247,7 +263,8 @@ figure.image figcaption {
 }
 
 .table ul li {
-	padding: 12.5px 12.5px 12.5px 25px;
+	padding: 0 12.5px 0 25px;
+	margin: 12.5px 0;
 	overflow: hidden;
 }
 
@@ -261,6 +278,20 @@ figure.image figcaption {
 
 .table ul li:nth-child(3n) {
 	width: 14%;
+	position: relative;
+}
+
+.table ul li:nth-child(3n):after {
+	opacity: 0;
+	transition: .2s ease-out opacity;
+}
+
+.table ul:hover li:nth-child(3n):after {
+	opacity: 1;
+	content: '\02197';
+	position: absolute;
+	right: 25px;
+	top: 0;
 }
 
 #archive .table {
@@ -298,12 +329,12 @@ div.contact {
 }
 
 div.contact span {
-	font-size: 16px;
+	font-size: 21.112px;
 	display: inline-block;
 }
 
 div.contact span:before {
-	content: "—";
+	content: "\02014";
 	display: block;
 }
 
@@ -347,6 +378,11 @@ div.contact span:before {
 		width: 15%;
 	}
 
+
+	.table ul:hover li:nth-child(3n):after {
+		content: "";
+	}
+
 	#gallery-wrap.section-open {
 		top: 1em;
 		left: 1em;
@@ -380,11 +416,14 @@ div.contact span:before {
 	}
 }
 @media only screen and (max-width: 485px) {
+
+	.table ul li:nth-child(2n) {
+		display: none;
+	}
 	#text-wrap, .table, div.contact {
 		font-size: 10.25vw;
 	}
 	div.contact span {
 		font-size: .5em;
 	}
-
 }

@@ -3,3 +3,22 @@ Title: Bix Archer
 ----
 
 Text: 
+
+----
+
+Contact: bixarcher@gmail.com
+
+----
+
+Author: Bix Archer
+
+----
+
+Description: 
+
+----
+
+Copyright: 
+
+Content © 2018–(date: Year) Bix Archer
+Design and original code © 2018–(date: Year) Jake Brussel Faria

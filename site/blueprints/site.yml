@@ -1,0 +1,20 @@
+title: Page
+pages: false
+files: false
+fields:
+  title:
+    label: Title
+    type:  text
+
+  author:
+    label: Author
+    type: text
+
+  description:
+    label: Description
+    type: textarea
+    help: This will show up in google searches and things like that.
+
+  copyright:
+    label: Copyright
+    type: textarea
