@@ -61,7 +61,7 @@
 
         foreach($sortedArchive as $archiveItem): ?>
           <!-- construct as archive properly -->
-          <a href="<?= $page->image($archiveItem->image())->url(); ?>" target="_blank">
+          <a href="<?= $page->image($archiveItem->image())->resize(2000)->url(); ?>" target="_blank">
             <ul>
               <li>
                 <?= $archiveItem->title()->html() ?>

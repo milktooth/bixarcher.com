@@ -1,6 +1,9 @@
 title: Page
 pages: false
 files: true
+  width: 3500
+  height: 3500
+  
 fields:
   title:
     label: Title
