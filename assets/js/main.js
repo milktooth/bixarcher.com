@@ -63,8 +63,13 @@ $('.main-toggle').on('click', function() {
     if (target == 'archive') {
       var arch_height = $('#archive-wrap').outerHeight(),
         win_height = $(window).height(),
-        final_height = (win_height - (arch_height*(2/3)));
-      $('#archive-wrap').css('top', final_height);
+        win_height_60 = win_height*.6,
+        final_height = (win_height - (arch_height*.6));
+        if (final_height < win_height_60) {
+          $('#archive-wrap').css('top', win_height_60);
+        } else {
+          $('#archive-wrap').css('top', final_height);
+        }
     }
 
   }
